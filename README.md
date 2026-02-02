@@ -15,7 +15,7 @@ or read the [Documentation Tutorial](http://https://fablabrwanda.github.io/UR-AC
 
     mkdocs.yml          # The site configuration file.
     docs/               # All site content/files should be in this folder.
-        index.md        # The homepage(https://github.com/easifiwe05-del/digital_fabrication/blob/main/docs/index.md).
+        index.md        # The [homepage](https://github.com/easifiwe05-del/digital_fabrication/blob/main/docs/index.md).
         files/          # Put files you'd like available in your site here (except videos)
         images/         # You can put your images in here
         Daily-Activity  # Document daily activity give for each lecture
