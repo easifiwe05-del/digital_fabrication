@@ -10,6 +10,8 @@ or read the [Documentation Tutorial](http://https://fablabrwanda.github.io/UR-AC
   * To change the looks of your website, use the theme options found in the `mkdocs.yml` file or see the names of the available themes
 * If you want to start a website from scratch, you can delete everything in this repository and push your own static website
 
+* The [homepage](https://github.com/easifiwe05-del/digital_fabrication/blob/main/docs/index.md).
+
 
 ## Documentation layout
 
