@@ -8,6 +8,8 @@ site_url: https://easifiwe05-del.github.io/digital_fabrication/
 repo_url: https://github.com/easifiwe05-del/digital_fabrication
 repo_name: digital_fabrication
 
+docs_dir: docs
+
 extra:
   social:
     # Change to your own social media or remove line to hide. 
