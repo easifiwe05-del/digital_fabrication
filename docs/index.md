@@ -33,13 +33,6 @@ I bring approximately **2.5-3 years of professional experience** combining softw
 - Network Engineering & System Architecture
 
 
-
-## My Background
-
-### Personal
-
-I was born and raised in Rwanda, growing up in Huye city (southern province), a town known for its strong academic culture and emphasis on education. This environment instilled in me a commitment to continuous learning and technical excellence.
-
 ### Education
 
 **Master's Degree** - IoT-Embedded Computing Systems (In Progress)
