@@ -94,7 +94,7 @@ Geometric constraints establish design intent:
 
 The fully constrained sketch (zero degrees of freedom) ensures dimensional stability and enables design modification through parameter value iteration rather than geometric reconstruction.
 
-![Dimensionally Specified Sketch with Constraint Representation](../images/day_2/dimens.png)
+![Dimensionally Specified Sketch with Constraint Representation](../images/day_2/FreeCad_design_1.png)
 
 **Figure 2:** Fully constrained sketch showing dimensional specification (25mm, 23mm, 30mm) with visual constraint indicators demonstrating parametric control architecture.
 
@@ -127,10 +127,6 @@ Fastener mounting requires precision hole placement:
 - Typical specification: 0.5-1.0mm chamfer radius
 - Improves manufacturability and assembly reliability
 
-![Bracket with Mounting Holes and Chamfered Edges](../images/day_2/holes.png)
-
-**Figure 4:** 3D model showing precision-positioned mounting holes with chamfered edges, demonstrating Pocket and Chamfer feature integration.
-
 #### Edge Finish: Fillet Application
 
 External corner treatment improves safety, manufacturability, and structural performance:
@@ -152,9 +148,9 @@ The completed bracket incorporates:
 - Complete parametric dimension control
 - Export compatibility with CNC and additive manufacturing workflows
 
-![Finished L-Shaped Bracket Assembly](../images/day_2/sketch_final.png)
+![Finished L-Shaped Bracket Assembly](../images/day_2/Screenshot 2026-04-17 134217.png)
 
-**Figure 5:** Completed bracket demonstrating integrated parametric modeling workflow: sketch constraints → dimensional specification → feature operations (Pad, Pocket, Chamfer, Fillet) → manufacturing-ready geometry.
+**Figure 4:** Completed bracket demonstrating integrated parametric modeling workflow: sketch constraints → dimensional specification → feature operations (Pad, Pocket, Chamfer, Fillet) → manufacturing-ready geometry.
 
 ### Common Challenges and Solutions
 
@@ -231,7 +227,7 @@ Press-fit assembly requires complementary geometry:
 
 ![Initial Press-Fit Panel Geometry](../images/day_2/b1.png)
 
-**Figure 6:** Press-fit panel geometry showing rectangular substrate with dimensioned tab and slot features positioned for interlocking assembly on precision grid reference.
+**Figure 5:** Press-fit panel geometry showing rectangular substrate with dimensioned tab and slot features positioned for interlocking assembly on precision grid reference.
 
 #### Geometry Refinement: Circular Detail Integration
 
@@ -282,12 +278,10 @@ The completed design integrates:
 
 ![Complete Press-Fit Box Assembly](../images/day_2/result.png)
 
-**Figure 7:** Finished press-fit box system demonstrating complete interlocking panel architecture with precision rectangular slot geometry optimized for laser cutting fabrication.
+**Figure 6:** Finished press-fit box system demonstrating complete interlocking panel architecture with precision rectangular slot geometry optimized for laser cutting fabrication.
 
 ### Common Challenges and Solutions
 
-| Challenge | Cause | Solution |
-|-----------|-------|----------|
 | Challenge | Root Cause | Resolution Strategy |
 |-----------|-----------|---------------------|
 | **Slot-assembly interference** | Material thickness dimensional mismatch; unmeasured kerf effect | Measure substrate thickness with precision caliper; apply dimensional correction; compensate for measured kerf (0.1-0.3mm) |

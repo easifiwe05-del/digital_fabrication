@@ -1,0 +1,1646 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="EA Docs">
+      
+      
+        <meta name="author" content="EA">
+      
+      
+        <link rel="canonical" href="https://easifiwe05-del.github.io/digital_fabrication/Daily-Activity/day_3/">
+      
+      
+        <link rel="prev" href="../day_2/">
+      
+      
+        <link rel="next" href="../day_4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Day 3: ATtiny45 Microcontroller PCB Design and Fabrication - Emmanuel ASIFIWE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Montserrat";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#day-3-attiny45-microcontroller-pcb-design-and-fabrication" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Emmanuel ASIFIWE" class="md-header__button md-logo" aria-label="Emmanuel ASIFIWE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Emmanuel ASIFIWE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/easifiwe05-del/digital_fabrication" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.94 13.11-1.05-3.22c0-.03-.01-.06-.02-.09l-2.11-6.48a.86.86 0 0 0-.8-.57c-.36 0-.68.25-.79.58l-2 6.17H8.84L6.83 3.33a.85.85 0 0 0-.79-.58c-.37 0-.69.25-.8.58L3.13 9.82v.01l-1.07 3.28c-.16.5.01 1.04.44 1.34l9.22 6.71c.17.12.39.12.56-.01l9.22-6.7c.43-.3.6-.84.44-1.34M8.15 10.45l2.57 7.91-6.17-7.91m8.73 7.92 2.47-7.59.1-.33h3.61l-5.59 7.16m4.1-13.67 1.81 5.56h-3.62m-1.3.95-1.79 5.51L12 19.24l-2.86-8.79M6.03 3.94 7.84 9.5H4.23m-1.18 4.19c-.09-.07-.13-.19-.09-.29l.79-2.43 5.82 7.45m11.38-4.73-6.51 4.73.02-.03 5.79-7.42.79 2.43c.04.1 0 .22-.09.29"/></svg>
+  </div>
+  <div class="md-source__repository">
+    digital_fabrication
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  My documentation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Daily Activity
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Emmanuel ASIFIWE" class="md-nav__button md-logo" aria-label="Emmanuel ASIFIWE" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Emmanuel ASIFIWE
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/easifiwe05-del/digital_fabrication" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.94 13.11-1.05-3.22c0-.03-.01-.06-.02-.09l-2.11-6.48a.86.86 0 0 0-.8-.57c-.36 0-.68.25-.79.58l-2 6.17H8.84L6.83 3.33a.85.85 0 0 0-.79-.58c-.37 0-.69.25-.8.58L3.13 9.82v.01l-1.07 3.28c-.16.5.01 1.04.44 1.34l9.22 6.71c.17.12.39.12.56-.01l9.22-6.7c.43-.3.6-.84.44-1.34M8.15 10.45l2.57 7.91-6.17-7.91m8.73 7.92 2.47-7.59.1-.33h3.61l-5.59 7.16m4.1-13.67 1.81 5.56h-3.62m-1.3.95-1.79 5.51L12 19.24l-2.86-8.79M6.03 3.94 7.84 9.5H4.23m-1.18 4.19c-.09-.07-.13-.19-.09-.29l.79-2.43 5.82 7.45m11.38-4.73-6.51 4.73.02-.03 5.79-7.42.79 2.43c.04.1 0 .22-.09.29"/></svg>
+  </div>
+  <div class="md-source__repository">
+    digital_fabrication
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily Activity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Daily Activity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity of Day 1: Introduction to Modeling and Fabrication Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Activity of Day 2: Advanced Digital Modeling for Fabrication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-objective-and-system-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objective and System Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-overview-and-circuit-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. System Overview and Circuit Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-components-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Components Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-schematic-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Schematic Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-footprint-assignment-and-component-placement-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Footprint Assignment and Component Placement Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-pcb-layout-and-single-sided-design-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. PCB Layout and Single-Sided Design Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-3d-visualization-and-assembly-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 3D Visualization and Assembly Review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-design-rule-check-drc-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Design Rule Check (DRC) Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-fabrication-preparation-and-file-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Fabrication Preparation and File Generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fabrication-results-and-prototype-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Fabrication Results and Prototype Assembly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-challenges-encountered-and-solutions-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Challenges Encountered and Solutions Implemented
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-design-improvements-for-next-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Design Improvements for Next Iteration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-learning-outcomes-and-competency-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Learning Outcomes and Competency Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reflection Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Activity of Day 4: Materials Science and Fabrication Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 5 – Digital Fabrication I: CNC and Laser Cutting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Activity of Day 6: Digital Fabrication II – Additive Manufacturing (3D Printing with Ultimaker)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day_7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Day 7: PCB Fabrication, Testing, and CNC Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day_8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Activity of Day 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../day_9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Activity of Day 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-objective-and-system-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objective and System Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-overview-and-circuit-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. System Overview and Circuit Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-components-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Components Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-schematic-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Schematic Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-footprint-assignment-and-component-placement-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Footprint Assignment and Component Placement Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-pcb-layout-and-single-sided-design-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. PCB Layout and Single-Sided Design Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-3d-visualization-and-assembly-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 3D Visualization and Assembly Review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-design-rule-check-drc-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Design Rule Check (DRC) Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-fabrication-preparation-and-file-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Fabrication Preparation and File Generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fabrication-results-and-prototype-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Fabrication Results and Prototype Assembly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-challenges-encountered-and-solutions-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Challenges Encountered and Solutions Implemented
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-design-improvements-for-next-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Design Improvements for Next Iteration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-learning-outcomes-and-competency-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Learning Outcomes and Competency Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reflection Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="day-3-attiny45-microcontroller-pcb-design-and-fabrication">Day 3: ATtiny45 Microcontroller PCB Design and Fabrication<a class="headerlink" href="#day-3-attiny45-microcontroller-pcb-design-and-fabrication" title="Permanent link">&para;</a></h1>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>Day 3 focused on the complete design and fabrication workflow for a single-sided printed circuit board featuring the ATtiny45 microcontroller. This embedded system integrates core input/output capabilities including LED control, push-button user interaction, and ISP (In-System Programming) functionality. The project emphasized practical constraints of single-layer PCB design, component footprint selection, and design-for-manufacturability (DFM) principles specific to hobbyist PCB milling fabrication.</p>
+<p>The development process integrated schematic capture in KiCad, footprint assignment for through-hole components, manual trace routing optimization for single-sided constraints, design rule checking, and generation of machine-executable fabrication files. The resulting prototype validates the effectiveness of methodical circuit design and demonstrates successful translation of digital specification into functional fabricated hardware.</p>
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Design functional embedded circuits using microcontroller integration</li>
+<li>Apply KiCad workflow from schematic to PCB layout</li>
+<li>Understand single-sided PCB design constraints and routing optimization</li>
+<li>Implement ISP programming interface for in-circuit development</li>
+<li>Perform design rule checking and DFM analysis</li>
+<li>Generate and interpret fabrication file formats (Gerber, drill files)</li>
+<li>Validate design through prototype fabrication and testing</li>
+</ul>
+<h2 id="1-objective-and-system-context">1. Objective and System Context<a class="headerlink" href="#1-objective-and-system-context" title="Permanent link">&para;</a></h2>
+<p>This project involved designing a minimalist ATtiny45-based control system capable of LED illumination control via push-button input with in-circuit programmability. The design integrates a microcontroller, discrete logic elements (resistor, capacitor), user interface components (LED, push button), and programming interface (ISP header) onto a single-sided PCB substrate.</p>
+<p><strong>Core System Functions:</strong>
+- <strong>Microcontroller Processing:</strong> ATtiny45 executes firmware logic managing LED state transitions
+- <strong>User Input:</strong> Push button provides digital input to microcontroller on GPIO pin
+- <strong>Visual Feedback:</strong> LED outputs controlled logic state for user observation
+- <strong>In-Circuit Programming:</strong> ISP interface enables firmware development and deployment without board removal</p>
+<h2 id="2-system-overview-and-circuit-architecture">2. System Overview and Circuit Architecture<a class="headerlink" href="#2-system-overview-and-circuit-architecture" title="Permanent link">&para;</a></h2>
+<p>The ATtiny45 microcontroller forms the computational core, operating from regulated 5V DC power supply. The microcontroller GPIO pins interface directly to user-facing components and programming headers without intermediate isolation circuitry, reflecting design simplicity appropriate to hobbyist prototyping.</p>
+<p><strong>Circuit Signal Flow:</strong></p>
+<ol>
+<li><strong>Power Distribution:</strong> 5V supply provides regulated voltage to microcontroller VCC pin with local filtering capacitor</li>
+<li><strong>LED Output Path:</strong> GPIO pin PB0 drives 220Ω current-limiting resistor connected to LED anode; LED cathode returns to ground</li>
+<li><strong>Button Input Path:</strong> Momentary push button connects GPIO pin PB2 to ground; internal pull-up resistor provides high state</li>
+<li><strong>ISP Programming Interface:</strong> Six-pin connector provides MISO, MOSI, SCK, RESET, VCC, GND signals for programmer access</li>
+</ol>
+<p><strong>Design Operating Principle:</strong></p>
+<p>The ATtiny45 firmware monitors button input on PB2 for state transitions. Upon button press detection, firmware toggles PB0 output state, controlling LED illumination. The microcontroller executes polling loop or interrupt-driven input handling depending on power consumption requirements and application timing constraints.</p>
+<h2 id="3-components-used">3. Components Used<a class="headerlink" href="#3-components-used" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Value</th>
+<th>Package</th>
+<th>Quantity</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Microcontroller</strong></td>
+<td>ATtiny45</td>
+<td>DIP-8</td>
+<td>1</td>
+<td>Main processing unit</td>
+</tr>
+<tr>
+<td><strong>LED</strong></td>
+<td>5mm Red</td>
+<td>THT</td>
+<td>1</td>
+<td>Visual output indicator</td>
+</tr>
+<tr>
+<td><strong>Current Limiting Resistor</strong></td>
+<td>220Ω</td>
+<td>0.25W THT</td>
+<td>1</td>
+<td>LED protection and brightness control</td>
+</tr>
+<tr>
+<td><strong>Push Button</strong></td>
+<td>Momentary</td>
+<td>THT</td>
+<td>1</td>
+<td>User input device</td>
+</tr>
+<tr>
+<td><strong>Decoupling Capacitor</strong></td>
+<td>0.1 µF</td>
+<td>Ceramic THT</td>
+<td>1</td>
+<td>Power supply filtering</td>
+</tr>
+<tr>
+<td><strong>Power Header</strong></td>
+<td>2-pin</td>
+<td>THT</td>
+<td>1</td>
+<td>External 5V supply connection</td>
+</tr>
+<tr>
+<td><strong>ISP Programming Header</strong></td>
+<td>2×3</td>
+<td>THT</td>
+<td>1</td>
+<td>ICSP connector for firmware programming</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Component Selection Rationale:</strong></p>
+<p>All components employ through-hole (THT) technology to align with hobbyist PCB milling capabilities. DIP-8 packaging for the ATtiny45 provides simplified hand-soldering and breadboarding compatibility. Standard 0.1" pin spacing throughout maintains consistency with breadboard and prototyping infrastructure. The 220Ω resistor provides appropriate current limitation for standard 5mm LED under 5V supply (approximately 15mA LED current).</p>
+<h2 id="4-schematic-design">4. Schematic Design<a class="headerlink" href="#4-schematic-design" title="Permanent link">&para;</a></h2>
+<p>The circuit schematic captures the electrical topology defining component interconnections and signal routing. Design methodology prioritized functional clarity and standard electrical practices.</p>
+<p><strong>Schematic Architecture:</strong></p>
+<ul>
+<li><strong>Power Rails:</strong> Dual rails representing +5V supply and ground reference distributed across all components</li>
+<li><strong>Microcontroller Core:</strong> ATtiny45 DIP-8 device central to circuit topology with all pins explicitly defined</li>
+<li><strong>Output Stage:</strong> PB0 GPIO output connected through 220Ω resistor to LED anode; LED cathode returned to ground</li>
+<li><strong>Input Stage:</strong> PB2 GPIO input connected to push button; return path to ground; internal pull-up enabled in firmware</li>
+<li><strong>Programming Interface:</strong> ISP header connected to RESET, SCK, MOSI, MISO pins with supply and ground references</li>
+<li><strong>Power Conditioning:</strong> 0.1 µF capacitor connected between VCC and ground at microcontroller location for high-frequency noise filtering</li>
+</ul>
+<p><strong>Design Validation:</strong></p>
+<p>The schematic underwent verification to confirm:
+- All GPIO pins routed to functional interface (output, input, programming)
+- Power and ground connectivity complete across all devices
+- Electrical ratings (voltage, current) within component specifications
+- No floating or unconnected signal paths</p>
+<p><a class="glightbox" href="../../images/day_3/Schematic_design.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Schematic Design" src="../../images/day_3/Schematic_design.png" /></a></p>
+<p><strong>Figure 1:</strong> Complete circuit schematic demonstrating ATtiny45 microcontroller integration with LED output stage, push-button input, ISP programming interface, and power conditioning. All signal paths and voltage rails explicitly routed.</p>
+<h2 id="5-footprint-assignment-and-component-placement-strategy">5. Footprint Assignment and Component Placement Strategy<a class="headerlink" href="#5-footprint-assignment-and-component-placement-strategy" title="Permanent link">&para;</a></h2>
+<p>Footprint assignment represents the translation of schematic symbols to physical PCB geometry and land patterns. This step aligns electrical design with manufacturing constraints and fabrication capabilities.</p>
+<p><strong>Footprint Selection Methodology:</strong></p>
+<ul>
+<li><strong>ATtiny45:</strong> DIP-8 (300mil package width) provides standard dual-in-line footprint compatible with breadboard and through-hole soldering</li>
+<li><strong>Passive Resistor and Capacitor:</strong> Standard 0.1" vertical mounting footprints (TH_1/4W, TH_C025)</li>
+<li><strong>LED:</strong> Radial through-hole footprint with 2mm lead spacing</li>
+<li><strong>Push Button:</strong> Standard tactile switch footprint with 2.54mm pin pitch</li>
+<li><strong>Headers:</strong> Pin header footprints with 2.54mm spacing aligned to standard connector ecosystem</li>
+</ul>
+<p><strong>Component Placement Considerations:</strong></p>
+<p>Through-hole component packages dictate vertical mounting orientation. Component leads pass through board perforations and solder to bottom copper layer. Placement strategy prioritized:
+- <strong>Signal Integrity:</strong> Input components (button, ISP header) grouped on board periphery
+- <strong>Thermal Path:</strong> Current-consuming element (LED resistor) positioned away from microcontroller thermal zone
+- <strong>Fabrication Accessibility:</strong> All components arranged for straightforward soldering without component interference
+- <strong>Routing Feasibility:</strong> Component placement optimized for single-layer trace routing without excessive jumpers</p>
+<h2 id="6-pcb-layout-and-single-sided-design-implementation">6. PCB Layout and Single-Sided Design Implementation<a class="headerlink" href="#6-pcb-layout-and-single-sided-design-implementation" title="Permanent link">&para;</a></h2>
+<p>PCB layout translates schematic connectivity into physical copper geometry suitable for fabrication. Single-sided design constraint restricts all traces to a single copper layer, necessitating careful routing optimization and potential jumper wire incorporation.</p>
+<p><strong>Board Geometry and Constraints:</strong></p>
+<ul>
+<li><strong>Board Dimensions:</strong> Approximately 60mm × 40mm footprint selected to encompass component placement with 5mm margin</li>
+<li><strong>Layer Configuration:</strong> Single copper layer (F.Cu) contains all signal traces and ground plane</li>
+<li><strong>Design Grid:</strong> 2.54mm (0.1") grid alignment matched to component pin spacing</li>
+<li><strong>No Via Usage:</strong> Single-sided design eliminates vias; all interlayer connections employ top-side jumper wires where necessary</li>
+<li><strong>Copper Clearance:</strong> 0.5mm minimum clearance maintained between traces and board perimeter</li>
+</ul>
+<p><strong>Routing Architecture:</strong></p>
+<ul>
+<li><strong>Ground Plane Organization:</strong> Continuous ground copper sheet covering maximum feasible board area, providing both electrical and thermal characteristics</li>
+<li><strong>Signal Traces:</strong> Individual routed traces connecting functional components (power, output, input, programming paths)</li>
+<li><strong>Jumpers:</strong> Insulated wire segments bridge traces where single-layer physical routing prevents direct copper connectivity</li>
+<li><strong>Trace Characterization:</strong> Trace width maintained at 0.6mm providing appropriate current-carrying capacity for low-voltage digital signals across ~15mA LED current</li>
+</ul>
+<p><strong>Single-Layer Challenge Resolution:</strong></p>
+<p>The ATtiny45 microcontroller central location created routing density at package pins. Resolution strategy implemented:
+1. Power and ground traces routed to pin locations with maximum available space utilization
+2. Output trace (PB0→LED resistor) and input trace (PB2←button) routed via opposing board margins
+3. ISP header traces directed via longest-path routing, accepting extended trace lengths in exchange for avoided crossings
+4. Critical resistor and capacitor placement adjacent to microcontroller to minimize trace lengths</p>
+<p><a class="glightbox" href="../../images/day_3/path_routing.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Routing Layout" src="../../images/day_3/path_routing.png" /></a></p>
+<p><strong>Figure 2:</strong> Single-sided PCB layout demonstrating trace routing optimization for ATtiny45 circuit. Ground plane provides electrical reference and reduced return path inductance. Output stage, input stage, and programming interface traces routed to minimize layer transitions.</p>
+<h2 id="7-3d-visualization-and-assembly-review">7. 3D Visualization and Assembly Review<a class="headerlink" href="#7-3d-visualization-and-assembly-review" title="Permanent link">&para;</a></h2>
+<p>Three-dimensional board visualization provides geometric validation confirming component placement feasibility, clearance verification, and soldering accessibility before fabrication.</p>
+<p><strong>3D Model Analysis:</strong></p>
+<ul>
+<li><strong>Component Orientation Verification:</strong> All through-hole leads perpendicular to board surface; no component mechanical interference</li>
+<li><strong>Copper Layer Visualization:</strong> Trace routing paths and ground plane distribution visible in rendered view</li>
+<li><strong>Clearance Assessment:</strong> Visual confirmation of maintained spacing between components and board edges</li>
+<li><strong>Assembly Accessibility:</strong> Solder-side surface clear for soldering iron access without obstruction</li>
+</ul>
+<p><a class="glightbox" href="../../images/day_3/pcb_3dview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="3D PCB Visualization" src="../../images/day_3/pcb_3dview.png" /></a></p>
+<p><strong>Figure 3:</strong> Three-dimensional rendering of ATtiny45 control PCB showing component placement, trace routing distribution, and board profile. Vertical through-hole components and wire jumpers visible in assembly configuration.</p>
+<h2 id="8-design-rule-check-drc-verification">8. Design Rule Check (DRC) Verification<a class="headerlink" href="#8-design-rule-check-drc-verification" title="Permanent link">&para;</a></h2>
+<p>Design rule checking automated verification processes validate PCB layout compliance with manufacturing specifications and electrical design requirements.</p>
+<p><strong>DRC Criteria Verified:</strong></p>
+<ul>
+<li><strong>Electrical Continuity:</strong> All schematic nets mapped to corresponding copper traces; no unconnected signal nodes</li>
+<li><strong>Trace to Trace Clearance:</strong> Minimum 0.5mm spacing maintained between adjacent copper elements; no bridging or shorts</li>
+<li><strong>Trace Width Compliance:</strong> All traces maintain minimum 0.6mm width; current-carrying capacity verified for 20mA design headroom</li>
+<li><strong>Via Placement:</strong> No vias required in single-sided design; all connections formed via through-hole component leads</li>
+<li><strong>Copper to Edge Clearance:</strong> Minimum 5mm margin maintained between copper elements and board perimeter</li>
+<li><strong>Creepage and Clearance:</strong> Spacing between 5V and ground paths meets isolation requirements for hobbyist fabrication</li>
+</ul>
+<p><strong>DRC Violation Resolution:</strong></p>
+<ul>
+<li><strong>Clearance Violations:</strong> Trace routing adjusted to maintain minimum clearance where conflicts identified</li>
+<li><strong>Unresolved Nets:</strong> All schematic nodes successfully routed; no floating or unconnected signals</li>
+<li><strong>Width Violations:</strong> Trace specifications verified adequate for circuit current requirements</li>
+</ul>
+<p><strong>Post-DRC Status:</strong> Design achieved clean DRC clearance; no violations reported.</p>
+<h2 id="9-fabrication-preparation-and-file-generation">9. Fabrication Preparation and File Generation<a class="headerlink" href="#9-fabrication-preparation-and-file-generation" title="Permanent link">&para;</a></h2>
+<p>Fabrication file generation translates PCB design into machine-executable formats consumed by PCB manufacturing and milling equipment.</p>
+<p><strong>File Generation Process:</strong></p>
+<ol>
+<li><strong>Gerber Export:</strong> Primary PCB geometry exported in RS-274X (Gerber) format defining copper layer topology</li>
+<li><strong>F.Cu Layer:</strong> Front copper layer containing all signal traces and ground plane</li>
+<li>
+<p><strong>Edge.Cuts Layer:</strong> Board perimeter profile defining milling boundary</p>
+</li>
+<li>
+<p><strong>Drill File Generation:</strong> NC (numerical control) drill file generated specifying all through-hole positions and diameters</p>
+</li>
+<li>Format: Excellon standard drill file</li>
+<li>Drill specifications: 0.8mm (31mil) for component leads, 1.5mm for jumper wire holes</li>
+<li>
+<p>File coordinates: Material location with origin reference point established</p>
+</li>
+<li>
+<p><strong>Board Layout Documentation:</strong> Assembly drawing exported showing component reference designators and placement locations for solder-side reference during assembly</p>
+</li>
+</ol>
+<p><strong>File Format Compatibility Verification:</strong></p>
+<ul>
+<li><strong>Gerber Specification:</strong> RS-274X Extended Gerber format ensuring compatibility with modern PCB equipment</li>
+<li><strong>Drill Format:</strong> Excellon format version 2.4 providing precise coordinate specification</li>
+<li><strong>Coordinate System:</strong> Absolute positioning mode with 2.54mm grid reference</li>
+</ul>
+<p><strong>Fabrication Readiness Confirmation:</strong></p>
+<p>All files verified for completeness and machine readability. Design ready for PCB milling, photo-lithography, or commercial fabrication submission.</p>
+<h2 id="10-fabrication-results-and-prototype-assembly">10. Fabrication Results and Prototype Assembly<a class="headerlink" href="#10-fabrication-results-and-prototype-assembly" title="Permanent link">&para;</a></h2>
+<p>The design successfully translated to fabricated hardware through PCB milling process. Prototype assembly and initial functional testing validated design assumptions and circuit operation.</p>
+<p><strong>Fabrication Process Summary:</strong></p>
+<p>PCB substrate mill-cut from FR4 material following board profile. Copper layer milling created trace paths and component mounting pads. Drill operations established through-holes at specified component locations.</p>
+<p><strong>Assembly Process:</strong></p>
+<ol>
+<li>Component lead preparation through cropping to appropriate board-penetration depth</li>
+<li>Through-hole insertion with microcontroller and passive components oriented to copper side</li>
+<li>Solder application via conventional wave soldering or hand-soldering with iron tool</li>
+<li>Jumper wire installation bridging single-layer routing conflicts using insulated hookup wire</li>
+<li>Cold solder joint inspection and repair as necessary</li>
+</ol>
+<p><strong>Prototype Appearance and Physical Validation:</strong></p>
+<p>Fabricated board demonstrates clean trace execution without copper bridges or missing segments. Component placement aligns with design specification. All through-holes drilled at design locations with appropriate dimensional accuracy.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3527.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Fabricated Prototype - Top View" src="../../images/day_3/IMG_3527.jpeg" /></a></p>
+<p><strong>Figure 4:</strong> Fabricated PCB top view showing component placement, trace routing structure, and overall board finish quality.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3528.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Fabricated Prototype - Detail View" src="../../images/day_3/IMG_3528.jpeg" /></a></p>
+<p><strong>Figure 5:</strong> Component and trace detail showing solder joint quality, lead preparation, and copper trace execution on fabricated substrate.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3529.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Assembled Board - Component Integration" src="../../images/day_3/IMG_3529.jpeg" /></a></p>
+<p><strong>Figure 6:</strong> Assembled microcontroller board showing integrated component positioning, power connectivity, and user interface elements.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3530.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prototype Operation - LED Illumination" src="../../images/day_3/IMG_3530.jpeg" /></a></p>
+<p><strong>Figure 7:</strong> Prototype under operating conditions demonstrating LED illumination in response to programmed microcontroller output.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3531.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ISP Programming Interface Connection" src="../../images/day_3/IMG_3531.jpeg" /></a></p>
+<p><strong>Figure 8:</strong> ISP programming header connected to development programmer, enabling firmware development and deployment.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3532.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Final Assembled System" src="../../images/day_3/IMG_3532.jpeg" /></a></p>
+<p><strong>Figure 9:</strong> Complete assembled ATtiny45 control system ready for firmware programming and functional testing.</p>
+<h2 id="11-challenges-encountered-and-solutions-implemented">11. Challenges Encountered and Solutions Implemented<a class="headerlink" href="#11-challenges-encountered-and-solutions-implemented" title="Permanent link">&para;</a></h2>
+<p><strong>Challenge 1: Single-Layer Routing Density</strong></p>
+<p>At the ATtiny45 DIP-8 package location, eight pins require connection to dispersed peripheral components. Conventional dual-layer routing would employ vias bridging layers; single-sided design constraint forced extended routing paths and jumper wire integration.</p>
+<p><strong>Resolution:</strong> Strategic component placement repositioned peripheral components (button, LED) to board perimeter regions, extending signal trace paths but avoiding crossings. Jumper wires routed on solder-side surface for traces incompatible with front copper routing.</p>
+<p><strong>Challenge 2: ISP Pin Reuse Complexity</strong></p>
+<p>The ISP header requires SCK, MOSI, MISO, and RESET pins—four signals consuming dedicated I/O pins on the limited ATtiny45 package. Simultaneous connectivity to user peripherals (LED, button) constrained available GPIO.</p>
+<p><strong>Resolution:</strong> Deliberate GPIO selection assigned button input to PB2 (non-ISP), LED output to PB0 (non-ISP), preserving ISP-critical pins for programming interface. Firmware design accommodated this constraint through targeted port selection without functional limitation.</p>
+<p><strong>Challenge 3: Ground Plane Discontinuity Management</strong></p>
+<p>Extensive single-layer ground plane required routing around component leads and trace paths, creating potential fragmentation zones where ground continuity interrupted.</p>
+<p><strong>Resolution:</strong> Ground distribution strategy maintained continuous copper sheet across maximum feasible area. Strategic trace routing over ground layer where electrical isolation requirements not exceeded. Fabricated board inspection confirmed continuous ground connectivity across all pad locations.</p>
+<h2 id="12-design-improvements-for-next-iteration">12. Design Improvements for Next Iteration<a class="headerlink" href="#12-design-improvements-for-next-iteration" title="Permanent link">&para;</a></h2>
+<p><strong>PCB Layout Optimization:</strong></p>
+<ul>
+<li><strong>Board Compaction:</strong> Current 60×40mm footprint could compress to 50×35mm through component clustering without routing complexity increase</li>
+<li><strong>Trace Width Optimization:</strong> Conservative 0.6mm trace width could reduce to 0.5mm for non-critical signals, improving routing flexibility</li>
+<li><strong>Jumper Elimination:</strong> Dual-sided fabrication would eliminate single-layer routing jumpers, improving aesthetics and solder joint accessibility</li>
+</ul>
+<p><strong>Component Selection Enhancement:</strong></p>
+<ul>
+<li><strong>Microcontroller Package:</strong> Investigation of SOIC-8 surface-mount package would enable tighter routing density and smaller footprint</li>
+<li><strong>LED Specification:</strong> Alternative to discrete 5mm LED; integration of LED with integrated resistor module or surface-mount technology</li>
+<li><strong>Header Consolidation:</strong> Combination of ISP and power headers into single connector reducing connector footprint</li>
+</ul>
+<p><strong>Documentation Improvements:</strong></p>
+<ul>
+<li><strong>Silkscreen Labeling:</strong> Addition of component reference designators (R1, C1, U1, SW1) printed on board surface for assembly clarity</li>
+<li><strong>Test Points:</strong> Integration of accessible test pads for multimeter measurement during debugging and validation</li>
+<li><strong>Polarity Marking:</strong> Explicit LED polarity indicators to prevent reverse-insertion damage</li>
+</ul>
+<p><strong>Assembly Process Enhancement:</strong></p>
+<ul>
+<li><strong>Solder Mask Addition:</strong> Protective coating reducing accidental trace contact and corrosion—not implemented in hobbyist milling but relevant for production PCBs</li>
+<li><strong>Conformal Coating:</strong> Environmental protection for operating conditions with moisture or contamination exposure</li>
+<li><strong>Edge Beveling:</strong> Smooth board edges reducing handling injury risk during assembly and testing</li>
+</ul>
+<h2 id="13-learning-outcomes-and-competency-demonstration">13. Learning Outcomes and Competency Demonstration<a class="headerlink" href="#13-learning-outcomes-and-competency-demonstration" title="Permanent link">&para;</a></h2>
+<p>This Day 3 project integrated prior digital fabrication knowledge with microcontroller-specific PCB design methodology.</p>
+<p><strong>Technical Competencies Developed:</strong></p>
+<ol>
+<li><strong>Microcontroller Circuit Design:</strong> ATtiny45 integration demonstrating peripheral configuration, GPIO assignment, and ISP interface implementation</li>
+<li><strong>KiCad Workflow:</strong> End-to-end design process from schematic capture through fabrication file generation</li>
+<li><strong>Single-Layer PCB Constraints:</strong> Practical understanding of routing complexity, jumper wire integration, and design trade-offs</li>
+<li><strong>Manufacturing File Interpretation:</strong> Gerber format, drill file specification, and machine-executable documentation</li>
+<li><strong>Design Rule Checking:</strong> Automated verification protocols ensuring electrical compliance and manufacturability</li>
+<li><strong>Prototype Assembly:</strong> Through-hole soldering, component orientation, and functional testing</li>
+</ol>
+<p><strong>Design-for-Manufacturability Application:</strong></p>
+<ul>
+<li>Component selection aligned with fabrication capability (through-hole technology)</li>
+<li>Board dimensions optimized for cutting equipment capability</li>
+<li>Trace specifications verified for milling tool capability</li>
+<li>Copper-to-edge clearances maintained for mechanical reliability</li>
+</ul>
+<p><strong>System-Level Understanding:</strong></p>
+<ul>
+<li>Integrated understanding of electrical specification translating to physical hardware</li>
+<li>Recognition of design constraints impacting fabrication feasibility and cost</li>
+<li>Trade-off analysis between design complexity, component count, and manufacturing simplicity</li>
+</ul>
+<p>This project validates the principle established throughout the fabrication curriculum: <strong>digital geometry and electrical specification directly control fabricated hardware performance and manufacturability.</strong></p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Single-sided PCB design imposes routing constraints requiring strategic component placement</li>
+<li>Microcontroller integration requires careful GPIO assignment and ISP interface planning</li>
+<li>Systematic DRC verification prevents manufacturing failures before fabrication commissioning</li>
+<li>Through-hole technology suitable for hobbyist prototyping but limited compared to surface-mount production</li>
+<li>Iterative design refinement identifies optimization opportunities for subsequent versions</li>
+</ul>
+<hr />
+<h2 id="reflection-questions">Reflection Questions<a class="headerlink" href="#reflection-questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>How did single-layer constraint influence your component placement strategy?</li>
+<li>What routing conflicts emerged during trace execution, and how were they resolved?</li>
+<li>How would ISP programming be eliminated in a production design?</li>
+<li>What would dual-layer design contribute to board compaction?</li>
+<li>How would surface-mount components change the board form factor?</li>
+</ul>
+<hr />
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<p><strong>KiCad Documentation:</strong>
+- <a href="https://kicad.org/">KiCad Official Website</a>
+- <a href="https://docs.kicad.org/">Schematic Capture Tutorial</a>
+- <a href="https://docs.kicad.org/">PCB Layout Guide</a></p>
+<p><strong>ATtiny45 Reference:</strong>
+- <a href="https://ww1.microchip.com/en-US/product/ATTINY45">Microchip ATtiny45 Datasheet</a>
+- <a href="https://ww1.microchip.com/en-US/product/ATTINY45">GPIO Configuration Guide</a></p>
+<p><strong>PCB Design Best Practices:</strong>
+- <a href="https://www.ipc.org/">IPC Standards for PCB Design</a>
+- <a href="https://www.ucamco.com/gerber">Gerber File Specification</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../day_2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Activity of Day 2: Advanced Digital Modeling for Fabrication">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. Activity of Day 2: Advanced Digital Modeling for Fabrication
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../day_4/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Activity of Day 4: Materials Science and Fabrication Methods">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. Activity of Day 4: Materials Science and Fabrication Methods
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2026 Emmanuel ASIFIWE
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://instagram.com/fablab_rwanda" target="_blank" rel="noopener" title="instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230m-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2m93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0m129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/KigaliFabLab" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/fablabrw" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

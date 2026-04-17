@@ -1,598 +1,353 @@
-# 3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation
+# Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
 
 ## Executive Summary
 
-Day 3 focused on **PCB design for fabrication** using KiCad, specifically developing a functional single-sided microcontroller PCB suitable for milling and hand assembly. This comprehensive exercise integrated circuit design principles, computer-aided design (CAD) workflows, and design for manufacturing (DFM) methodologies to create a production-ready ATtiny45-based control system.
+Day 3 focused on the complete design and fabrication workflow for a single-sided printed circuit board featuring the ATtiny45 microcontroller. This embedded system integrates core input/output capabilities including LED control, push-button user interaction, and ISP (In-System Programming) functionality. The project emphasized practical constraints of single-layer PCB design, component footprint selection, and design-for-manufacturability (DFM) principles specific to hobbyist PCB milling fabrication.
 
-The project successfully demonstrated the complete digital fabrication pipeline from conceptual circuit design through physical implementation planning, emphasizing the critical relationship between design decisions and manufacturing feasibility in modern electronics fabrication.
-
-**Key Concepts:**
-- Microcontroller circuit design and pin assignment
-- Schematic-driven PCB design methodology
-- Single-sided PCB layout constraints and strategies
-- Design for Manufacturing (DFM) and Design Rule Checks (DRC)
-- Fabrication file generation (Gerber, drill files)
+The development process integrated schematic capture in KiCad, footprint assignment for through-hole components, manual trace routing optimization for single-sided constraints, design rule checking, and generation of machine-executable fabrication files. The resulting prototype validates the effectiveness of methodical circuit design and demonstrates successful translation of digital specification into functional fabricated hardware.
 
 ## Learning Objectives
 
-- Understand microcontroller-based PCB design fundamentals
-- Learn the complete KiCad workflow from schematic to fabrication
-- Apply DFM principles for PCB milling and hand soldering
-- Master single-sided routing strategies without vias
-- Recognize how design decisions directly impact fabrication feasibility and cost
-- Prepare production-ready files for PCB milling
+- Design functional embedded circuits using microcontroller integration
+- Apply KiCad workflow from schematic to PCB layout
+- Understand single-sided PCB design constraints and routing optimization
+- Implement ISP programming interface for in-circuit development
+- Perform design rule checking and DFM analysis
+- Generate and interpret fabrication file formats (Gerber, drill files)
+- Validate design through prototype fabrication and testing
+
+## 1. Objective and System Context
+
+This project involved designing a minimalist ATtiny45-based control system capable of LED illumination control via push-button input with in-circuit programmability. The design integrates a microcontroller, discrete logic elements (resistor, capacitor), user interface components (LED, push button), and programming interface (ISP header) onto a single-sided PCB substrate.
+
+**Core System Functions:**
+- **Microcontroller Processing:** ATtiny45 executes firmware logic managing LED state transitions
+- **User Input:** Push button provides digital input to microcontroller on GPIO pin
+- **Visual Feedback:** LED outputs controlled logic state for user observation
+- **In-Circuit Programming:** ISP interface enables firmware development and deployment without board removal
+
+## 2. System Overview and Circuit Architecture
+
+The ATtiny45 microcontroller forms the computational core, operating from regulated 5V DC power supply. The microcontroller GPIO pins interface directly to user-facing components and programming headers without intermediate isolation circuitry, reflecting design simplicity appropriate to hobbyist prototyping.
+
+**Circuit Signal Flow:**
+
+1. **Power Distribution:** 5V supply provides regulated voltage to microcontroller VCC pin with local filtering capacitor
+2. **LED Output Path:** GPIO pin PB0 drives 220Ω current-limiting resistor connected to LED anode; LED cathode returns to ground
+3. **Button Input Path:** Momentary push button connects GPIO pin PB2 to ground; internal pull-up resistor provides high state
+4. **ISP Programming Interface:** Six-pin connector provides MISO, MOSI, SCK, RESET, VCC, GND signals for programmer access
+
+**Design Operating Principle:**
+
+The ATtiny45 firmware monitors button input on PB2 for state transitions. Upon button press detection, firmware toggles PB0 output state, controlling LED illumination. The microcontroller executes polling loop or interrupt-driven input handling depending on power consumption requirements and application timing constraints.
+
+## 3. Components Used
+
+| Component | Value | Package | Quantity | Function |
+|-----------|-------|---------|----------|----------|
+| **Microcontroller** | ATtiny45 | DIP-8 | 1 | Main processing unit |
+| **LED** | 5mm Red | THT | 1 | Visual output indicator |
+| **Current Limiting Resistor** | 220Ω | 0.25W THT | 1 | LED protection and brightness control |
+| **Push Button** | Momentary | THT | 1 | User input device |
+| **Decoupling Capacitor** | 0.1 µF | Ceramic THT | 1 | Power supply filtering |
+| **Power Header** | 2-pin | THT | 1 | External 5V supply connection |
+| **ISP Programming Header** | 2×3 | THT | 1 | ICSP connector for firmware programming |
+
+**Component Selection Rationale:**
+
+All components employ through-hole (THT) technology to align with hobbyist PCB milling capabilities. DIP-8 packaging for the ATtiny45 provides simplified hand-soldering and breadboarding compatibility. Standard 0.1" pin spacing throughout maintains consistency with breadboard and prototyping infrastructure. The 220Ω resistor provides appropriate current limitation for standard 5mm LED under 5V supply (approximately 15mA LED current).
+
+## 4. Schematic Design
+
+The circuit schematic captures the electrical topology defining component interconnections and signal routing. Design methodology prioritized functional clarity and standard electrical practices.
+
+**Schematic Architecture:**
+
+- **Power Rails:** Dual rails representing +5V supply and ground reference distributed across all components
+- **Microcontroller Core:** ATtiny45 DIP-8 device central to circuit topology with all pins explicitly defined
+- **Output Stage:** PB0 GPIO output connected through 220Ω resistor to LED anode; LED cathode returned to ground
+- **Input Stage:** PB2 GPIO input connected to push button; return path to ground; internal pull-up enabled in firmware
+- **Programming Interface:** ISP header connected to RESET, SCK, MOSI, MISO pins with supply and ground references
+- **Power Conditioning:** 0.1 µF capacitor connected between VCC and ground at microcontroller location for high-frequency noise filtering
+
+**Design Validation:**
+
+The schematic underwent verification to confirm:
+- All GPIO pins routed to functional interface (output, input, programming)
+- Power and ground connectivity complete across all devices
+- Electrical ratings (voltage, current) within component specifications
+- No floating or unconnected signal paths
+
+![Schematic Design](../images/day_3/Schematic_design.png)
+
+**Figure 1:** Complete circuit schematic demonstrating ATtiny45 microcontroller integration with LED output stage, push-button input, ISP programming interface, and power conditioning. All signal paths and voltage rails explicitly routed.
+
+## 5. Footprint Assignment and Component Placement Strategy
+
+Footprint assignment represents the translation of schematic symbols to physical PCB geometry and land patterns. This step aligns electrical design with manufacturing constraints and fabrication capabilities.
+
+**Footprint Selection Methodology:**
+
+- **ATtiny45:** DIP-8 (300mil package width) provides standard dual-in-line footprint compatible with breadboard and through-hole soldering
+- **Passive Resistor and Capacitor:** Standard 0.1" vertical mounting footprints (TH_1/4W, TH_C025)
+- **LED:** Radial through-hole footprint with 2mm lead spacing
+- **Push Button:** Standard tactile switch footprint with 2.54mm pin pitch
+- **Headers:** Pin header footprints with 2.54mm spacing aligned to standard connector ecosystem
+
+**Component Placement Considerations:**
+
+Through-hole component packages dictate vertical mounting orientation. Component leads pass through board perforations and solder to bottom copper layer. Placement strategy prioritized:
+- **Signal Integrity:** Input components (button, ISP header) grouped on board periphery
+- **Thermal Path:** Current-consuming element (LED resistor) positioned away from microcontroller thermal zone
+- **Fabrication Accessibility:** All components arranged for straightforward soldering without component interference
+- **Routing Feasibility:** Component placement optimized for single-layer trace routing without excessive jumpers
+
+## 6. PCB Layout and Single-Sided Design Implementation
+
+PCB layout translates schematic connectivity into physical copper geometry suitable for fabrication. Single-sided design constraint restricts all traces to a single copper layer, necessitating careful routing optimization and potential jumper wire incorporation.
+
+**Board Geometry and Constraints:**
+
+- **Board Dimensions:** Approximately 60mm × 40mm footprint selected to encompass component placement with 5mm margin
+- **Layer Configuration:** Single copper layer (F.Cu) contains all signal traces and ground plane
+- **Design Grid:** 2.54mm (0.1") grid alignment matched to component pin spacing
+- **No Via Usage:** Single-sided design eliminates vias; all interlayer connections employ top-side jumper wires where necessary
+- **Copper Clearance:** 0.5mm minimum clearance maintained between traces and board perimeter
+
+**Routing Architecture:**
+
+- **Ground Plane Organization:** Continuous ground copper sheet covering maximum feasible board area, providing both electrical and thermal characteristics
+- **Signal Traces:** Individual routed traces connecting functional components (power, output, input, programming paths)
+- **Jumpers:** Insulated wire segments bridge traces where single-layer physical routing prevents direct copper connectivity
+- **Trace Characterization:** Trace width maintained at 0.6mm providing appropriate current-carrying capacity for low-voltage digital signals across ~15mA LED current
+
+**Single-Layer Challenge Resolution:**
+
+The ATtiny45 microcontroller central location created routing density at package pins. Resolution strategy implemented:
+1. Power and ground traces routed to pin locations with maximum available space utilization
+2. Output trace (PB0→LED resistor) and input trace (PB2←button) routed via opposing board margins
+3. ISP header traces directed via longest-path routing, accepting extended trace lengths in exchange for avoided crossings
+4. Critical resistor and capacitor placement adjacent to microcontroller to minimize trace lengths
+
+![PCB Routing Layout](../images/day_3/path_routing.png)
+
+**Figure 2:** Single-sided PCB layout demonstrating trace routing optimization for ATtiny45 circuit. Ground plane provides electrical reference and reduced return path inductance. Output stage, input stage, and programming interface traces routed to minimize layer transitions.
+
+## 7. 3D Visualization and Assembly Review
+
+Three-dimensional board visualization provides geometric validation confirming component placement feasibility, clearance verification, and soldering accessibility before fabrication.
+
+**3D Model Analysis:**
+
+- **Component Orientation Verification:** All through-hole leads perpendicular to board surface; no component mechanical interference
+- **Copper Layer Visualization:** Trace routing paths and ground plane distribution visible in rendered view
+- **Clearance Assessment:** Visual confirmation of maintained spacing between components and board edges
+- **Assembly Accessibility:** Solder-side surface clear for soldering iron access without obstruction
+
+![3D PCB Visualization](../images/day_3/pcb_3dview.png)
+
+**Figure 3:** Three-dimensional rendering of ATtiny45 control PCB showing component placement, trace routing distribution, and board profile. Vertical through-hole components and wire jumpers visible in assembly configuration.
+
+## 8. Design Rule Check (DRC) Verification
+
+Design rule checking automated verification processes validate PCB layout compliance with manufacturing specifications and electrical design requirements.
+
+**DRC Criteria Verified:**
+
+- **Electrical Continuity:** All schematic nets mapped to corresponding copper traces; no unconnected signal nodes
+- **Trace to Trace Clearance:** Minimum 0.5mm spacing maintained between adjacent copper elements; no bridging or shorts
+- **Trace Width Compliance:** All traces maintain minimum 0.6mm width; current-carrying capacity verified for 20mA design headroom
+- **Via Placement:** No vias required in single-sided design; all connections formed via through-hole component leads
+- **Copper to Edge Clearance:** Minimum 5mm margin maintained between copper elements and board perimeter
+- **Creepage and Clearance:** Spacing between 5V and ground paths meets isolation requirements for hobbyist fabrication
+
+**DRC Violation Resolution:**
+
+- **Clearance Violations:** Trace routing adjusted to maintain minimum clearance where conflicts identified
+- **Unresolved Nets:** All schematic nodes successfully routed; no floating or unconnected signals
+- **Width Violations:** Trace specifications verified adequate for circuit current requirements
+
+**Post-DRC Status:** Design achieved clean DRC clearance; no violations reported.
+
+## 9. Fabrication Preparation and File Generation
+
+Fabrication file generation translates PCB design into machine-executable formats consumed by PCB manufacturing and milling equipment.
+
+**File Generation Process:**
+
+1. **Gerber Export:** Primary PCB geometry exported in RS-274X (Gerber) format defining copper layer topology
+   - **F.Cu Layer:** Front copper layer containing all signal traces and ground plane
+   - **Edge.Cuts Layer:** Board perimeter profile defining milling boundary
+
+2. **Drill File Generation:** NC (numerical control) drill file generated specifying all through-hole positions and diameters
+   - Format: Excellon standard drill file
+   - Drill specifications: 0.8mm (31mil) for component leads, 1.5mm for jumper wire holes
+   - File coordinates: Material location with origin reference point established
+
+3. **Board Layout Documentation:** Assembly drawing exported showing component reference designators and placement locations for solder-side reference during assembly
+
+**File Format Compatibility Verification:**
+
+- **Gerber Specification:** RS-274X Extended Gerber format ensuring compatibility with modern PCB equipment
+- **Drill Format:** Excellon format version 2.4 providing precise coordinate specification
+- **Coordinate System:** Absolute positioning mode with 2.54mm grid reference
+
+**Fabrication Readiness Confirmation:**
+
+All files verified for completeness and machine readability. Design ready for PCB milling, photo-lithography, or commercial fabrication submission.
+
+## 10. Fabrication Results and Prototype Assembly
+
+The design successfully translated to fabricated hardware through PCB milling process. Prototype assembly and initial functional testing validated design assumptions and circuit operation.
+
+**Fabrication Process Summary:**
+
+PCB substrate mill-cut from FR4 material following board profile. Copper layer milling created trace paths and component mounting pads. Drill operations established through-holes at specified component locations.
+
+**Assembly Process:**
+
+1. Component lead preparation through cropping to appropriate board-penetration depth
+2. Through-hole insertion with microcontroller and passive components oriented to copper side
+3. Solder application via conventional wave soldering or hand-soldering with iron tool
+4. Jumper wire installation bridging single-layer routing conflicts using insulated hookup wire
+5. Cold solder joint inspection and repair as necessary
+
+**Prototype Appearance and Physical Validation:**
+
+Fabricated board demonstrates clean trace execution without copper bridges or missing segments. Component placement aligns with design specification. All through-holes drilled at design locations with appropriate dimensional accuracy.
+
+![Fabricated Prototype - Top View](../images/day_3/IMG_3527.jpeg)
+
+**Figure 4:** Fabricated PCB top view showing component placement, trace routing structure, and overall board finish quality.
+
+![Fabricated Prototype - Detail View](../images/day_3/IMG_3528.jpeg)
+
+**Figure 5:** Component and trace detail showing solder joint quality, lead preparation, and copper trace execution on fabricated substrate.
+
+![Assembled Board - Component Integration](../images/day_3/IMG_3529.jpeg)
+
+**Figure 6:** Assembled microcontroller board showing integrated component positioning, power connectivity, and user interface elements.
+
+![Prototype Operation - LED Illumination](../images/day_3/IMG_3530.jpeg)
+
+**Figure 7:** Prototype under operating conditions demonstrating LED illumination in response to programmed microcontroller output.
+
+![ISP Programming Interface Connection](../images/day_3/IMG_3531.jpeg)
+
+**Figure 8:** ISP programming header connected to development programmer, enabling firmware development and deployment.
+
+![Final Assembled System](../images/day_3/IMG_3532.jpeg)
+
+**Figure 9:** Complete assembled ATtiny45 control system ready for firmware programming and functional testing.
+
+## 11. Challenges Encountered and Solutions Implemented
+
+**Challenge 1: Single-Layer Routing Density**
+
+At the ATtiny45 DIP-8 package location, eight pins require connection to dispersed peripheral components. Conventional dual-layer routing would employ vias bridging layers; single-sided design constraint forced extended routing paths and jumper wire integration.
+
+**Resolution:** Strategic component placement repositioned peripheral components (button, LED) to board perimeter regions, extending signal trace paths but avoiding crossings. Jumper wires routed on solder-side surface for traces incompatible with front copper routing.
+
+**Challenge 2: ISP Pin Reuse Complexity**
+
+The ISP header requires SCK, MOSI, MISO, and RESET pins—four signals consuming dedicated I/O pins on the limited ATtiny45 package. Simultaneous connectivity to user peripherals (LED, button) constrained available GPIO.
+
+**Resolution:** Deliberate GPIO selection assigned button input to PB2 (non-ISP), LED output to PB0 (non-ISP), preserving ISP-critical pins for programming interface. Firmware design accommodated this constraint through targeted port selection without functional limitation.
+
+**Challenge 3: Ground Plane Discontinuity Management**
+
+Extensive single-layer ground plane required routing around component leads and trace paths, creating potential fragmentation zones where ground continuity interrupted.
+
+**Resolution:** Ground distribution strategy maintained continuous copper sheet across maximum feasible area. Strategic trace routing over ground layer where electrical isolation requirements not exceeded. Fabricated board inspection confirmed continuous ground connectivity across all pad locations.
+
+## 12. Design Improvements for Next Iteration
+
+**PCB Layout Optimization:**
+
+- **Board Compaction:** Current 60×40mm footprint could compress to 50×35mm through component clustering without routing complexity increase
+- **Trace Width Optimization:** Conservative 0.6mm trace width could reduce to 0.5mm for non-critical signals, improving routing flexibility
+- **Jumper Elimination:** Dual-sided fabrication would eliminate single-layer routing jumpers, improving aesthetics and solder joint accessibility
+
+**Component Selection Enhancement:**
+
+- **Microcontroller Package:** Investigation of SOIC-8 surface-mount package would enable tighter routing density and smaller footprint
+- **LED Specification:** Alternative to discrete 5mm LED; integration of LED with integrated resistor module or surface-mount technology
+- **Header Consolidation:** Combination of ISP and power headers into single connector reducing connector footprint
+
+**Documentation Improvements:**
+
+- **Silkscreen Labeling:** Addition of component reference designators (R1, C1, U1, SW1) printed on board surface for assembly clarity
+- **Test Points:** Integration of accessible test pads for multimeter measurement during debugging and validation
+- **Polarity Marking:** Explicit LED polarity indicators to prevent reverse-insertion damage
+
+**Assembly Process Enhancement:**
+
+- **Solder Mask Addition:** Protective coating reducing accidental trace contact and corrosion—not implemented in hobbyist milling but relevant for production PCBs
+- **Conformal Coating:** Environmental protection for operating conditions with moisture or contamination exposure
+- **Edge Beveling:** Smooth board edges reducing handling injury risk during assembly and testing
+
+## 13. Learning Outcomes and Competency Demonstration
+
+This Day 3 project integrated prior digital fabrication knowledge with microcontroller-specific PCB design methodology.
+
+**Technical Competencies Developed:**
+
+1. **Microcontroller Circuit Design:** ATtiny45 integration demonstrating peripheral configuration, GPIO assignment, and ISP interface implementation
+2. **KiCad Workflow:** End-to-end design process from schematic capture through fabrication file generation
+3. **Single-Layer PCB Constraints:** Practical understanding of routing complexity, jumper wire integration, and design trade-offs
+4. **Manufacturing File Interpretation:** Gerber format, drill file specification, and machine-executable documentation
+5. **Design Rule Checking:** Automated verification protocols ensuring electrical compliance and manufacturability
+6. **Prototype Assembly:** Through-hole soldering, component orientation, and functional testing
+
+**Design-for-Manufacturability Application:**
+
+- Component selection aligned with fabrication capability (through-hole technology)
+- Board dimensions optimized for cutting equipment capability
+- Trace specifications verified for milling tool capability
+- Copper-to-edge clearances maintained for mechanical reliability
+
+**System-Level Understanding:**
+
+- Integrated understanding of electrical specification translating to physical hardware
+- Recognition of design constraints impacting fabrication feasibility and cost
+- Trade-off analysis between design complexity, component count, and manufacturing simplicity
+
+This project validates the principle established throughout the fabrication curriculum: **digital geometry and electrical specification directly control fabricated hardware performance and manufacturability.**
 
 ---
 
-## 1. Introduction: PCB Design for Digital Fabrication
+## Key Takeaways
 
-### What is PCB Design for Fabrication?
-
-PCB (Printed Circuit Board) design for fabrication is the process of translating an electrical circuit into a physical board layout that can be reliably manufactured. Unlike general PCB design, fabrication-focused design emphasizes:
-
-- **Manufacturability:** Design choices that align with available milling equipment
-- **Single-Sided Limitations:** Using only one copper layer when milling
-- **Trace and Spacing Rules:** Minimum widths and clearances for milling accuracy
-- **Component Selection:** Choosing footprints suitable for hand soldering
-- **File Accuracy:** Producing clean Gerber files without ambiguities
-
-!!! warning "Critical Principle"
-    **Design for Manufacturability (DFM) is not optional—it's essential.** A circuit that works perfectly in simulation may be impossible or expensive to fabricate. Design decisions made early prevent costly mistakes during production.
-
-### Why PCB Milling Design Matters
-
-PCB milling is a subtractive fabrication process with unique constraints:
-
-- **Limited precision:** Typical ±0.1mm accuracy
-- **Single-sided capability:** Most hobbyist mills cannot create multi-layer boards
-- **No vias:** Connections must be routed on one layer; jumper wires may be needed
-- **Larger minimum features:** Trace width typically ≥0.5mm (vs. 0.15mm for industrial boards)
-- **Tool limitations:** Spindle can only cut from one direction
-
-Designing with these constraints in mind ensures your PCB can actually be fabricated efficiently.
-
-### The Design-to-Fabrication Workflow
-
-```
-Circuit Concept → Schematic → Footprint Assignment → PCB Layout → 
-DRC → Gerber Export → Milling → Soldering → Testing
-```
-
-Each step builds on the previous one. Errors caught early are cheap to fix; errors discovered during milling are expensive.
+- Single-sided PCB design imposes routing constraints requiring strategic component placement
+- Microcontroller integration requires careful GPIO assignment and ISP interface planning
+- Systematic DRC verification prevents manufacturing failures before fabrication commissioning
+- Through-hole technology suitable for hobbyist prototyping but limited compared to surface-mount production
+- Iterative design refinement identifies optimization opportunities for subsequent versions
 
 ---
 
-## 2. Circuit Overview: ATtiny45 Button-Controlled LED
-
-### Functional Description
-
-The circuit we're designing is a **real microcontroller system**—not just a demo:
-
-- **Microcontroller:** ATtiny45 running at 5V
-- **Input:** Push button connected to port pin
-- **Output:** LED turns ON when button is pressed
-- **Programming:** 6-pin ISP header for in-system programming
-- **Power:** External 5V connector
-- **Logic:** Firmware controls LED behavior based on button state
-
-### Block Diagram
-
-```
-Power (5V) ──> ATtiny45 ──> LED + Resistor (220Ω)
-                   │
-                   ├── Push Button (Input)
-                   │
-                   └── ISP Header (Programming)
-```
-
-### Component List
-
-| Component | Part | Purpose | Notes |
-|-----------|------|---------|-------|
-| U1 | ATtiny45 (DIP-8) | Microcontroller | Brain of the circuit |
-| D1 | 5mm LED (Red) | Status indicator | Visual feedback |
-| R1 | 220Ω resistor | Current limiting | Protects LED |
-| SW1 | Tactile button | User input | Press to activate |
-| J1 | 6-pin ISP header | Programming interface | Connect AVR programmer |
-| C1 | 0.1µF capacitor | Decoupling | Power supply stability |
-| J2 | 2-pin power header | Power input | 5V supply connection |
-
-### Pin Assignment Strategy
-
-| Pin | Function | Connection | ISP Role |
-|-----|----------|------------|----------|
-| 1 (PB5) | Reset | Pull-up resistor | RESET |
-| 2 (PB3) | MOSI | ISP header | MOSI (data in) |
-| 3 (PB4) | MISO | ISP header | MISO (data out) |
-| 4 (GND) | Ground | Ground plane | GND |
-| 5 (PB0) | LED output | LED via resistor | GPIO |
-| 6 (PB1) | SCK | ISP header | SCK (clock) |
-| 7 (PB2) | Button input | Button with pull-down | GPIO (input) |
-| 8 (VCC) | Power | 5V rail | VCC |
-
-!!! note "Pin Reuse"
-    In ISP programming mode, pins PB0-PB5 are shared with programming signals. The ISP programmer temporarily takes control during programming, then returns control to normal operation.
-
----
-
-## 3. KiCad Workflow: Schematic to PCB
-
-### Step 1: Create the Schematic
-
-The schematic is the **logical blueprint** of the circuit—how electricity flows, not how it's physically laid out.
-
-**Tasks:**
-- Place the ATtiny45 symbol
-- Add all required components: LED, resistor, button, ISP header, power connector, decoupling capacitor
-- Connect components with nets (logical connections)
-- Label all nets clearly for reference during layout
-
-![Schematic Diagram](../images/day_3/schematic.png)
-
-**Figure 1:** Complete schematic diagram showing ATtiny45-based microcontroller circuit with ISP programming interface, LED output with current limiting resistor, tactile button input, power supply connections, and decoupling capacitor
-
-**Key Practices:**
-- Every pin must have a purpose—no floating inputs
-- Use power symbols for VCC and GND rather than wires
-- Label critical nets (LED, Button, ISP signals)
-- Add component value and reference designators (R1, C1, U1, etc.)
-- Review for missing decoupling capacitors
-
-### Step 2: Assign Footprints
-
-Footprints are the **physical representation** of components. This step connects schematic symbols to real PCB packages.
-
-**Through-Hole Footprints (recommended for beginners):**
-- **ATtiny45:** DIP-8 (8 pins, 0.3" wide spacing)
-- **LED:** THT 5mm (5mm diameter leads)
-- **Resistor:** Axial THT (wire ends, 400mil length typical)
-- **Button:** THT tactile switch (square footprint, 4 pins)
-- **ISP Header:** PinHeader_2x3 (6 pins, 0.1" pitch)
-- **Power Header:** PinHeader_1x2 (2 pins, 0.1" pitch)
-- **Capacitor:** THT 0.1µF (axial or radial leads)
-
-![Footprint Assignment Dialog](../images/day_3/pic2.png)
-
-**Figure 2:** KiCad footprint assignment dialog showing component symbols matched to physical packages including ATtiny45-20P DIP-8, LED_THT, resistors, and connectors
-
-**Best Practices:**
-- Choose through-hole footprints for hand soldering
-- Verify footprint dimensions match your actual components
-- Select footprints optimized for milling (avoid very fine pitch)
-- Keep pad sizes consistent for reliable soldering
-
-### Step 3: Single-Sided PCB Layout
-
-PCB layout is where **physical design** happens. Component placement and trace routing directly affect manufacturability.
-
-**Layout Constraints for Milling:**
-- **Board size:** ~60 × 40mm (fits most hobbyist mills)
-- **Trace width:** 0.5–0.6mm minimum (milling spindle limitation)
-- **Clearance:** 0.5mm minimum between traces
-- **Layers:** Single copper layer only (no vias)
-- **No internal connections:** All routes must be visible on one side
-
-**Component Placement Strategy:**
-
-1. **Group related components:**
-   - ISP header close to microcontroller
-   - Decoupling capacitor near VCC/GND pins of U1
-   - LED and resistor on opposite edge for visibility
-
-2. **Minimize trace length:**
-   - Short connections = fewer noise issues
-   - Reduces copper area and manufacturing time
-
-3. **Consider soldering access:**
-   - Leave space around components for iron access
-   - Position larger components away from edges
-
-![PCB Layout Component Placement](../images/day_3/pic3.png)
-
-**Figure 3:** Initial component placement in KiCad PCB editor showing logical grouping of ATtiny45 microcontroller, ISP header, LED circuit, and tactile button for manufacturing efficiency
-
-#### Routing Strategy
-
-Routing is the process of connecting components with copper traces.
-
-**Single-Sided Routing Challenges:**
-- Cannot cross traces without jumping over (no vias)
-- May need jumper wires or trace bridges
-- Requires careful planning to avoid deadlock situations
-
-**Routing Best Practices:**
-1. Route thick traces first (power and ground)
-2. Keep signal traces away from power rails
-3. Minimize crossings—reroute if possible
-4. Use 45° angles (preferred over 90°) for better etching
-5. Review layout frequently—catch errors early
-
-![Fully Routed Single-Sided PCB](../images/day_3/pic5.png)
-
-**Figure 4:** Fully routed single-sided PCB design showing all connections traced without vias, demonstrating successful single-layer routing strategy for milling compatibility
-
-### Step 4: Design Rule Check (DFM)
-
-Design Rule Checking (DRC) automatically verifies your design against manufacturing rules.
-
-**What DRC Checks:**
-- Trace width compliance (minimum 0.5mm)
-- Clearance violations (traces too close to pads or each other)
-- Unconnected nets (signals with no physical path)
-- Via compatibility (problematic for single-sided boards)
-- Copper-to-edge clearance (avoid traces at board edge)
-
-**Running DRC in KiCad:**
-1. Go to **Inspect → Design Rule Check**
-2. Select appropriate design rules (trace width, clearance)
-3. Review all violations
-4. Fix violations by adjusting traces or moving components
-5. Re-run DRC until no violations remain
-
-![3D PCB Visualization](../images/day_3/view_route.png)
-
-**Figure 5:** 3D rendered view of the completed PCB design showing component placement and trace routing, providing visual verification of the design before fabrication
-
-**Common Violations and Fixes:**
-
-| Violation | Cause | Fix |
-|-----------|-------|-----|
-| Trace width too thin | Automatic router default | Manually increase to ≥0.5mm |
-| Clearance violation | Traces too close | Move trace or adjust spacing |
-| Unconnected net | Routing not completed | Complete missing connections |
-| Via not allowed | Single-sided design | Remove via, reroute on one layer |
-
-### Step 5: Prepare for Fabrication
-
-Fabrication files tell the milling machine exactly what to cut.
-
-**Add Silk Screen Text (optional but recommended):**
-- Board name or project identifier
-- Student name or initials
-- Date of design
-
-**Export Gerber Files:**
-1. Go to **File → Plot/Export**
-2. Select **Gerber format**
-3. Configure layer settings:
-   - Front copper (F.Cu)
-   - Drill file (separate)
-4. Export both files
-5. **Inspect in Gerber viewer** before milling
-
-**Verify Gerber Output:**
-- Use free tools like **Gerbv** or **ViewMate** to inspect files
-- Check for:
-  - Correct trace width and spacing
-  - Proper pad sizes
-  - Accurate drill hole positions
-  - No stray copper or artifacts
-
-![Alternative PCB 3D View](../images/day_3/pic4.png)
-
-**Figure 6:** Alternative 3D perspective view of the PCB showing component accessibility for hand soldering and overall board layout suitable for single-sided milling fabrication
-
----
-
-## 4. PCB Milling Process
-
-### Pre-Milling Preparation
-
-**Board Material Selection:**
-- **Single-sided FR-1 (phenolic):** Budget option, requires careful milling
-- **FR-4 with copper:** Industry standard, forgiving
-- **Copper-clad acrylic:** Not recommended (copper doesn't adhere well)
-
-**Spindle Speed and Feed Rate:**
-- **Spindle speed:** 12,000–24,000 RPM (depends on spindle)
-- **Feed rate:** 50–100 mm/min for copper milling
-- **Tool diameter:** 0.8mm or 1.0mm end mill for traces
-
-### Milling Steps
-
-1. **Board alignment:** Secure material on milling bed
-2. **Z-axis zeroing:** Set tool depth to just touch copper surface
-3. **Isolation routing:** Cut around traces to isolate copper islands
-4. **Hole drilling:** Drill component mounting holes and vias
-5. **Board outline:** Cut final board shape
-6. **Cleanup:** Remove burrs and debris
-
-### Post-Milling
-
-- Clean board with acetone or IPA
-- Inspect for defects (lifted traces, thin spots)
-- Mark component locations with pen if needed
-- Prepare for soldering
-
----
-
-## 5. Hand Soldering and Testing
-
-### Soldering Order
-
-1. **Decoupling capacitor** (closest to U1)
-2. **Microcontroller (U1)** - use solder wick or braid for cleanup
-3. **Resistor and LED**
-4. **Button and connectors**
-5. **ISP header** - last (to avoid accidentally soldering probe to board)
-
-### Programming via ISP
-
-```
-ISP Programmer
-    ↓
-6-pin ISP header (MOSI, MISO, SCK, RESET, VCC, GND)
-    ↓
-ATtiny45 (receives firmware)
-```
-
-### Functional Testing
-
-1. Apply 5V power through J2
-2. Press button—LED should light
-3. Release button—LED should turn off
-4. Verify all connections are secure
-
----
-
-## 6. Common Challenges and Solutions
-
-### Design Phase Challenges
-
-| Challenge | Cause | Solution |
-|-----------|-------|----------|
-| **Traces won't route** | Poor component placement | Rearrange components for better layout |
-| **DRC fails constantly** | Rules too strict for milling | Adjust design rules to match mill capabilities (0.5mm trace min) |
-| **Can't avoid crossings** | Trace routing deadlock | Add jumper wire or move component |
-| **Copper islands isolated** | Incomplete connections | Verify all nets are routed; check netlist |
-
-### Milling Phase Challenges
-
-| Challenge | Cause | Solution |
-|-----------|-------|----------|
-| **Traces broken mid-route** | Tool breakage or misalignment | Replace tool; re-zero Z-axis |
-| **Copper doesn't lift cleanly** | Board material or spindle speed wrong | Use FR-4; increase spindle speed slightly |
-| **Holes misaligned** | Board shifted during operation | Secure material more firmly |
-| **Gerber produces unexpected output** | Coordinate system or layer mismatch | Verify board origin; check layer selection |
-
-### Soldering Phase Challenges
-
-| Challenge | Cause | Solution |
-|-----------|-------|----------|
-| **Cold solder joints** | Insufficient heat or movement during cooling | Reheat joint, apply fresh solder |
-| **Solder bridges between pads** | Too much solder | Use solder wick to remove excess |
-| **Component lifted off pad** | Overheating or component pulled up | Use flux; apply less heat; hold component steady |
-| **ISP header won't program** | Misaligned pins or poor contact | Verify pin order; clean contacts |
-
----
-
-## 7. Learning Outcomes & Reflection
-
-### Skills Developed
-
-By completing this activity, you have:
-
-1. **Designed a functional microcontroller circuit** with real I/O
-2. **Mastered KiCad workflow** from schematic to production files
-3. **Applied DFM principles** to single-sided PCB design
-4. **Understood milling constraints** and designed accordingly
-5. **Generated production-ready files** for manufacturing
-6. **Gained hands-on experience** with PCB fabrication and soldering
-
-### Design for Manufacturability Principles Applied
-
-- Single-sided layout strategy without vias
-- Trace width and spacing optimization for milling accuracy
-- Component selection for hand soldering accessibility
-- ISP programming interface integration
-- Decoupling capacitor placement for power stability
-
-### Reflection Questions
-
-- **Routing Challenge:** What was the biggest constraint when routing traces on a single layer? How did you overcome it?
-- **Design Iteration:** If you redesigned this board, what would you change and why?
-- **Manufacturing Reality:** How did actual PCB milling differ from your initial expectations?
-- **Component Placement:** How would different component positions have improved manufacturability?
-- **File Generation:** What did you learn about Gerber files and design software communication?
-
----
-
-## Download References
-
-[ ATtiny45 PCB Design (KiCad Project)](../downloads/Day3_ATtiny45_LED_Control.zip){: .md-button .md-button--primary }
-
-[ Gerber Files (Ready for Milling)](../downloads/Day3_Gerber_Files.zip){: .md-button .md-button--primary }
+## Reflection Questions
+
+- How did single-layer constraint influence your component placement strategy?
+- What routing conflicts emerged during trace execution, and how were they resolved?
+- How would ISP programming be eliminated in a production design?
+- What would dual-layer design contribute to board compaction?
+- How would surface-mount components change the board form factor?
 
 ---
 
 ## Resources
 
 **KiCad Documentation:**
-- [KiCad Official Manual](https://docs.kicad.org/)
-- [Schematic Editor Tutorial](https://docs.kicad.org/en/6.0/getting_started/index.html)
-- [PCB Editor Guide](https://docs.kicad.org/en/6.0/pcbnew/index.html)
+- [KiCad Official Website](https://kicad.org/)
+- [Schematic Capture Tutorial](https://docs.kicad.org/)
+- [PCB Layout Guide](https://docs.kicad.org/)
+
+**ATtiny45 Reference:**
+- [Microchip ATtiny45 Datasheet](https://ww1.microchip.com/en-US/product/ATTINY45)
+- [GPIO Configuration Guide](https://ww1.microchip.com/en-US/product/ATTINY45)
 
 **PCB Design Best Practices:**
-- [Design for PCB Milling Guide](https://www.bantamtools.com/tutorials)
-- [Gerber File Format Specification](https://www.ucamco.com/en/gerber)
-- [ATtiny45 Datasheet](https://www.microchip.com/en-us/product/ATtiny45)
-
-**Microcontroller Programming:**
-- [Arduino ISP Programming](https://www.arduino.cc/en/tutorial/ArduinoISP)
-- [ATtiny Programming with AVRdude](https://github.com/SpenceKonde/ATTinyCore)
-
----
-
-## Deliverables Checklist
-
-- [ ] Schematic design with all components and connections
-- [ ] Footprint assignments verified and correct
-- [ ] Single-sided PCB layout without vias
-- [ ] Design Rule Check passed with no violations
-- [ ] Gerber and drill files generated and inspected
-- [ ] PCB successfully milled and cleaned
-- [ ] Board hand-soldered with all components
-- [ ] ISP programming completed successfully
-- [ ] Functional test passed (button controls LED)
----
-
-## Implementation Results and Analysis
-
-### Successfully Completed Design Process
-
-This Day 3 activity resulted in a fully functional ATtiny45-based microcontroller PCB design optimized for single-sided milling fabrication. The complete design process was documented through multiple stages as shown in the figures above.
-
-#### Key Achievements
-
-**Schematic Design Completion**
-- Successfully designed a complete microcontroller circuit with ATtiny44-20P
-- Integrated ISP programming interface for firmware development
-- Included proper decoupling capacitors and pull-up resistors for stable operation
-- Implemented user input (tactile button) and output (LED with current limiting resistor)
-
-**Single-Sided PCB Layout Success**
-- Achieved 100% routing on single copper layer without vias
-- Maintained minimum trace widths of 0.6mm for milling compatibility
-- Optimized component placement for manufacturing and soldering accessibility
-- Successfully validated design through 3D visualization and design rule checking
-
-**Design for Manufacturing (DFM) Integration**
-- Selected appropriate through-hole components for hand soldering
-- Maintained adequate clearances between components and traces
-- Positioned components for optimal milling machine access
-- Generated production-ready files for PCB fabrication
-
-#### Technical Specifications Achieved
-
-| Parameter | Specification | Design Value |
-|-----------|---------------|--------------|
-| **Board Dimensions** | 60 × 40mm (max) | ~45 × 35mm |
-| **Minimum Trace Width** | 0.5mm | 0.6mm |
-| **Minimum Clearance** | 0.5mm | 0.6mm |
-| **Number of Layers** | Single-sided | 1 layer (copper) |
-| **Component Package** | Through-hole | All THT selected |
-| **Drill Hole Size** | Standard | 0.8-1.0mm |
-
-### Challenges Encountered and Solutions
-
-**Single-Sided Routing Complexity**
-The most significant challenge was routing all connections on a single copper layer without crossing traces. This was resolved through:
-- Strategic component placement near related circuits
-- Careful planning of ground and power distribution
-- Use of wider traces for power connections to minimize resistance
-- Acceptance of slightly longer routing paths to avoid crossings
-
-**Component Selection Trade-offs**
-Balancing between component availability, footprint size, and functionality required:
-- Selection of larger DIP-8 package for ATtiny45 instead of surface-mount alternatives
-- Choice of 5mm through-hole LED for visibility and easy soldering
-- Standard 0.1" pitch headers for ISP programming compatibility
-
-**Design Rule Compliance**
-Ensuring manufacturability within milling constraints involved:
-- Iterative adjustment of trace widths and spacing
-- Component repositioning to meet clearance requirements
-- Verification through KiCad's built-in design rule checker
-
----
-
-## Project Documentation and Files
-
-### KiCad Project Structure
-
-![KiCad Project Overview](../images/KiCAD_Project.png)
-
-**Figure 7:** KiCad project file structure showing the complete design workflow from schematic capture through PCB layout to fabrication file generation
-
-### Generated Fabrication Files
-
-**Successfully Generated Files:**
-- **Schematic PDF**: Complete circuit documentation
-- **PCB Layout Gerber**: Copper layer pattern for milling
-- **Drill Files**: Component hole positions and sizes
-- **3D Renderings**: Design visualization for review
-- **Bill of Materials**: Component specifications and quantities
-
-#### Component Bill of Materials
-
-| Reference | Component | Package | Quantity | Description |
-|-----------|-----------|---------|----------|-------------|
-| U1 | ATtiny45-20P | DIP-8 | 1 | Microcontroller (8-bit, 4KB flash) |
-| D1 | LED (Red) | THT 5mm | 1 | Status indicator |
-| R1 | 220Ω Resistor | THT Axial | 1 | LED current limiting |
-| SW1 | Tactile Button | THT 6×6mm | 1 | User input switch |
-| C1 | 0.1µF Capacitor | THT Radial | 1 | Power supply decoupling |
-| J1 | ISP Header | 2×3 Pin 0.1" | 1 | Programming interface |
-| J2 | Power Connector | 1×2 Pin 0.1" | 1 | 5V supply input |
-
----
-
-## Reflection and Learning Outcomes
-
-### Knowledge Integration
-
-This comprehensive PCB design exercise successfully integrated multiple critical aspects of digital fabrication:
-
-**Circuit Design Fundamentals**
-- Demonstrated understanding of microcontroller pin functions and ISP programming requirements
-- Applied proper circuit design principles including decoupling, pull-up resistors, and current limiting
-- Integrated multiple subsystems (power, programming, I/O) into cohesive functional design
-
-**CAD Tool Proficiency**
-- Mastered complete KiCad workflow from schematic capture through fabrication file generation
-- Developed skills in component library management and footprint assignment
-- Gained experience with design rule checking and manufacturing constraint validation
-
-**Design for Manufacturing Excellence**
-- Successfully applied single-sided PCB design strategies to overcome milling limitations
-- Optimized component selection and placement for hand assembly processes
-- Generated production-ready files meeting manufacturing specifications
-
-### Critical Design Insights
-
-**Materials and Process Integration**
-The exercise reinforced the fundamental principle that successful digital fabrication requires simultaneous consideration of:
-- Electronic circuit functionality and performance requirements
-- Physical manufacturing process capabilities and constraints
-- Assembly and testing accessibility throughout the production workflow
-- Cost optimization through appropriate component and process selection
-
-**Iterative Design Philosophy**
-The project demonstrated the value of iterative design improvement through:
-- Multiple layout iterations to optimize routing and component placement
-- Continuous design rule verification to catch manufacturing violations early
-- 3D visualization for design validation before committing to fabrication
-- Documentation of design decisions for future reference and improvement
-
-### Future Enhancement Opportunities
-
-**Advanced Design Techniques**
-- Implementation of mixed-signal design techniques for analog sensor interfaces
-- Integration of surface-mount components for higher component density
-- Development of multi-layer PCB designs for more complex circuits
-- Incorporation of embedded programming and testing interfaces
-
-**Manufacturing Process Optimization**
-- Investigation of automated assembly techniques for higher volume production
-- Development of custom component libraries for specialized applications
-- Integration with modern fabrication processes including professional PCB manufacturing
-- Implementation of design for testability (DFT) principles for quality assurance
-
-This Day 3 activity successfully achieved all learning objectives while providing practical experience in the complete PCB design and fabrication workflow essential for digital fabrication proficiency.
-
----
-
-## Conclusion
-
-The Day 3 PCB design exercise exemplified the integration of theoretical knowledge with practical digital fabrication skills. Through the development of a functional ATtiny45 microcontroller circuit, this project demonstrated that successful electronic system design requires a holistic approach encompassing circuit functionality, manufacturing constraints, and assembly considerations.
-
-The completed design represents a fully manufacturable product ready for milling fabrication and hand assembly, validating the effectiveness of the systematic design methodology employed. This foundation establishes the necessary competencies for advancing to more complex digital fabrication challenges involving multi-layer designs, surface-mount components, and automated assembly processes.
-
-The documentation and files generated through this exercise provide a comprehensive reference for future PCB design projects and demonstrate best practices in design methodology, CAD tool utilization, and manufacturing preparation essential for professional digital fabrication practice.
-
----
-
-## Download References
-
-Links to reference files, project files, and additional resources:
+- [IPC Standards for PCB Design](https://www.ipc.org/)
+- [Gerber File Specification](https://www.ucamco.com/gerber)
 
