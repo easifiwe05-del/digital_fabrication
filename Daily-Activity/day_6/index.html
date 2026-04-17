@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -63,7 +63,16 @@
 
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -487,7 +496,7 @@
   <span class="md-ellipsis">
     
   
-    3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation
+    Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
   
 
     
@@ -912,7 +921,7 @@
   <span class="md-ellipsis">
     
   
-    7. Activity of Day 7: Digital Fabrication III – CNC Router Milling &amp; Cutting
+    Day 7: PCB Fabrication, Testing, and CNC Constraints
   
 
     
@@ -1440,7 +1449,7 @@
 <li><strong>Scaling</strong> was verified to match the intended physical dimensions</li>
 <li>The printer profile was set to <strong>Ultimaker 2+ Connect</strong> with the correct nozzle diameter</li>
 </ul>
-<p><img alt="Drone frame model loaded and positioned on the build plate in Ultimaker Cura" src="../../images/day_6/picture_design_ult_1.png" />
+<p><a class="glightbox" href="../../images/day_6/picture_design_ult_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Drone frame model loaded and positioned on the build plate in Ultimaker Cura" src="../../images/day_6/picture_design_ult_1.png" /></a>
 <em>Figure 1: FPV drone frame STL model (<code>fpv-drone-frame.stl</code>) imported into Ultimaker Cura, with Ultimaker 2+ Connect profile selected, Generic PLA at 0.4mm nozzle, and model auto-scaled to fit the build volume (182.2 × 179.4 × 22.6 mm).</em></p>
 <h3 id="step-3-configure-slicing-parameters">Step 3: Configure Slicing Parameters<a class="headerlink" href="#step-3-configure-slicing-parameters" title="Permanent link">&para;</a></h3>
 <p>Print settings were configured based on the requirements of the drone frame geometry and the PLA filament in use:</p>
@@ -1495,7 +1504,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="Ultimaker Cura displaying the FPV drone frame model from a closer angle, showing the complex motor-mount and arm geometry on the build plate" src="../../images/day_6/picture_design_ult_2.png" />
+<p><a class="glightbox" href="../../images/day_6/picture_design_ult_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ultimaker Cura displaying the FPV drone frame model from a closer angle, showing the complex motor-mount and arm geometry on the build plate" src="../../images/day_6/picture_design_ult_2.png" /></a>
 <em>Figure 2: Closer view of the FPV drone frame model in Cura's PREPARE stage, clearly showing the arm geometry, motor mount corners, and central hub before slicing.</em></p>
 <h3 id="step-4-slice-the-model-and-review-layer-preview">Step 4: Slice the Model and Review Layer Preview<a class="headerlink" href="#step-4-slice-the-model-and-review-layer-preview" title="Permanent link">&para;</a></h3>
 <p>After confirming all parameters, the model was <strong>sliced</strong> — converted from a 3D mesh into a sequence of G-code instructions the printer executes layer by layer. The <strong>layer preview</strong> mode in Cura was used to:</p>
@@ -1505,7 +1514,7 @@
 <li>Review estimated print time and material usage</li>
 <li>Verify travel moves and retraction points that could cause stringing</li>
 </ul>
-<p><img alt="Ultimaker Cura switched to PREVIEW tab showing the FPV drone frame in Layer View before slicing, with the model outline and footprint visible" src="../../images/day_6/picture_design_ult_preview.png" />
+<p><a class="glightbox" href="../../images/day_6/picture_design_ult_preview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ultimaker Cura switched to PREVIEW tab showing the FPV drone frame in Layer View before slicing, with the model outline and footprint visible" src="../../images/day_6/picture_design_ult_preview.png" /></a>
 <em>Figure 3: Cura PREVIEW tab in Layer View mode, showing the drone frame outline and build footprint. The "Slice" button is ready to be pressed to generate the G-code.</em></p>
 <h3 id="step-5-printer-setup-and-calibration">Step 5: Printer Setup and Calibration<a class="headerlink" href="#step-5-printer-setup-and-calibration" title="Permanent link">&para;</a></h3>
 <p>Before starting the print, the following preparation steps were performed:</p>
@@ -1537,13 +1546,13 @@
 <hr />
 <h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
 <p>The drone frame was successfully printed in olive green PLA. The following photographs document the final output:</p>
-<p><img alt="Printed FPV drone frame – slightly elevated rear view on blue work surface" src="../../images/day_6/IMG-20260313-WA0006.jpg" />
+<p><a class="glightbox" href="../../images/day_6/IMG-20260313-WA0006.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Printed FPV drone frame – slightly elevated rear view on blue work surface" src="../../images/day_6/IMG-20260313-WA0006.jpg" /></a>
 <em>Figure 4: Completed FPV drone frame printed in olive green PLA – rear elevated view showing arm structure, motor mount corners, and central hub.</em></p>
-<p><img alt="Printed FPV drone frame – overhead flat view" src="../../images/day_6/IMG-20260313-WA0008.jpg" />
+<p><a class="glightbox" href="../../images/day_6/IMG-20260313-WA0008.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Printed FPV drone frame – overhead flat view" src="../../images/day_6/IMG-20260313-WA0008.jpg" /></a>
 <em>Figure 5: Overhead view of the drone frame, showing the symmetrical X-frame geometry, four motor mount corners, and stringing in the central hub area.</em></p>
-<p><img alt="Printed FPV drone frame – overhead view showing full footprint" src="../../images/day_6/IMG-20260313-WA0010.jpg" />
+<p><a class="glightbox" href="../../images/day_6/IMG-20260313-WA0010.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Printed FPV drone frame – overhead view showing full footprint" src="../../images/day_6/IMG-20260313-WA0010.jpg" /></a>
 <em>Figure 6: Full overhead view of the printed frame, confirming dimensional symmetry and arm-to-corner alignment.</em></p>
-<p><img alt="FPV drone frame held up by hand showing underside and frame scale" src="../../images/day_6/IMG-20260313-WA0012.jpg" />
+<p><a class="glightbox" href="../../images/day_6/IMG-20260313-WA0012.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="FPV drone frame held up by hand showing underside and frame scale" src="../../images/day_6/IMG-20260313-WA0012.jpg" /></a>
 <em>Figure 7: Hand-held view of the completed FPV drone frame, giving a sense of scale and showing the underside arm geometry, motor mount holes, and visible stringing in the centre hub.</em></p>
 <h3 id="print-quality-observations">Print Quality Observations<a class="headerlink" href="#print-quality-observations" title="Permanent link">&para;</a></h3>
 <table>
@@ -1696,13 +1705,13 @@
         
         
           
-          <a href="../day_7/" class="md-footer__link md-footer__link--next" aria-label="Next: 7. Activity of Day 7: Digital Fabrication III – CNC Router Milling &amp;amp; Cutting">
+          <a href="../day_7/" class="md-footer__link md-footer__link--next" aria-label="Next: Day 7: PCB Fabrication, Testing, and CNC Constraints">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                7. Activity of Day 7: Digital Fabrication III – CNC Router Milling &amp; Cutting
+                Day 7: PCB Fabrication, Testing, and CNC Constraints
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1787,5 +1796,5 @@
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

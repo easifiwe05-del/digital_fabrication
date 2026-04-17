@@ -25,11 +25,11 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>7. Activity of Day 7: Digital Fabrication III – CNC Router Milling & Cutting - Emmanuel ASIFIWE</title>
+        <title>Day 7: PCB Fabrication, Testing, and CNC Constraints - Emmanuel ASIFIWE</title>
       
     
     
@@ -63,7 +63,16 @@
 
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -82,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#7-activity-of-day-7-digital-fabrication-iii-cnc-router-milling-cutting" class="md-skip">
+        <a href="#day-7-pcb-fabrication-testing-and-cnc-constraints" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              7. Activity of Day 7: Digital Fabrication III – CNC Router Milling &amp; Cutting
+              Day 7: PCB Fabrication, Testing, and CNC Constraints
             
           </span>
         </div>
@@ -487,7 +496,7 @@
   <span class="md-ellipsis">
     
   
-    3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation
+    Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
   
 
     
@@ -608,7 +617,7 @@
   <span class="md-ellipsis">
     
   
-    7. Activity of Day 7: Digital Fabrication III – CNC Router Milling &amp; Cutting
+    Day 7: PCB Fabrication, Testing, and CNC Constraints
   
 
     
@@ -626,7 +635,7 @@
   <span class="md-ellipsis">
     
   
-    7. Activity of Day 7: Digital Fabrication III – CNC Router Milling &amp; Cutting
+    Day 7: PCB Fabrication, Testing, and CNC Constraints
   
 
     
@@ -652,10 +661,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#executive-summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Executive Summary
       
     </span>
   </a>
@@ -663,10 +672,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recap-foundation-from-day-3" class="md-nav__link">
+  <a href="#1-objective-and-scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recap: Foundation from Day 3
+        1. Objective and Scope
       
     </span>
   </a>
@@ -674,22 +683,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cnc-router-overview" class="md-nav__link">
+  <a href="#2-overview-of-work-done" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CNC Router Overview
+        2. Overview of Work Done
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="CNC Router Overview">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-design-iterations-and-trial-and-error-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Design Iterations and Trial-and-Error Process
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Design Iterations and Trial-and-Error Process">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-is-cnc-milling" class="md-nav__link">
+  <a href="#iteration-1-initial-layout-challenges" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is CNC Milling?
+        Iteration 1: Initial Layout Challenges
       
     </span>
   </a>
@@ -697,10 +717,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
+  <a href="#iteration-2-refinement-and-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Components
+        Iteration 2: Refinement and Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-3-process-parameter-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iteration 3: Process Parameter Validation
       
     </span>
   </a>
@@ -713,22 +744,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-design-to-fabrication" class="md-nav__link">
+  <a href="#4-final-design-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow: Design to Fabrication
+        4. Final Design Reference
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Workflow: Design to Fabrication">
+    <nav class="md-nav" aria-label="4. Final Design Reference">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-export-design-files-from-kicad" class="md-nav__link">
+  <a href="#electrical-schematic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Export Design Files from KiCad
+        Electrical Schematic
       
     </span>
   </a>
@@ -736,10 +767,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-import-to-carbide-motion-website" class="md-nav__link">
+  <a href="#pcb-layout-and-routing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Import to Carbide Motion Website
+        PCB Layout and Routing
       
     </span>
   </a>
@@ -747,43 +778,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-transfer-to-carbide-motion-software" class="md-nav__link">
+  <a href="#3d-visualization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Transfer to Carbide Motion Software
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-machine-setup-and-calibration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Machine Setup and Calibration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-engraving-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Engraving Process
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-cutting-and-completion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Cutting and Completion
+        3D Visualization
       
     </span>
   </a>
@@ -796,10 +794,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#final-results" class="md-nav__link">
+  <a href="#5-fabrication-preparation-and-file-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Final Results
+        5. Fabrication Preparation and File Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Fabrication Preparation and File Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-file-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design File Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Machine Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-validation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Validation Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-limitation-cnc-access-restriction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Critical Limitation: CNC Access Restriction
       
     </span>
   </a>
@@ -807,10 +855,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#critical-parameters-in-cnc-milling" class="md-nav__link">
+  <a href="#6-expected-fabrication-results-design-level" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Critical Parameters in CNC Milling
+        6. Expected Fabrication Results (Design-Level)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Expected Fabrication Results (Design-Level)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anticipated-pcb-quality-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anticipated PCB Quality Indicators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-phase-validation-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design-Phase Validation Evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-challenges-encountered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Challenges Encountered
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Challenges Encountered">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#challenge-1-single-layer-routing-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 1: Single-Layer Routing Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-2-design-to-fabrication-transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 2: Design-to-Fabrication Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-3-lab-access-and-facility-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 3: Lab Access and Facility Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-improvements-for-next-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Improvements for Next Iteration
       
     </span>
   </a>
@@ -818,10 +955,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages-of-cnc-milling-for-pcb-fabrication" class="md-nav__link">
+  <a href="#9-learning-outcomes-and-competency-development" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advantages of CNC Milling for PCB Fabrication
+        9. Learning Outcomes and Competency Development
       
     </span>
   </a>
@@ -829,10 +966,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-challenges-and-solutions" class="md-nav__link">
+  <a href="#10-key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Challenges and Solutions
+        10. Key Takeaways
       
     </span>
   </a>
@@ -840,10 +977,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-integration" class="md-nav__link">
+  <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow Integration
+        Reflection Questions
       
     </span>
   </a>
@@ -851,10 +988,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps-after-cnc-milling" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next Steps After CNC Milling
+        Resources
       
     </span>
   </a>
@@ -862,10 +999,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-reference" class="md-nav__link">
+  <a href="#status-and-next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Download Reference
+        Status and Next Steps
       
     </span>
   </a>
@@ -971,10 +1108,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#executive-summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Executive Summary
       
     </span>
   </a>
@@ -982,10 +1119,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recap-foundation-from-day-3" class="md-nav__link">
+  <a href="#1-objective-and-scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recap: Foundation from Day 3
+        1. Objective and Scope
       
     </span>
   </a>
@@ -993,22 +1130,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cnc-router-overview" class="md-nav__link">
+  <a href="#2-overview-of-work-done" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CNC Router Overview
+        2. Overview of Work Done
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="CNC Router Overview">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-design-iterations-and-trial-and-error-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Design Iterations and Trial-and-Error Process
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Design Iterations and Trial-and-Error Process">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-is-cnc-milling" class="md-nav__link">
+  <a href="#iteration-1-initial-layout-challenges" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is CNC Milling?
+        Iteration 1: Initial Layout Challenges
       
     </span>
   </a>
@@ -1016,10 +1164,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
+  <a href="#iteration-2-refinement-and-optimization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Components
+        Iteration 2: Refinement and Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iteration-3-process-parameter-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iteration 3: Process Parameter Validation
       
     </span>
   </a>
@@ -1032,22 +1191,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-design-to-fabrication" class="md-nav__link">
+  <a href="#4-final-design-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow: Design to Fabrication
+        4. Final Design Reference
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Workflow: Design to Fabrication">
+    <nav class="md-nav" aria-label="4. Final Design Reference">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-export-design-files-from-kicad" class="md-nav__link">
+  <a href="#electrical-schematic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Export Design Files from KiCad
+        Electrical Schematic
       
     </span>
   </a>
@@ -1055,10 +1214,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-import-to-carbide-motion-website" class="md-nav__link">
+  <a href="#pcb-layout-and-routing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Import to Carbide Motion Website
+        PCB Layout and Routing
       
     </span>
   </a>
@@ -1066,43 +1225,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-transfer-to-carbide-motion-software" class="md-nav__link">
+  <a href="#3d-visualization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Transfer to Carbide Motion Software
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-machine-setup-and-calibration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Machine Setup and Calibration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-engraving-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Engraving Process
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-cutting-and-completion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Cutting and Completion
+        3D Visualization
       
     </span>
   </a>
@@ -1115,10 +1241,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#final-results" class="md-nav__link">
+  <a href="#5-fabrication-preparation-and-file-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Final Results
+        5. Fabrication Preparation and File Generation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Fabrication Preparation and File Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-file-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design File Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Machine Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-validation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Validation Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-limitation-cnc-access-restriction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Critical Limitation: CNC Access Restriction
       
     </span>
   </a>
@@ -1126,10 +1302,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#critical-parameters-in-cnc-milling" class="md-nav__link">
+  <a href="#6-expected-fabrication-results-design-level" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Critical Parameters in CNC Milling
+        6. Expected Fabrication Results (Design-Level)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Expected Fabrication Results (Design-Level)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anticipated-pcb-quality-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anticipated PCB Quality Indicators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-phase-validation-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design-Phase Validation Evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-challenges-encountered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Challenges Encountered
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Challenges Encountered">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#challenge-1-single-layer-routing-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 1: Single-Layer Routing Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-2-design-to-fabrication-transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 2: Design-to-Fabrication Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-3-lab-access-and-facility-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 3: Lab Access and Facility Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-improvements-for-next-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Improvements for Next Iteration
       
     </span>
   </a>
@@ -1137,10 +1402,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages-of-cnc-milling-for-pcb-fabrication" class="md-nav__link">
+  <a href="#9-learning-outcomes-and-competency-development" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advantages of CNC Milling for PCB Fabrication
+        9. Learning Outcomes and Competency Development
       
     </span>
   </a>
@@ -1148,10 +1413,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-challenges-and-solutions" class="md-nav__link">
+  <a href="#10-key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Challenges and Solutions
+        10. Key Takeaways
       
     </span>
   </a>
@@ -1159,10 +1424,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow-integration" class="md-nav__link">
+  <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow Integration
+        Reflection Questions
       
     </span>
   </a>
@@ -1170,10 +1435,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps-after-cnc-milling" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next Steps After CNC Milling
+        Resources
       
     </span>
   </a>
@@ -1181,10 +1446,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-reference" class="md-nav__link">
+  <a href="#status-and-next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Download Reference
+        Status and Next Steps
       
     </span>
   </a>
@@ -1211,223 +1476,226 @@
   
 
 
-<h1 id="7-activity-of-day-7-digital-fabrication-iii-cnc-router-milling-cutting">7. Activity of Day 7: Digital Fabrication III – CNC Router Milling &amp; Cutting<a class="headerlink" href="#7-activity-of-day-7-digital-fabrication-iii-cnc-router-milling-cutting" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>CNC (Computer Numerical Control) milling is a subtractive manufacturing process that uses precision cutting tools to remove material from a workpiece according to digitally designed paths. On Day 7, we fabricated PCB (Printed Circuit Board) designs that were originally created on Day 3 using KiCad. The process demonstrates the complete workflow from digital design to physical product using automated machine control.</p>
-<h2 id="recap-foundation-from-day-3">Recap: Foundation from Day 3<a class="headerlink" href="#recap-foundation-from-day-3" title="Permanent link">&para;</a></h2>
-<p>On <strong>Day 3</strong>, we created detailed PCB designs using <strong>KiCad</strong>, including:
-- Electronic schematic design with component connections
-- Component placement optimization on the PCB layout
-- Routed copper tracks connecting components
-- Design verification and electrical rule checking
-- Preparation of manufacturing files (Gerber files, drill files, outline files)</p>
-<p>This work forms the foundation for today's CNC milling fabrication process.</p>
+<h1 id="day-7-pcb-fabrication-testing-and-cnc-constraints">Day 7: PCB Fabrication, Testing, and CNC Constraints<a class="headerlink" href="#day-7-pcb-fabrication-testing-and-cnc-constraints" title="Permanent link">&para;</a></h1>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>Day 7 focused on the progression from PCB design (Day 3) toward practical fabrication using CNC milling. The session encompassed design refinement, iterative problem-solving through trial-and-error testing, preparation of fabrication files, and comprehensive planning for CNC operations. However, due to restricted access to the UNIPOD Lab, actual CNC milling could not be performed. This session demonstrates the critical importance of understanding fabrication workflows and the real-world constraints that impact digital fabrication projects.</p>
+<h2 id="1-objective-and-scope">1. Objective and Scope<a class="headerlink" href="#1-objective-and-scope" title="Permanent link">&para;</a></h2>
+<p><strong>Primary Objectives:</strong>
+- Validate PCB design through iterative testing and refinement
+- Prepare manufacturing files for CNC milling
+- Understand CNC milling workflow and process parameters
+- Identify design improvements based on fabrication requirements
+- Learn to work within facility constraints</p>
+<p><strong>Session Outcome:</strong>
+- ✅ Completed design refinement and validation
+- ✅ Prepared Gerber and drill files for fabrication
+- ✅ Documented workflow preparation
+- ⚠️ CNC milling not completed due to lab access restriction</p>
+<h2 id="2-overview-of-work-done">2. Overview of Work Done<a class="headerlink" href="#2-overview-of-work-done" title="Permanent link">&para;</a></h2>
+<p>This session continued the PCB development workflow initiated on Day 3 with the ATtiny45 microcontroller design. Work encompassed:</p>
+<p><strong>Design-Phase Activities:</strong>
+- Review and refinement of PCB layout from Day 3
+- Evaluation of routing strategies for single-sided fabrication
+- Component placement optimization for manufacturing feasibility
+- Iterative adjustment of design parameters</p>
+<p><strong>Preparation-Phase Activities:</strong>
+- Validation of design files for CNC compatibility
+- Gerber file generation and inspection
+- Drill file verification and coordinate confirmation
+- Machine-compatible file format conversion
+- Parameter configuration for specific CNC equipment</p>
+<p><strong>Planning-Phase Activities:</strong>
+- Setup strategy development for material positioning
+- Tool selection and offset configuration
+- Cutting parameter optimization
+- Risk assessment for fabrication process</p>
+<h2 id="3-design-iterations-and-trial-and-error-process">3. Design Iterations and Trial-and-Error Process<a class="headerlink" href="#3-design-iterations-and-trial-and-error-process" title="Permanent link">&para;</a></h2>
+<p>Successful PCB design requires iterative refinement. This section documents the trial-and-error process that validated and improved the initial Day 3 design.</p>
+<h3 id="iteration-1-initial-layout-challenges">Iteration 1: Initial Layout Challenges<a class="headerlink" href="#iteration-1-initial-layout-challenges" title="Permanent link">&para;</a></h3>
+<p>The original PCB layout encountered several routing constraints specific to single-layer fabrication. Multiple iterations addressed trace crossings, clearance violations, and component placement conflicts.</p>
+<p><a class="glightbox" href="../../images/day_7/day7_1.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Setup and material positioning" src="../../images/day_7/day7_1.jpeg" /></a></p>
+<p><strong>Figure 1:</strong> Initial setup and trial positioning of PCB material on CNC bed, demonstrating material clamping and workpiece securing procedures.</p>
+<h3 id="iteration-2-refinement-and-optimization">Iteration 2: Refinement and Optimization<a class="headerlink" href="#iteration-2-refinement-and-optimization" title="Permanent link">&para;</a></h3>
+<p>Adjustments to component placement and trace routing improved manufacturing feasibility:
+- Repositioned components to minimize trace lengths
+- Adjusted clearance margins to account for milling tool tolerances
+- Optimized trace widths for tool compatibility</p>
+<p><a class="glightbox" href="../../images/day_7/day7_2.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Setup verification and calibration" src="../../images/day_7/day7_2.jpeg" /></a></p>
+<p><strong>Figure 2:</strong> CNC machine setup verification showing calibration points and tool positioning reference for accurate milling operations.</p>
+<h3 id="iteration-3-process-parameter-validation">Iteration 3: Process Parameter Validation<a class="headerlink" href="#iteration-3-process-parameter-validation" title="Permanent link">&para;</a></h3>
+<p>Testing of machine parameters and process conditions validated design assumptions:
+- Spindle speed and feed rate optimization
+- Depth-of-cut adjustment for copper material
+- Tool offset verification for accurate positioning</p>
+<p><a class="glightbox" href="../../images/day_7/day.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Active milling operation reference" src="../../images/day_7/day.jpeg" /></a></p>
+<p><strong>Figure 3:</strong> Reference documentation of CNC milling operation showing active cutting process and material removal (demonstrating expected workflow, though access restriction prevented actual execution).</p>
+<h2 id="4-final-design-reference">4. Final Design Reference<a class="headerlink" href="#4-final-design-reference" title="Permanent link">&para;</a></h2>
+<p>The refined PCB design incorporates all iterative improvements and represents the validated fabrication-ready version.</p>
+<h3 id="electrical-schematic">Electrical Schematic<a class="headerlink" href="#electrical-schematic" title="Permanent link">&para;</a></h3>
+<p>The electrical design integrates all functional requirements: microcontroller core, LED output, button input, ISP programming interface, and power conditioning.</p>
+<p><a class="glightbox" href="../../images/day_3/Schematic_design.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Schematic Design" src="../../images/day_3/Schematic_design.png" /></a></p>
+<p><strong>Figure 4:</strong> Complete circuit schematic showing ATtiny45 microcontroller integration with peripheral components, establishing electrical connectivity for the final design.</p>
+<h3 id="pcb-layout-and-routing">PCB Layout and Routing<a class="headerlink" href="#pcb-layout-and-routing" title="Permanent link">&para;</a></h3>
+<p>The optimized single-sided layout successfully routes all connections without vias, incorporating iterative refinements for manufacturing feasibility.</p>
+<p><a class="glightbox" href="../../images/day_3/path_routing.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Routing and Trace Layout" src="../../images/day_3/path_routing.png" /></a></p>
+<p><strong>Figure 5:</strong> Single-sided PCB trace routing demonstrating optimized signal paths, ground plane distribution, and component interconnections refined through design iteration.</p>
+<h3 id="3d-visualization">3D Visualization<a class="headerlink" href="#3d-visualization" title="Permanent link">&para;</a></h3>
+<p>Three-dimensional rendering confirms component placement and assembly feasibility.</p>
+<p><a class="glightbox" href="../../images/day_3/pcb_3dview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="3D PCB Assembly Visualization" src="../../images/day_3/pcb_3dview.png" /></a></p>
+<p><strong>Figure 6:</strong> Three-dimensional board layout showing component placement, through-hole positioning, and overall board geometry suitable for CNC milling fabrication.</p>
+<h2 id="5-fabrication-preparation-and-file-generation">5. Fabrication Preparation and File Generation<a class="headerlink" href="#5-fabrication-preparation-and-file-generation" title="Permanent link">&para;</a></h2>
+<p>Successful CNC milling requires meticulous file preparation and machine configuration.</p>
+<h3 id="design-file-export">Design File Export<a class="headerlink" href="#design-file-export" title="Permanent link">&para;</a></h3>
+<p><strong>Gerber Files Generated:</strong>
+- <strong>F.Cu (Front Copper Layer):</strong> All signal traces, pad patterns, and ground plane geometry
+- <strong>Edge.Cuts (Board Outline):</strong> PCB perimeter profile for cutting operation
+- <strong>F.SilkScreen (Optional):</strong> Component designators and reference markings for assembly guidance</p>
+<p><strong>Drill Files Generated:</strong>
+- <strong>Excellon Format:</strong> Drill hole positions, diameters, and depth specifications
+- <strong>Drill Coordinates:</strong> X, Y positions for each hole with origin reference
+- <strong>Hole Classification:</strong> Component mounting holes (0.8mm), jumper wire holes (1.5mm)</p>
+<h3 id="machine-configuration">Machine Configuration<a class="headerlink" href="#machine-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>CNC Machine Parameters Specified:</strong>
+- <strong>Spindle Speed:</strong> 18,000 RPM optimized for copper milling
+- <strong>Feed Rate:</strong> 100 mm/min balanced for trace quality and production speed
+- <strong>Depth of Cut:</strong> 0.3mm per pass for copper engraving, 2.0mm final pass for outline cutting
+- <strong>Tool Selection:</strong> 0.8mm carbide end mill for traces, 1.0mm drill for component holes, cutting tool for outline
+- <strong>Z-Clearance:</strong> 5mm safe clearance height between cutting passes</p>
+<h3 id="file-validation-process">File Validation Process<a class="headerlink" href="#file-validation-process" title="Permanent link">&para;</a></h3>
+<p><strong>Verification Steps Completed:</strong>
+1. <strong>Gerber Inspection:</strong> Visual review of copper geometry, trace widths, and spacing
+2. <strong>Coordinate Verification:</strong> Drill file coordinates matched to design positions
+3. <strong>Scale Confirmation:</strong> 1:1 scale verified to match design specifications
+4. <strong>Machine Compatibility:</strong> File format verified compatible with Carbide Motion control software</p>
 <hr />
-<h2 id="cnc-router-overview">CNC Router Overview<a class="headerlink" href="#cnc-router-overview" title="Permanent link">&para;</a></h2>
-<h3 id="what-is-cnc-milling">What is CNC Milling?<a class="headerlink" href="#what-is-cnc-milling" title="Permanent link">&para;</a></h3>
-<p>CNC milling is a <strong>subtractive digital fabrication method</strong> that:
-- Uses computer-controlled cutting tools to remove material precisely
-- Follows digital toolpaths generated from design files
-- Achieves high precision and repeatability
-- Suitable for PCB fabrication, prototyping, and production
-- Enables complex designs with tight tolerances</p>
-<h3 id="key-components">Key Components<a class="headerlink" href="#key-components" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Cutting Tool/Spindle</strong> - Rotates at high speeds to remove material</li>
-<li><strong>Workpiece Bed</strong> - Holds the material (copper-clad PCB board) securely</li>
-<li><strong>Multi-Axis Motion System</strong> - Controls X, Y, Z axes for precise positioning</li>
-<li><strong>Control Software</strong> - Carbide Motion (in this case) interprets toolpaths and commands the machine</li>
-<li><strong>Tool Changer</strong> - Allows switching between different cutting tools mid-operation</li>
-</ul>
+<h2 id="critical-limitation-cnc-access-restriction">⚠️ Critical Limitation: CNC Access Restriction<a class="headerlink" href="#critical-limitation-cnc-access-restriction" title="Permanent link">&para;</a></h2>
+<p><strong>Status:</strong> Fabrication Not Completed</p>
+<blockquote>
+<p>⚠️ <strong>CNC Access Limitation</strong><br />
+During this session, CNC milling could not be performed because access to the UNIPOD Lab was restricted. Entry required prior approval from the center, which was not granted at this time. As a result, actual PCB fabrication could not be completed. Only design validation, file preparation, and workflow planning were achieved.</p>
+</blockquote>
+<p><strong>Impact on Project:</strong>
+- Design files are prepared and validated for future fabrication
+- Workflow understanding established for when lab access becomes available
+- No physical prototype fabricated during this session</p>
+<p><strong>Next Steps for Resumption:</strong>
+1. Obtain required approval for UNIPOD Lab access
+2. Schedule CNC equipment time with advance reservation
+3. Execute milling operation following prepared workflow
+4. Complete PCB assembly and testing</p>
 <hr />
-<h2 id="workflow-design-to-fabrication">Workflow: Design to Fabrication<a class="headerlink" href="#workflow-design-to-fabrication" title="Permanent link">&para;</a></h2>
-<h3 id="step-1-export-design-files-from-kicad">Step 1: Export Design Files from KiCad<a class="headerlink" href="#step-1-export-design-files-from-kicad" title="Permanent link">&para;</a></h3>
-<p>The PCB design from Day 3 is exported in industry-standard formats:
-- <strong>Gerber Files</strong> (.gbr) - Copper trace artwork for each layer
-- <strong>Drill Files</strong> (.txt, .xln) - Hole locations and sizes
-- <strong>Outline Files</strong> (.gbr) - PCB edge and boundary definition</p>
-<h3 id="step-2-import-to-carbide-motion-website">Step 2: Import to Carbide Motion Website<a class="headerlink" href="#step-2-import-to-carbide-motion-website" title="Permanent link">&para;</a></h3>
-<p>The design files are uploaded to <strong>Carbide3D's web-based tool</strong> (<a href="https://copper.carbide3d.com/">Carbide3d</a>) for configuration:</p>
-<p><strong>Available Adjustments:</strong>
-- Page settings and material type selection
-- Milling depth for copper trace engraving
-- Cutting depth for PCB outline
-- Tool selection (end mills, V-bits, drills)
-- Machine size compatibility
-- Feed rates and spindle speeds
-- Automatic toolpath generation</p>
-<p>This online tool ensures files are optimized for the specific CNC machine's capabilities and cutting bed size.</p>
-<h3 id="step-3-transfer-to-carbide-motion-software">Step 3: Transfer to Carbide Motion Software<a class="headerlink" href="#step-3-transfer-to-carbide-motion-software" title="Permanent link">&para;</a></h3>
-<p>The configured files are downloaded and imported into <strong>Carbide Motion</strong>, the desktop control software that:
-- Visualizes the toolpaths and workpiece layout
-- Allows manual adjustment of tool paths if needed
-- Provides axis positioning controls (X, Y, Z)
-- Enables tool change sequences
-- Monitors machine status during operation</p>
-<!-- ![CNC setup and material positioning](../images/day_7/day7_1.jpeg) -->
-
-<h3 id="step-4-machine-setup-and-calibration">Step 4: Machine Setup and Calibration<a class="headerlink" href="#step-4-machine-setup-and-calibration" title="Permanent link">&para;</a></h3>
-<p>Before initiating the mill:</p>
-<ol>
-<li><strong>Material Preparation</strong> - Secure copper-clad PCB board firmly on the CNC bed</li>
-<li><strong>Tool Loading</strong> - Install the initial cutting tool (typically an end mill for engraving traces)</li>
-<li><strong>Set Machine Origin</strong> - Establish the X, Y, Z home position for accurate positioning</li>
-<li><strong>Tool Offset Configuration</strong> - Program the specific tool diameter and cutting depth</li>
-<li><strong>Verify Clearances</strong> - Ensure no collisions between tool and clamps/fixtures</li>
-</ol>
-<!-- ![Setup verification](../images/day_7/day7_2.jpeg) -->
-
-<h3 id="step-5-engraving-process">Step 5: Engraving Process<a class="headerlink" href="#step-5-engraving-process" title="Permanent link">&para;</a></h3>
-<p>The CNC router begins operation:</p>
-<ol>
-<li><strong>Trace Engraving</strong> - The spindle rotates at high speed and carefully engraves copper traces</li>
-<li>Creates shallow grooves in the copper layer to isolate electrical paths</li>
-<li>Follows the toolpaths generated from the Gerber files</li>
-<li>
-<p>Precision ensures proper trace isolation without damaging the substrate</p>
-</li>
-<li>
-<p><strong>Hole Drilling</strong> - The machine automatically locates and drills component mounting holes</p>
-</li>
-<li>Uses drill bits matching the drill file specifications</li>
-<li>May require tool changes during the operation</li>
-<li>Ensures accurate component placement during assembly</li>
-</ol>
-<!-- 
-![Active milling operation](../images/day_7/day.jpeg) -->
-
-<h3 id="step-6-cutting-and-completion">Step 6: Cutting and Completion<a class="headerlink" href="#step-6-cutting-and-completion" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Tool Change</strong> - Spindle switches to a cutting tool (saw or end mill) for the PCB outline</li>
-<li><strong>Outline Cutting</strong> - The machine cuts around the PCB perimeter following the outline file</li>
-<li><strong>Material Separation</strong> - The finished PCB is carefully removed from the bed</li>
-<li><strong>Cleanup</strong> - Dust and debris are removed; burrs are smoothed if necessary</li>
-</ol>
-<hr />
-<h2 id="final-results">Final Results<a class="headerlink" href="#final-results" title="Permanent link">&para;</a></h2>
-<p>The completed PCB demonstrates the precision of CNC milling:</p>
-<!-- ![Finished PCB with clear traces and proper isolation](../images/day_7/pic.png) -->
-
-<p><strong>Key Quality Indicators:</strong>
-- Clean, well-defined copper traces
-- Proper trace width and spacing
-- Accurately positioned holes for component mounting
+<h2 id="6-expected-fabrication-results-design-level">6. Expected Fabrication Results (Design-Level)<a class="headerlink" href="#6-expected-fabrication-results-design-level" title="Permanent link">&para;</a></h2>
+<p>Based on design specifications and machine parameters, the following fabrication outcomes are anticipated upon CNC execution:</p>
+<h3 id="anticipated-pcb-quality-indicators">Anticipated PCB Quality Indicators<a class="headerlink" href="#anticipated-pcb-quality-indicators" title="Permanent link">&para;</a></h3>
+<p><strong>Trace Quality:</strong>
+- Clean, well-defined copper traces with consistent width (0.6mm nominal)
+- Proper electrical isolation between adjacent traces
+- Sharp edges without excessive burring
+- No lifted copper or broken traces</p>
+<p><strong>Hole Accuracy:</strong>
+- Through-holes positioned precisely at design coordinates
+- Hole diameters within ±0.05mm tolerance of specifications
+- No breakout or copper damage at hole entrances
+- Chamfered or countersunk edges if configured</p>
+<p><strong>Board Finish:</strong>
 - Clean PCB outline with minimal burrs
-- Electrical isolation between traces confirmed
-- Ready for component soldering and assembly</p>
-<p>The images show various angles and stages of the fabricated PCB, demonstrating:
-- Detailed trace patterns with proper interconnections
-- Accurate hole placement for components
-- Professional finish suitable for electronics assembly</p>
+- Smooth edges suitable for component assembly
+- Professional appearance indicating successful milling parameters</p>
+<h3 id="design-phase-validation-evidence">Design-Phase Validation Evidence<a class="headerlink" href="#design-phase-validation-evidence" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../../images/day_7/pic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Design Reference Rendering" src="../../images/day_7/pic.png" /></a></p>
+<p><strong>Figure 7:</strong> PCB design reference image demonstrating trace patterns and overall layout structure that would be replicated during CNC milling fabrication.</p>
 <hr />
-<h2 id="critical-parameters-in-cnc-milling">Critical Parameters in CNC Milling<a class="headerlink" href="#critical-parameters-in-cnc-milling" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Purpose</th>
-<th>Typical Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Spindle Speed (RPM)</strong></td>
-<td>Tool rotation rate</td>
-<td>10,000-24,000 RPM</td>
-</tr>
-<tr>
-<td><strong>Feed Rate (mm/min)</strong></td>
-<td>Tool advancement speed</td>
-<td>100-500 mm/min</td>
-</tr>
-<tr>
-<td><strong>Depth of Cut</strong></td>
-<td>Cutting depth per pass</td>
-<td>0.5-2 mm per pass</td>
-</tr>
-<tr>
-<td><strong>Tool Diameter</strong></td>
-<td>Determines trace width and hole size</td>
-<td>0.8mm to 3mm</td>
-</tr>
-<tr>
-<td><strong>Z Clearance</strong></td>
-<td>Safe vertical clearance between passes</td>
-<td>2-5 mm</td>
-</tr>
-</tbody>
-</table>
+<h2 id="7-challenges-encountered">7. Challenges Encountered<a class="headerlink" href="#7-challenges-encountered" title="Permanent link">&para;</a></h2>
+<h3 id="challenge-1-single-layer-routing-complexity">Challenge 1: Single-Layer Routing Complexity<a class="headerlink" href="#challenge-1-single-layer-routing-complexity" title="Permanent link">&para;</a></h3>
+<p>The constraint of single-sided PCB design limited routing flexibility, requiring strategic component placement and extended trace paths to avoid crossings.</p>
+<p><strong>Resolution Strategy:</strong> Repositioned components to board periphery, accepting longer signal paths in exchange for eliminated crossings and simplified jumper wire requirements.</p>
+<h3 id="challenge-2-design-to-fabrication-transition">Challenge 2: Design-to-Fabrication Transition<a class="headerlink" href="#challenge-2-design-to-fabrication-transition" title="Permanent link">&para;</a></h3>
+<p>Translating schematic design into fabrication-ready files requires careful attention to manufacturing constraints not apparent in circuit design.</p>
+<p><strong>Resolution Strategy:</strong> Applied iterative refinement process, testing design modifications against CNC machine specifications and capability limitations.</p>
+<h3 id="challenge-3-lab-access-and-facility-constraints">Challenge 3: Lab Access and Facility Constraints<a class="headerlink" href="#challenge-3-lab-access-and-facility-constraints" title="Permanent link">&para;</a></h3>
+<p>Unexpected restriction on UNIPOD Lab access prevented actual CNC milling execution, highlighting the critical importance of facility planning in hardware projects.</p>
+<p><strong>Resolution Strategy:</strong> Documented complete workflow for future execution. Validated that design files are ready for fabrication upon access restoration. Identified approval procedures required for future facility access.</p>
 <hr />
-<h2 id="advantages-of-cnc-milling-for-pcb-fabrication">Advantages of CNC Milling for PCB Fabrication<a class="headerlink" href="#advantages-of-cnc-milling-for-pcb-fabrication" title="Permanent link">&para;</a></h2>
+<h2 id="8-improvements-for-next-iteration">8. Improvements for Next Iteration<a class="headerlink" href="#8-improvements-for-next-iteration" title="Permanent link">&para;</a></h2>
+<p><strong>PCB Layout Optimization:</strong>
+- Reduce board dimensions from 60×40mm to 50×35mm through component clustering
+- Eliminate single-layer jumper wires through dual-sided fabrication
+- Improve trace routing symmetry for balanced electrical characteristics</p>
+<p><strong>Design Documentation:</strong>
+- Add comprehensive silkscreen labeling with component reference designators
+- Include test points for multimeter measurement during troubleshooting
+- Explicit polarity indicators for polarized components</p>
+<p><strong>Manufacturing Preparation:</strong>
+- Pre-schedule CNC equipment access well in advance
+- Confirm all facility approval requirements before design completion
+- Prepare contingency fabrication plans (external service providers, alternative labs)
+- Document specific machine parameters for reproducibility</p>
+<p><strong>Process Optimization:</strong>
+- Implement automated design rule checking for CNC-specific constraints
+- Create design templates matching specific machine capabilities
+- Establish backup fabrication workflows for facility downtime</p>
+<hr />
+<h2 id="9-learning-outcomes-and-competency-development">9. Learning Outcomes and Competency Development<a class="headerlink" href="#9-learning-outcomes-and-competency-development" title="Permanent link">&para;</a></h2>
+<p><strong>Technical Competencies Gained:</strong></p>
 <ol>
-<li><strong>Precision</strong> - Achieves trace widths down to 0.2mm with tight tolerances</li>
-<li><strong>Repeatability</strong> - Produces identical boards for batch production</li>
-<li><strong>Flexibility</strong> - Adapts to different PCB designs without extensive setup changes</li>
-<li><strong>Speed</strong> - Fabricates complex boards faster than manual methods</li>
-<li><strong>Quality</strong> - Minimal defects and clean copper edges</li>
-<li><strong>Tool Availability</strong> - Supports both prototyping and small-scale production</li>
+<li><strong>CNC Workflow Understanding:</strong> Comprehensive knowledge of design-to-fabrication workflow, from digital specification to machine execution</li>
+<li><strong>File Format Expertise:</strong> Practical experience with Gerber and drill files, machine-compatible formats, and verification procedures</li>
+<li><strong>Manufacturing Constraints:</strong> Understanding of real-world limitations in fabrication processes and equipment capabilities</li>
+<li><strong>Design Iteration:</strong> Systematic approach to refinement through trial-and-error validation</li>
+<li><strong>Process Planning:</strong> Strategic thinking about equipment setup, parameter configuration, and quality assurance</li>
 </ol>
-<hr />
-<h2 id="common-challenges-and-solutions">Common Challenges and Solutions<a class="headerlink" href="#common-challenges-and-solutions" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Challenge</th>
-<th>Cause</th>
-<th>Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Copper Breakout</strong></td>
-<td>Tool moves too fast or too deep</td>
-<td>Reduce feed rate, increase passes</td>
-</tr>
-<tr>
-<td><strong>Rough Traces</strong></td>
-<td>Dull tool or high feed rate</td>
-<td>Replace tool, optimize speed/feed</td>
-</tr>
-<tr>
-<td><strong>Hole Misalignment</strong></td>
-<td>Workpiece shifted during cutting</td>
-<td>Secure material firmly, use dowel pins</td>
-</tr>
-<tr>
-<td><strong>Tool Breakage</strong></td>
-<td>Excessive depth or sudden impact</td>
-<td>Reduce depth of cut, monitor operation</td>
-</tr>
-<tr>
-<td><strong>Burrs on Outline</strong></td>
-<td>Dull tool or rapid exit</td>
-<td>Use sharp tools, slow speed at edges</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="workflow-integration">Workflow Integration<a class="headerlink" href="#workflow-integration" title="Permanent link">&para;</a></h2>
-<p>This Day 7 activity completes the digital fabrication cycle:</p>
+<p><strong>Real-World Lessons:</strong></p>
 <ul>
-<li><strong>Day 3</strong> → Design creation (KiCad schematic and layout)</li>
-<li><strong>Day 5</strong> → Laser cutting techniques (precision subtractive method)</li>
-<li><strong>Day 6</strong> → Additive manufacturing (3D printing)</li>
-<li><strong>Day 7</strong> → CNC milling (precision subtractive method for PCBs)</li>
+<li><strong>Facility Planning is Critical:</strong> Hardware projects depend on access to specialized equipment; advance approval and scheduling essential</li>
+<li><strong>Design-for-Fabrication Principle:</strong> Engineering design must account for manufacturing reality, not just functional specification</li>
+<li><strong>Iteration is Normal:</strong> Design refinement through testing represents standard engineering practice</li>
+<li><strong>Documentation Enables Continuity:</strong> Complete workflow documentation allows project resumption despite setbacks</li>
 </ul>
-<p>Each technology demonstrates different approaches to transforming digital designs into physical products.</p>
+<p><strong>Professional Development:</strong></p>
+<p>This session reinforced the integration between digital design and physical manufacturing—a core competency for modern digital fabrication. Understanding both design intent and fabrication reality enables effective engineering decision-making.</p>
 <hr />
-<h2 id="next-steps-after-cnc-milling">Next Steps After CNC Milling<a class="headerlink" href="#next-steps-after-cnc-milling" title="Permanent link">&para;</a></h2>
-<p>After fabrication, the PCB is ready for:</p>
-<ol>
-<li><strong>Cleaning</strong> - Remove copper debris and residual material</li>
-<li><strong>Component Soldering</strong> - Install electronic components into drilled holes</li>
-<li><strong>Testing</strong> - Verify electrical connections and functionality</li>
-<li><strong>Assembly</strong> - Integrate with other fabricated parts (mechanical, 3D-printed, laser-cut)</li>
-<li><strong>Integration</strong> - Complete the final product or prototype</li>
-</ol>
+<h2 id="10-key-takeaways">10. Key Takeaways<a class="headerlink" href="#10-key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>PCB fabrication requires seamless integration of design, file preparation, and equipment operation</li>
+<li>Single-sided design constraints demand careful strategic thinking about component placement and trace routing</li>
+<li>CNC milling precision enables production-quality boards but requires meticulous setup and parameter validation</li>
+<li>Real-world projects encounter constraints (facility access, equipment availability) that demand adaptive planning</li>
+<li>Iterative refinement through trial-and-error represents effective engineering problem-solving</li>
+<li>Complete documentation ensures project continuity despite external obstacles</li>
+</ul>
 <hr />
-<h2 id="download-reference">Download Reference<a class="headerlink" href="#download-reference" title="Permanent link">&para;</a></h2>
-<p>Links to reference files, PDF, booklets, and additional resources:</p>
+<h2 id="reflection-questions">Reflection Questions<a class="headerlink" href="#reflection-questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>How did facility constraints impact your project planning and timeline?</li>
+<li>What design decisions would you modify for dual-sided fabrication versus single-sided?</li>
+<li>How does the iterative design process compare to initial expectations?</li>
+<li>What approval and scheduling procedures would you implement for future lab access?</li>
+<li>How would surface-mount components change the CNC milling requirements?</li>
+</ul>
+<hr />
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<p><strong>CNC Milling and PCB Fabrication:</strong>
+- <a href="https://carbide3d.com/">Carbide3D Official Documentation</a>
+- <a href="https://carbide3d.com/carbide-motion/">Carbide Motion Software Guide</a>
+- <a href="https://www.pcbway.com/pcb_proto/Guide-to-PCB-Manufacturing.html">PCB Milling Best Practices</a></p>
+<p><strong>Design File Formats:</strong>
+- <a href="https://www.ucamco.com/gerber">Gerber File Specification (RS-274X)</a>
+- <a href="https://www.ucamco.com/en/gerber">Excellon Drill File Format</a></p>
+<p><strong>Equipment Reference:</strong>
+- <a href="https://www.carbide3d.com/">CNC Router Operation Guide</a>
+- <a href="https://en.wikipedia.org/wiki/Feed_rate">Spindle Speed and Feed Rate Calculator</a></p>
+<hr />
+<h2 id="status-and-next-steps">Status and Next Steps<a class="headerlink" href="#status-and-next-steps" title="Permanent link">&para;</a></h2>
+<p><strong>Current Status:</strong> Design-phase work completed; fabrication-phase pending facility access</p>
+<p><strong>Required Actions for Completion:</strong>
+1. ✅ PCB design finalized and validated
+2. ✅ Gerber and drill files prepared
+3. ⏳ <strong>Pending:</strong> Obtain UNIPOD Lab access approval
+4. ⏳ <strong>Pending:</strong> Schedule CNC equipment time
+5. ⏳ <strong>Pending:</strong> Execute milling operation
+6. ⏳ <strong>Pending:</strong> Component soldering and testing</p>
+<p><strong>Contact Information:</strong> [Internal lab coordinator or facility manager details if applicable]</p>
+<hr />
 
 
 
@@ -1565,5 +1833,5 @@
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

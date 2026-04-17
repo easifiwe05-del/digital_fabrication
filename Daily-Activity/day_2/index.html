@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -63,7 +63,16 @@
 
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -1111,7 +1120,7 @@
   <span class="md-ellipsis">
     
   
-    3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation
+    Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
   
 
     
@@ -1223,7 +1232,7 @@
   <span class="md-ellipsis">
     
   
-    7. Activity of Day 7: Digital Fabrication III – CNC Router Milling &amp; Cutting
+    Day 7: PCB Fabrication, Testing, and CNC Constraints
   
 
     
@@ -2008,7 +2017,7 @@
 <li><strong>Closed Geometry Loop:</strong> Contiguous line segments forming valid profile boundary</li>
 <li><strong>Constraint Framework:</strong> Geometric (parallel, perpendicular, coincident) and dimensional specifications</li>
 </ul>
-<p><img alt="FreeCAD L-Shaped 2D Sketch Profile" src="../../images/day_2/sketch1.png" /></p>
+<p><a class="glightbox" href="../../images/day_2/sketch1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="FreeCAD L-Shaped 2D Sketch Profile" src="../../images/day_2/sketch1.png" /></a></p>
 <p><strong>Figure 1:</strong> L-shaped 2D profile demonstrating constraint framework with dimensional annotations (25mm, 23mm, 30mm) establishing parametric control points.</p>
 <h4 id="constraint-application-and-validation">Constraint Application and Validation<a class="headerlink" href="#constraint-application-and-validation" title="Permanent link">&para;</a></h4>
 <p>Geometric constraints establish design intent:</p>
@@ -2019,7 +2028,7 @@
 <li><strong>Junction Control:</strong> Coincident constraints for endpoint and intersection definition</li>
 </ul>
 <p>The fully constrained sketch (zero degrees of freedom) ensures dimensional stability and enables design modification through parameter value iteration rather than geometric reconstruction.</p>
-<p><img alt="Dimensionally Specified Sketch with Constraint Representation" src="../../images/day_2/dimens.png" /></p>
+<p><a class="glightbox" href="../../images/day_2/FreeCad_design_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dimensionally Specified Sketch with Constraint Representation" src="../../images/day_2/FreeCad_design_1.png" /></a></p>
 <p><strong>Figure 2:</strong> Fully constrained sketch showing dimensional specification (25mm, 23mm, 30mm) with visual constraint indicators demonstrating parametric control architecture.</p>
 <h4 id="solid-geometry-construction-pad-operation">Solid Geometry Construction: Pad Operation<a class="headerlink" href="#solid-geometry-construction-pad-operation" title="Permanent link">&para;</a></h4>
 <p>Extrusion of the 2D sketch profile generates 3D solid geometry:</p>
@@ -2028,7 +2037,7 @@
 <li><strong>Parameters:</strong> Material thickness specification (uniform 5mm wall)</li>
 <li><strong>Result:</strong> Volumetric L-shaped solid ready for feature operations</li>
 </ul>
-<p><img alt="3D L-Shaped Solid Foundation" src="../../images/day_2/first.png" /></p>
+<p><a class="glightbox" href="../../images/day_2/first.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="3D L-Shaped Solid Foundation" src="../../images/day_2/first.png" /></a></p>
 <p><strong>Figure 3:</strong> Extruded 3D bracket base demonstrating transition from 2D sketch to solid geometry via Pad operation.</p>
 <h4 id="mounting-provision-hole-creation-through-pocket">Mounting Provision: Hole Creation Through Pocket<a class="headerlink" href="#mounting-provision-hole-creation-through-pocket" title="Permanent link">&para;</a></h4>
 <p>Fastener mounting requires precision hole placement:</p>
@@ -2045,8 +2054,6 @@
 - Creates beveled lead-in for fastener alignment
 - Typical specification: 0.5-1.0mm chamfer radius
 - Improves manufacturability and assembly reliability</p>
-<p><img alt="Bracket with Mounting Holes and Chamfered Edges" src="../../images/day_2/holes.png" /></p>
-<p><strong>Figure 4:</strong> 3D model showing precision-positioned mounting holes with chamfered edges, demonstrating Pocket and Chamfer feature integration.</p>
 <h4 id="edge-finish-fillet-application">Edge Finish: Fillet Application<a class="headerlink" href="#edge-finish-fillet-application" title="Permanent link">&para;</a></h4>
 <p>External corner treatment improves safety, manufacturability, and structural performance:</p>
 <ul>
@@ -2065,8 +2072,8 @@
 - External corner treatment through fillet operations
 - Complete parametric dimension control
 - Export compatibility with CNC and additive manufacturing workflows</p>
-<p><img alt="Finished L-Shaped Bracket Assembly" src="../../images/day_2/sketch_final.png" /></p>
-<p><strong>Figure 5:</strong> Completed bracket demonstrating integrated parametric modeling workflow: sketch constraints → dimensional specification → feature operations (Pad, Pocket, Chamfer, Fillet) → manufacturing-ready geometry.</p>
+<p><a class="glightbox" href="../../images/day_2/Screenshot%202026-04-17%20134217.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Finished L-Shaped Bracket Assembly" src="../../images/day_2/Screenshot%202026-04-17%20134217.png" /></a></p>
+<p><strong>Figure 4:</strong> Completed bracket demonstrating integrated parametric modeling workflow: sketch constraints → dimensional specification → feature operations (Pad, Pocket, Chamfer, Fillet) → manufacturing-ready geometry.</p>
 <h3 id="common-challenges-and-solutions">Common Challenges and Solutions<a class="headerlink" href="#common-challenges-and-solutions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2163,8 +2170,8 @@
 - Dimensional specification: Material thickness (nominal 3mm for acrylic/plywood)
 - Length specification: Tab depth + 1-2mm assembly tolerance
 - Positional alignment ensuring complementary tab-slot registration</p>
-<p><img alt="Initial Press-Fit Panel Geometry" src="../../images/day_2/b1.png" /></p>
-<p><strong>Figure 6:</strong> Press-fit panel geometry showing rectangular substrate with dimensioned tab and slot features positioned for interlocking assembly on precision grid reference.</p>
+<p><a class="glightbox" href="../../images/day_2/b1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Initial Press-Fit Panel Geometry" src="../../images/day_2/b1.png" /></a></p>
+<p><strong>Figure 5:</strong> Press-fit panel geometry showing rectangular substrate with dimensioned tab and slot features positioned for interlocking assembly on precision grid reference.</p>
 <h4 id="geometry-refinement-circular-detail-integration">Geometry Refinement: Circular Detail Integration<a class="headerlink" href="#geometry-refinement-circular-detail-integration" title="Permanent link">&para;</a></h4>
 <p>Design enhancement through edge treatment:</p>
 <ul>
@@ -2203,28 +2210,18 @@
 - Efficient material nesting architecture
 - Tool-free assembly methodology
 - Manufacturing-ready vector format</p>
-<p><img alt="Complete Press-Fit Box Assembly" src="../../images/day_2/result.png" /></p>
-<p><strong>Figure 7:</strong> Finished press-fit box system demonstrating complete interlocking panel architecture with precision rectangular slot geometry optimized for laser cutting fabrication.</p>
+<p><a class="glightbox" href="../../images/day_2/result.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Complete Press-Fit Box Assembly" src="../../images/day_2/result.png" /></a></p>
+<p><strong>Figure 6:</strong> Finished press-fit box system demonstrating complete interlocking panel architecture with precision rectangular slot geometry optimized for laser cutting fabrication.</p>
 <h3 id="common-challenges-and-solutions_1">Common Challenges and Solutions<a class="headerlink" href="#common-challenges-and-solutions_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Challenge</th>
-<th>Cause</th>
-<th>Solution</th>
+<th>Root Cause</th>
+<th>Resolution Strategy</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Challenge</td>
-<td>Root Cause</td>
-<td>Resolution Strategy</td>
-</tr>
-<tr>
-<td>-----------</td>
-<td>-----------</td>
-<td>---------------------</td>
-</tr>
 <tr>
 <td><strong>Slot-assembly interference</strong></td>
 <td>Material thickness dimensional mismatch; unmeasured kerf effect</td>
@@ -2501,13 +2498,13 @@ The press-fit box system demonstrates successful application of parametric vecto
         
         
           
-          <a href="../day_3/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation">
+          <a href="../day_3/" class="md-footer__link md-footer__link--next" aria-label="Next: Day 3: ATtiny45 Microcontroller PCB Design and Fabrication">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation
+                Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2592,5 +2589,5 @@ The press-fit box system demonstrates successful application of parametric vecto
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

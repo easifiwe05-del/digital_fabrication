@@ -25,11 +25,11 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation - Emmanuel ASIFIWE</title>
+        <title>Day 3: ATtiny45 Microcontroller PCB Design and Fabrication - Emmanuel ASIFIWE</title>
       
     
     
@@ -63,7 +63,16 @@
 
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -82,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3-activity-of-day-3-pcb-design-and-fabrication-microcontroller-circuit-implementation" class="md-skip">
+        <a href="#day-3-attiny45-microcontroller-pcb-design-and-fabrication" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation
+              Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
             
           </span>
         </div>
@@ -496,7 +505,7 @@
   <span class="md-ellipsis">
     
   
-    3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation
+    Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
   
 
     
@@ -514,7 +523,7 @@
   <span class="md-ellipsis">
     
   
-    3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation
+    Day 3: ATtiny45 Microcontroller PCB Design and Fabrication
   
 
     
@@ -562,410 +571,164 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-introduction-pcb-design-for-digital-fabrication" class="md-nav__link">
+  <a href="#1-objective-and-system-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Introduction: PCB Design for Digital Fabrication
+        1. Objective and System Context
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1. Introduction: PCB Design for Digital Fabrication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-pcb-design-for-fabrication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What is PCB Design for Fabrication?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-pcb-milling-design-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why PCB Milling Design Matters
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-design-to-fabrication-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Design-to-Fabrication Workflow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-circuit-overview-attiny45-button-controlled-led" class="md-nav__link">
+  <a href="#2-system-overview-and-circuit-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Circuit Overview: ATtiny45 Button-Controlled LED
+        2. System Overview and Circuit Architecture
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2. Circuit Overview: ATtiny45 Button-Controlled LED">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#functional-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Functional Description
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#block-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Block Diagram
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#component-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Component List
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pin-assignment-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pin Assignment Strategy
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-kicad-workflow-schematic-to-pcb" class="md-nav__link">
+  <a href="#3-components-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. KiCad Workflow: Schematic to PCB
+        3. Components Used
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. KiCad Workflow: Schematic to PCB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-create-the-schematic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Create the Schematic
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-assign-footprints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Assign Footprints
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-single-sided-pcb-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Single-Sided PCB Layout
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Single-Sided PCB Layout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#routing-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Routing Strategy
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-design-rule-check-dfm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Design Rule Check (DFM)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-prepare-for-fabrication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Prepare for Fabrication
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-pcb-milling-process" class="md-nav__link">
+  <a href="#4-schematic-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. PCB Milling Process
+        4. Schematic Design
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="4. PCB Milling Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-milling-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-Milling Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#milling-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Milling Steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post-milling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Post-Milling
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-hand-soldering-and-testing" class="md-nav__link">
+  <a href="#5-footprint-assignment-and-component-placement-strategy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Hand Soldering and Testing
+        5. Footprint Assignment and Component Placement Strategy
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="5. Hand Soldering and Testing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#soldering-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Soldering Order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#programming-via-isp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Programming via ISP
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#functional-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Functional Testing
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-common-challenges-and-solutions" class="md-nav__link">
+  <a href="#6-pcb-layout-and-single-sided-design-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Common Challenges and Solutions
+        6. PCB Layout and Single-Sided Design Implementation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="6. Common Challenges and Solutions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#design-phase-challenges" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design Phase Challenges
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#milling-phase-challenges" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Milling Phase Challenges
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#soldering-phase-challenges" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Soldering Phase Challenges
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-learning-outcomes-reflection" class="md-nav__link">
+  <a href="#7-3d-visualization-and-assembly-review" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Learning Outcomes &amp; Reflection
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. Learning Outcomes &amp; Reflection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#skills-developed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Skills Developed
+        7. 3D Visualization and Assembly Review
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#design-for-manufacturability-principles-applied" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#8-design-rule-check-drc-verification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Design for Manufacturability Principles Applied
+        8. Design Rule Check (DRC) Verification
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#9-fabrication-preparation-and-file-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Fabrication Preparation and File Generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fabrication-results-and-prototype-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Fabrication Results and Prototype Assembly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-challenges-encountered-and-solutions-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Challenges Encountered and Solutions Implemented
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-design-improvements-for-next-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Design Improvements for Next Iteration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-learning-outcomes-and-competency-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Learning Outcomes and Competency Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
         Reflection Questions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Download References
       
     </span>
   </a>
@@ -977,212 +740,6 @@
     <span class="md-ellipsis">
       
         Resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deliverables-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deliverables Checklist
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-results-and-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Results and Analysis
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Results and Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#successfully-completed-design-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Successfully Completed Design Process
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Successfully Completed Design Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-achievements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Achievements
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#technical-specifications-achieved" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Technical Specifications Achieved
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#challenges-encountered-and-solutions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Challenges Encountered and Solutions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-documentation-and-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project Documentation and Files
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Project Documentation and Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kicad-project-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        KiCad Project Structure
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generated-fabrication-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generated Fabrication Files
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Generated Fabrication Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#component-bill-of-materials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Component Bill of Materials
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reflection-and-learning-outcomes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reflection and Learning Outcomes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reflection and Learning Outcomes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#knowledge-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Knowledge Integration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#critical-design-insights" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Critical Design Insights
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#future-enhancement-opportunities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancement Opportunities
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conclusion
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-references_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Download References
       
     </span>
   </a>
@@ -1296,7 +853,7 @@
   <span class="md-ellipsis">
     
   
-    7. Activity of Day 7: Digital Fabrication III – CNC Router Milling &amp; Cutting
+    Day 7: PCB Fabrication, Testing, and CNC Constraints
   
 
     
@@ -1422,410 +979,164 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-introduction-pcb-design-for-digital-fabrication" class="md-nav__link">
+  <a href="#1-objective-and-system-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Introduction: PCB Design for Digital Fabrication
+        1. Objective and System Context
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1. Introduction: PCB Design for Digital Fabrication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-pcb-design-for-fabrication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What is PCB Design for Fabrication?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-pcb-milling-design-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why PCB Milling Design Matters
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-design-to-fabrication-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Design-to-Fabrication Workflow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-circuit-overview-attiny45-button-controlled-led" class="md-nav__link">
+  <a href="#2-system-overview-and-circuit-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Circuit Overview: ATtiny45 Button-Controlled LED
+        2. System Overview and Circuit Architecture
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2. Circuit Overview: ATtiny45 Button-Controlled LED">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#functional-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Functional Description
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#block-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Block Diagram
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#component-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Component List
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pin-assignment-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pin Assignment Strategy
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-kicad-workflow-schematic-to-pcb" class="md-nav__link">
+  <a href="#3-components-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. KiCad Workflow: Schematic to PCB
+        3. Components Used
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. KiCad Workflow: Schematic to PCB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-create-the-schematic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Create the Schematic
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-assign-footprints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Assign Footprints
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-single-sided-pcb-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Single-Sided PCB Layout
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Single-Sided PCB Layout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#routing-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Routing Strategy
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-design-rule-check-dfm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Design Rule Check (DFM)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-prepare-for-fabrication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Prepare for Fabrication
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-pcb-milling-process" class="md-nav__link">
+  <a href="#4-schematic-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. PCB Milling Process
+        4. Schematic Design
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="4. PCB Milling Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-milling-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-Milling Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#milling-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Milling Steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post-milling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Post-Milling
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-hand-soldering-and-testing" class="md-nav__link">
+  <a href="#5-footprint-assignment-and-component-placement-strategy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Hand Soldering and Testing
+        5. Footprint Assignment and Component Placement Strategy
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="5. Hand Soldering and Testing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#soldering-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Soldering Order
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#programming-via-isp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Programming via ISP
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#functional-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Functional Testing
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-common-challenges-and-solutions" class="md-nav__link">
+  <a href="#6-pcb-layout-and-single-sided-design-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Common Challenges and Solutions
+        6. PCB Layout and Single-Sided Design Implementation
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="6. Common Challenges and Solutions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#design-phase-challenges" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design Phase Challenges
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#milling-phase-challenges" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Milling Phase Challenges
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#soldering-phase-challenges" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Soldering Phase Challenges
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-learning-outcomes-reflection" class="md-nav__link">
+  <a href="#7-3d-visualization-and-assembly-review" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Learning Outcomes &amp; Reflection
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7. Learning Outcomes &amp; Reflection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#skills-developed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Skills Developed
+        7. 3D Visualization and Assembly Review
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#design-for-manufacturability-principles-applied" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#8-design-rule-check-drc-verification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Design for Manufacturability Principles Applied
+        8. Design Rule Check (DRC) Verification
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#9-fabrication-preparation-and-file-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Fabrication Preparation and File Generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-fabrication-results-and-prototype-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Fabrication Results and Prototype Assembly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-challenges-encountered-and-solutions-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Challenges Encountered and Solutions Implemented
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-design-improvements-for-next-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Design Improvements for Next Iteration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-learning-outcomes-and-competency-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Learning Outcomes and Competency Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
         Reflection Questions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Download References
       
     </span>
   </a>
@@ -1837,212 +1148,6 @@
     <span class="md-ellipsis">
       
         Resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deliverables-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deliverables Checklist
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-results-and-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Results and Analysis
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Results and Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#successfully-completed-design-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Successfully Completed Design Process
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Successfully Completed Design Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-achievements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Achievements
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#technical-specifications-achieved" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Technical Specifications Achieved
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#challenges-encountered-and-solutions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Challenges Encountered and Solutions
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-documentation-and-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project Documentation and Files
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Project Documentation and Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kicad-project-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        KiCad Project Structure
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generated-fabrication-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generated Fabrication Files
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Generated Fabrication Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#component-bill-of-materials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Component Bill of Materials
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reflection-and-learning-outcomes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reflection and Learning Outcomes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reflection and Learning Outcomes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#knowledge-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Knowledge Integration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#critical-design-insights" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Critical Design Insights
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#future-enhancement-opportunities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancement Opportunities
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conclusion
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download-references_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Download References
       
     </span>
   </a>
@@ -2069,754 +1174,337 @@
   
 
 
-<h1 id="3-activity-of-day-3-pcb-design-and-fabrication-microcontroller-circuit-implementation">3. Activity of Day 3: PCB Design and Fabrication - Microcontroller Circuit Implementation<a class="headerlink" href="#3-activity-of-day-3-pcb-design-and-fabrication-microcontroller-circuit-implementation" title="Permanent link">&para;</a></h1>
+<h1 id="day-3-attiny45-microcontroller-pcb-design-and-fabrication">Day 3: ATtiny45 Microcontroller PCB Design and Fabrication<a class="headerlink" href="#day-3-attiny45-microcontroller-pcb-design-and-fabrication" title="Permanent link">&para;</a></h1>
 <h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
-<p>Day 3 focused on <strong>PCB design for fabrication</strong> using KiCad, specifically developing a functional single-sided microcontroller PCB suitable for milling and hand assembly. This comprehensive exercise integrated circuit design principles, computer-aided design (CAD) workflows, and design for manufacturing (DFM) methodologies to create a production-ready ATtiny45-based control system.</p>
-<p>The project successfully demonstrated the complete digital fabrication pipeline from conceptual circuit design through physical implementation planning, emphasizing the critical relationship between design decisions and manufacturing feasibility in modern electronics fabrication.</p>
-<p><strong>Key Concepts:</strong>
-- Microcontroller circuit design and pin assignment
-- Schematic-driven PCB design methodology
-- Single-sided PCB layout constraints and strategies
-- Design for Manufacturing (DFM) and Design Rule Checks (DRC)
-- Fabrication file generation (Gerber, drill files)</p>
+<p>Day 3 focused on the complete design and fabrication workflow for a single-sided printed circuit board featuring the ATtiny45 microcontroller. This embedded system integrates core input/output capabilities including LED control, push-button user interaction, and ISP (In-System Programming) functionality. The project emphasized practical constraints of single-layer PCB design, component footprint selection, and design-for-manufacturability (DFM) principles specific to hobbyist PCB milling fabrication.</p>
+<p>The development process integrated schematic capture in KiCad, footprint assignment for through-hole components, manual trace routing optimization for single-sided constraints, design rule checking, and generation of machine-executable fabrication files. The resulting prototype validates the effectiveness of methodical circuit design and demonstrates successful translation of digital specification into functional fabricated hardware.</p>
 <h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Understand microcontroller-based PCB design fundamentals</li>
-<li>Learn the complete KiCad workflow from schematic to fabrication</li>
-<li>Apply DFM principles for PCB milling and hand soldering</li>
-<li>Master single-sided routing strategies without vias</li>
-<li>Recognize how design decisions directly impact fabrication feasibility and cost</li>
-<li>Prepare production-ready files for PCB milling</li>
+<li>Design functional embedded circuits using microcontroller integration</li>
+<li>Apply KiCad workflow from schematic to PCB layout</li>
+<li>Understand single-sided PCB design constraints and routing optimization</li>
+<li>Implement ISP programming interface for in-circuit development</li>
+<li>Perform design rule checking and DFM analysis</li>
+<li>Generate and interpret fabrication file formats (Gerber, drill files)</li>
+<li>Validate design through prototype fabrication and testing</li>
 </ul>
-<hr />
-<h2 id="1-introduction-pcb-design-for-digital-fabrication">1. Introduction: PCB Design for Digital Fabrication<a class="headerlink" href="#1-introduction-pcb-design-for-digital-fabrication" title="Permanent link">&para;</a></h2>
-<h3 id="what-is-pcb-design-for-fabrication">What is PCB Design for Fabrication?<a class="headerlink" href="#what-is-pcb-design-for-fabrication" title="Permanent link">&para;</a></h3>
-<p>PCB (Printed Circuit Board) design for fabrication is the process of translating an electrical circuit into a physical board layout that can be reliably manufactured. Unlike general PCB design, fabrication-focused design emphasizes:</p>
-<ul>
-<li><strong>Manufacturability:</strong> Design choices that align with available milling equipment</li>
-<li><strong>Single-Sided Limitations:</strong> Using only one copper layer when milling</li>
-<li><strong>Trace and Spacing Rules:</strong> Minimum widths and clearances for milling accuracy</li>
-<li><strong>Component Selection:</strong> Choosing footprints suitable for hand soldering</li>
-<li><strong>File Accuracy:</strong> Producing clean Gerber files without ambiguities</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Critical Principle</p>
-<p><strong>Design for Manufacturability (DFM) is not optional—it's essential.</strong> A circuit that works perfectly in simulation may be impossible or expensive to fabricate. Design decisions made early prevent costly mistakes during production.</p>
-</div>
-<h3 id="why-pcb-milling-design-matters">Why PCB Milling Design Matters<a class="headerlink" href="#why-pcb-milling-design-matters" title="Permanent link">&para;</a></h3>
-<p>PCB milling is a subtractive fabrication process with unique constraints:</p>
-<ul>
-<li><strong>Limited precision:</strong> Typical ±0.1mm accuracy</li>
-<li><strong>Single-sided capability:</strong> Most hobbyist mills cannot create multi-layer boards</li>
-<li><strong>No vias:</strong> Connections must be routed on one layer; jumper wires may be needed</li>
-<li><strong>Larger minimum features:</strong> Trace width typically ≥0.5mm (vs. 0.15mm for industrial boards)</li>
-<li><strong>Tool limitations:</strong> Spindle can only cut from one direction</li>
-</ul>
-<p>Designing with these constraints in mind ensures your PCB can actually be fabricated efficiently.</p>
-<h3 id="the-design-to-fabrication-workflow">The Design-to-Fabrication Workflow<a class="headerlink" href="#the-design-to-fabrication-workflow" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Circuit Concept → Schematic → Footprint Assignment → PCB Layout → 
-DRC → Gerber Export → Milling → Soldering → Testing
-</code></pre></div>
-<p>Each step builds on the previous one. Errors caught early are cheap to fix; errors discovered during milling are expensive.</p>
-<hr />
-<h2 id="2-circuit-overview-attiny45-button-controlled-led">2. Circuit Overview: ATtiny45 Button-Controlled LED<a class="headerlink" href="#2-circuit-overview-attiny45-button-controlled-led" title="Permanent link">&para;</a></h2>
-<h3 id="functional-description">Functional Description<a class="headerlink" href="#functional-description" title="Permanent link">&para;</a></h3>
-<p>The circuit we're designing is a <strong>real microcontroller system</strong>—not just a demo:</p>
-<ul>
-<li><strong>Microcontroller:</strong> ATtiny45 running at 5V</li>
-<li><strong>Input:</strong> Push button connected to port pin</li>
-<li><strong>Output:</strong> LED turns ON when button is pressed</li>
-<li><strong>Programming:</strong> 6-pin ISP header for in-system programming</li>
-<li><strong>Power:</strong> External 5V connector</li>
-<li><strong>Logic:</strong> Firmware controls LED behavior based on button state</li>
-</ul>
-<h3 id="block-diagram">Block Diagram<a class="headerlink" href="#block-diagram" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Power (5V) ──&gt; ATtiny45 ──&gt; LED + Resistor (220Ω)
-                   │
-                   ├── Push Button (Input)
-                   │
-                   └── ISP Header (Programming)
-</code></pre></div>
-<h3 id="component-list">Component List<a class="headerlink" href="#component-list" title="Permanent link">&para;</a></h3>
+<h2 id="1-objective-and-system-context">1. Objective and System Context<a class="headerlink" href="#1-objective-and-system-context" title="Permanent link">&para;</a></h2>
+<p>This project involved designing a minimalist ATtiny45-based control system capable of LED illumination control via push-button input with in-circuit programmability. The design integrates a microcontroller, discrete logic elements (resistor, capacitor), user interface components (LED, push button), and programming interface (ISP header) onto a single-sided PCB substrate.</p>
+<p><strong>Core System Functions:</strong>
+- <strong>Microcontroller Processing:</strong> ATtiny45 executes firmware logic managing LED state transitions
+- <strong>User Input:</strong> Push button provides digital input to microcontroller on GPIO pin
+- <strong>Visual Feedback:</strong> LED outputs controlled logic state for user observation
+- <strong>In-Circuit Programming:</strong> ISP interface enables firmware development and deployment without board removal</p>
+<h2 id="2-system-overview-and-circuit-architecture">2. System Overview and Circuit Architecture<a class="headerlink" href="#2-system-overview-and-circuit-architecture" title="Permanent link">&para;</a></h2>
+<p>The ATtiny45 microcontroller forms the computational core, operating from regulated 5V DC power supply. The microcontroller GPIO pins interface directly to user-facing components and programming headers without intermediate isolation circuitry, reflecting design simplicity appropriate to hobbyist prototyping.</p>
+<p><strong>Circuit Signal Flow:</strong></p>
+<ol>
+<li><strong>Power Distribution:</strong> 5V supply provides regulated voltage to microcontroller VCC pin with local filtering capacitor</li>
+<li><strong>LED Output Path:</strong> GPIO pin PB0 drives 220Ω current-limiting resistor connected to LED anode; LED cathode returns to ground</li>
+<li><strong>Button Input Path:</strong> Momentary push button connects GPIO pin PB2 to ground; internal pull-up resistor provides high state</li>
+<li><strong>ISP Programming Interface:</strong> Six-pin connector provides MISO, MOSI, SCK, RESET, VCC, GND signals for programmer access</li>
+</ol>
+<p><strong>Design Operating Principle:</strong></p>
+<p>The ATtiny45 firmware monitors button input on PB2 for state transitions. Upon button press detection, firmware toggles PB0 output state, controlling LED illumination. The microcontroller executes polling loop or interrupt-driven input handling depending on power consumption requirements and application timing constraints.</p>
+<h2 id="3-components-used">3. Components Used<a class="headerlink" href="#3-components-used" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Component</th>
-<th>Part</th>
-<th>Purpose</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>U1</td>
-<td>ATtiny45 (DIP-8)</td>
-<td>Microcontroller</td>
-<td>Brain of the circuit</td>
-</tr>
-<tr>
-<td>D1</td>
-<td>5mm LED (Red)</td>
-<td>Status indicator</td>
-<td>Visual feedback</td>
-</tr>
-<tr>
-<td>R1</td>
-<td>220Ω resistor</td>
-<td>Current limiting</td>
-<td>Protects LED</td>
-</tr>
-<tr>
-<td>SW1</td>
-<td>Tactile button</td>
-<td>User input</td>
-<td>Press to activate</td>
-</tr>
-<tr>
-<td>J1</td>
-<td>6-pin ISP header</td>
-<td>Programming interface</td>
-<td>Connect AVR programmer</td>
-</tr>
-<tr>
-<td>C1</td>
-<td>0.1µF capacitor</td>
-<td>Decoupling</td>
-<td>Power supply stability</td>
-</tr>
-<tr>
-<td>J2</td>
-<td>2-pin power header</td>
-<td>Power input</td>
-<td>5V supply connection</td>
-</tr>
-</tbody>
-</table>
-<h3 id="pin-assignment-strategy">Pin Assignment Strategy<a class="headerlink" href="#pin-assignment-strategy" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
+<th>Value</th>
+<th>Package</th>
+<th>Quantity</th>
 <th>Function</th>
-<th>Connection</th>
-<th>ISP Role</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1 (PB5)</td>
-<td>Reset</td>
-<td>Pull-up resistor</td>
-<td>RESET</td>
+<td><strong>Microcontroller</strong></td>
+<td>ATtiny45</td>
+<td>DIP-8</td>
+<td>1</td>
+<td>Main processing unit</td>
 </tr>
 <tr>
-<td>2 (PB3)</td>
-<td>MOSI</td>
-<td>ISP header</td>
-<td>MOSI (data in)</td>
+<td><strong>LED</strong></td>
+<td>5mm Red</td>
+<td>THT</td>
+<td>1</td>
+<td>Visual output indicator</td>
 </tr>
 <tr>
-<td>3 (PB4)</td>
-<td>MISO</td>
-<td>ISP header</td>
-<td>MISO (data out)</td>
+<td><strong>Current Limiting Resistor</strong></td>
+<td>220Ω</td>
+<td>0.25W THT</td>
+<td>1</td>
+<td>LED protection and brightness control</td>
 </tr>
 <tr>
-<td>4 (GND)</td>
-<td>Ground</td>
-<td>Ground plane</td>
-<td>GND</td>
+<td><strong>Push Button</strong></td>
+<td>Momentary</td>
+<td>THT</td>
+<td>1</td>
+<td>User input device</td>
 </tr>
 <tr>
-<td>5 (PB0)</td>
-<td>LED output</td>
-<td>LED via resistor</td>
-<td>GPIO</td>
+<td><strong>Decoupling Capacitor</strong></td>
+<td>0.1 µF</td>
+<td>Ceramic THT</td>
+<td>1</td>
+<td>Power supply filtering</td>
 </tr>
 <tr>
-<td>6 (PB1)</td>
-<td>SCK</td>
-<td>ISP header</td>
-<td>SCK (clock)</td>
+<td><strong>Power Header</strong></td>
+<td>2-pin</td>
+<td>THT</td>
+<td>1</td>
+<td>External 5V supply connection</td>
 </tr>
 <tr>
-<td>7 (PB2)</td>
-<td>Button input</td>
-<td>Button with pull-down</td>
-<td>GPIO (input)</td>
-</tr>
-<tr>
-<td>8 (VCC)</td>
-<td>Power</td>
-<td>5V rail</td>
-<td>VCC</td>
+<td><strong>ISP Programming Header</strong></td>
+<td>2×3</td>
+<td>THT</td>
+<td>1</td>
+<td>ICSP connector for firmware programming</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Pin Reuse</p>
-<p>In ISP programming mode, pins PB0-PB5 are shared with programming signals. The ISP programmer temporarily takes control during programming, then returns control to normal operation.</p>
-</div>
-<hr />
-<h2 id="3-kicad-workflow-schematic-to-pcb">3. KiCad Workflow: Schematic to PCB<a class="headerlink" href="#3-kicad-workflow-schematic-to-pcb" title="Permanent link">&para;</a></h2>
-<h3 id="step-1-create-the-schematic">Step 1: Create the Schematic<a class="headerlink" href="#step-1-create-the-schematic" title="Permanent link">&para;</a></h3>
-<p>The schematic is the <strong>logical blueprint</strong> of the circuit—how electricity flows, not how it's physically laid out.</p>
-<p><strong>Tasks:</strong>
-- Place the ATtiny45 symbol
-- Add all required components: LED, resistor, button, ISP header, power connector, decoupling capacitor
-- Connect components with nets (logical connections)
-- Label all nets clearly for reference during layout</p>
-<p><img alt="Schematic Diagram" src="../../images/day_3/schematic.png" /></p>
-<p><strong>Figure 1:</strong> Complete schematic diagram showing ATtiny45-based microcontroller circuit with ISP programming interface, LED output with current limiting resistor, tactile button input, power supply connections, and decoupling capacitor</p>
-<p><strong>Key Practices:</strong>
-- Every pin must have a purpose—no floating inputs
-- Use power symbols for VCC and GND rather than wires
-- Label critical nets (LED, Button, ISP signals)
-- Add component value and reference designators (R1, C1, U1, etc.)
-- Review for missing decoupling capacitors</p>
-<h3 id="step-2-assign-footprints">Step 2: Assign Footprints<a class="headerlink" href="#step-2-assign-footprints" title="Permanent link">&para;</a></h3>
-<p>Footprints are the <strong>physical representation</strong> of components. This step connects schematic symbols to real PCB packages.</p>
-<p><strong>Through-Hole Footprints (recommended for beginners):</strong>
-- <strong>ATtiny45:</strong> DIP-8 (8 pins, 0.3" wide spacing)
-- <strong>LED:</strong> THT 5mm (5mm diameter leads)
-- <strong>Resistor:</strong> Axial THT (wire ends, 400mil length typical)
-- <strong>Button:</strong> THT tactile switch (square footprint, 4 pins)
-- <strong>ISP Header:</strong> PinHeader_2x3 (6 pins, 0.1" pitch)
-- <strong>Power Header:</strong> PinHeader_1x2 (2 pins, 0.1" pitch)
-- <strong>Capacitor:</strong> THT 0.1µF (axial or radial leads)</p>
-<p><img alt="Footprint Assignment Dialog" src="../../images/day_3/pic2.png" /></p>
-<p><strong>Figure 2:</strong> KiCad footprint assignment dialog showing component symbols matched to physical packages including ATtiny45-20P DIP-8, LED_THT, resistors, and connectors</p>
-<p><strong>Best Practices:</strong>
-- Choose through-hole footprints for hand soldering
-- Verify footprint dimensions match your actual components
-- Select footprints optimized for milling (avoid very fine pitch)
-- Keep pad sizes consistent for reliable soldering</p>
-<h3 id="step-3-single-sided-pcb-layout">Step 3: Single-Sided PCB Layout<a class="headerlink" href="#step-3-single-sided-pcb-layout" title="Permanent link">&para;</a></h3>
-<p>PCB layout is where <strong>physical design</strong> happens. Component placement and trace routing directly affect manufacturability.</p>
-<p><strong>Layout Constraints for Milling:</strong>
-- <strong>Board size:</strong> ~60 × 40mm (fits most hobbyist mills)
-- <strong>Trace width:</strong> 0.5–0.6mm minimum (milling spindle limitation)
-- <strong>Clearance:</strong> 0.5mm minimum between traces
-- <strong>Layers:</strong> Single copper layer only (no vias)
-- <strong>No internal connections:</strong> All routes must be visible on one side</p>
-<p><strong>Component Placement Strategy:</strong></p>
-<ol>
-<li><strong>Group related components:</strong></li>
-<li>ISP header close to microcontroller</li>
-<li>Decoupling capacitor near VCC/GND pins of U1</li>
-<li>
-<p>LED and resistor on opposite edge for visibility</p>
-</li>
-<li>
-<p><strong>Minimize trace length:</strong></p>
-</li>
-<li>Short connections = fewer noise issues</li>
-<li>
-<p>Reduces copper area and manufacturing time</p>
-</li>
-<li>
-<p><strong>Consider soldering access:</strong></p>
-</li>
-<li>Leave space around components for iron access</li>
-<li>Position larger components away from edges</li>
-</ol>
-<p><img alt="PCB Layout Component Placement" src="../../images/day_3/pic3.png" /></p>
-<p><strong>Figure 3:</strong> Initial component placement in KiCad PCB editor showing logical grouping of ATtiny45 microcontroller, ISP header, LED circuit, and tactile button for manufacturing efficiency</p>
-<h4 id="routing-strategy">Routing Strategy<a class="headerlink" href="#routing-strategy" title="Permanent link">&para;</a></h4>
-<p>Routing is the process of connecting components with copper traces.</p>
-<p><strong>Single-Sided Routing Challenges:</strong>
-- Cannot cross traces without jumping over (no vias)
-- May need jumper wires or trace bridges
-- Requires careful planning to avoid deadlock situations</p>
-<p><strong>Routing Best Practices:</strong>
-1. Route thick traces first (power and ground)
-2. Keep signal traces away from power rails
-3. Minimize crossings—reroute if possible
-4. Use 45° angles (preferred over 90°) for better etching
-5. Review layout frequently—catch errors early</p>
-<p><img alt="Fully Routed Single-Sided PCB" src="../../images/day_3/pic5.png" /></p>
-<p><strong>Figure 4:</strong> Fully routed single-sided PCB design showing all connections traced without vias, demonstrating successful single-layer routing strategy for milling compatibility</p>
-<h3 id="step-4-design-rule-check-dfm">Step 4: Design Rule Check (DFM)<a class="headerlink" href="#step-4-design-rule-check-dfm" title="Permanent link">&para;</a></h3>
-<p>Design Rule Checking (DRC) automatically verifies your design against manufacturing rules.</p>
-<p><strong>What DRC Checks:</strong>
-- Trace width compliance (minimum 0.5mm)
-- Clearance violations (traces too close to pads or each other)
-- Unconnected nets (signals with no physical path)
-- Via compatibility (problematic for single-sided boards)
-- Copper-to-edge clearance (avoid traces at board edge)</p>
-<p><strong>Running DRC in KiCad:</strong>
-1. Go to <strong>Inspect → Design Rule Check</strong>
-2. Select appropriate design rules (trace width, clearance)
-3. Review all violations
-4. Fix violations by adjusting traces or moving components
-5. Re-run DRC until no violations remain</p>
-<p><img alt="3D PCB Visualization" src="../../images/day_3/view_route.png" /></p>
-<p><strong>Figure 5:</strong> 3D rendered view of the completed PCB design showing component placement and trace routing, providing visual verification of the design before fabrication</p>
-<p><strong>Common Violations and Fixes:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Violation</th>
-<th>Cause</th>
-<th>Fix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Trace width too thin</td>
-<td>Automatic router default</td>
-<td>Manually increase to ≥0.5mm</td>
-</tr>
-<tr>
-<td>Clearance violation</td>
-<td>Traces too close</td>
-<td>Move trace or adjust spacing</td>
-</tr>
-<tr>
-<td>Unconnected net</td>
-<td>Routing not completed</td>
-<td>Complete missing connections</td>
-</tr>
-<tr>
-<td>Via not allowed</td>
-<td>Single-sided design</td>
-<td>Remove via, reroute on one layer</td>
-</tr>
-</tbody>
-</table>
-<h3 id="step-5-prepare-for-fabrication">Step 5: Prepare for Fabrication<a class="headerlink" href="#step-5-prepare-for-fabrication" title="Permanent link">&para;</a></h3>
-<p>Fabrication files tell the milling machine exactly what to cut.</p>
-<p><strong>Add Silk Screen Text (optional but recommended):</strong>
-- Board name or project identifier
-- Student name or initials
-- Date of design</p>
-<p><strong>Export Gerber Files:</strong>
-1. Go to <strong>File → Plot/Export</strong>
-2. Select <strong>Gerber format</strong>
-3. Configure layer settings:
-   - Front copper (F.Cu)
-   - Drill file (separate)
-4. Export both files
-5. <strong>Inspect in Gerber viewer</strong> before milling</p>
-<p><strong>Verify Gerber Output:</strong>
-- Use free tools like <strong>Gerbv</strong> or <strong>ViewMate</strong> to inspect files
-- Check for:
-  - Correct trace width and spacing
-  - Proper pad sizes
-  - Accurate drill hole positions
-  - No stray copper or artifacts</p>
-<p><img alt="Alternative PCB 3D View" src="../../images/day_3/pic4.png" /></p>
-<p><strong>Figure 6:</strong> Alternative 3D perspective view of the PCB showing component accessibility for hand soldering and overall board layout suitable for single-sided milling fabrication</p>
-<hr />
-<h2 id="4-pcb-milling-process">4. PCB Milling Process<a class="headerlink" href="#4-pcb-milling-process" title="Permanent link">&para;</a></h2>
-<h3 id="pre-milling-preparation">Pre-Milling Preparation<a class="headerlink" href="#pre-milling-preparation" title="Permanent link">&para;</a></h3>
-<p><strong>Board Material Selection:</strong>
-- <strong>Single-sided FR-1 (phenolic):</strong> Budget option, requires careful milling
-- <strong>FR-4 with copper:</strong> Industry standard, forgiving
-- <strong>Copper-clad acrylic:</strong> Not recommended (copper doesn't adhere well)</p>
-<p><strong>Spindle Speed and Feed Rate:</strong>
-- <strong>Spindle speed:</strong> 12,000–24,000 RPM (depends on spindle)
-- <strong>Feed rate:</strong> 50–100 mm/min for copper milling
-- <strong>Tool diameter:</strong> 0.8mm or 1.0mm end mill for traces</p>
-<h3 id="milling-steps">Milling Steps<a class="headerlink" href="#milling-steps" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Board alignment:</strong> Secure material on milling bed</li>
-<li><strong>Z-axis zeroing:</strong> Set tool depth to just touch copper surface</li>
-<li><strong>Isolation routing:</strong> Cut around traces to isolate copper islands</li>
-<li><strong>Hole drilling:</strong> Drill component mounting holes and vias</li>
-<li><strong>Board outline:</strong> Cut final board shape</li>
-<li><strong>Cleanup:</strong> Remove burrs and debris</li>
-</ol>
-<h3 id="post-milling">Post-Milling<a class="headerlink" href="#post-milling" title="Permanent link">&para;</a></h3>
+<p><strong>Component Selection Rationale:</strong></p>
+<p>All components employ through-hole (THT) technology to align with hobbyist PCB milling capabilities. DIP-8 packaging for the ATtiny45 provides simplified hand-soldering and breadboarding compatibility. Standard 0.1" pin spacing throughout maintains consistency with breadboard and prototyping infrastructure. The 220Ω resistor provides appropriate current limitation for standard 5mm LED under 5V supply (approximately 15mA LED current).</p>
+<h2 id="4-schematic-design">4. Schematic Design<a class="headerlink" href="#4-schematic-design" title="Permanent link">&para;</a></h2>
+<p>The circuit schematic captures the electrical topology defining component interconnections and signal routing. Design methodology prioritized functional clarity and standard electrical practices.</p>
+<p><strong>Schematic Architecture:</strong></p>
 <ul>
-<li>Clean board with acetone or IPA</li>
-<li>Inspect for defects (lifted traces, thin spots)</li>
-<li>Mark component locations with pen if needed</li>
-<li>Prepare for soldering</li>
+<li><strong>Power Rails:</strong> Dual rails representing +5V supply and ground reference distributed across all components</li>
+<li><strong>Microcontroller Core:</strong> ATtiny45 DIP-8 device central to circuit topology with all pins explicitly defined</li>
+<li><strong>Output Stage:</strong> PB0 GPIO output connected through 220Ω resistor to LED anode; LED cathode returned to ground</li>
+<li><strong>Input Stage:</strong> PB2 GPIO input connected to push button; return path to ground; internal pull-up enabled in firmware</li>
+<li><strong>Programming Interface:</strong> ISP header connected to RESET, SCK, MOSI, MISO pins with supply and ground references</li>
+<li><strong>Power Conditioning:</strong> 0.1 µF capacitor connected between VCC and ground at microcontroller location for high-frequency noise filtering</li>
+</ul>
+<p><strong>Design Validation:</strong></p>
+<p>The schematic underwent verification to confirm:
+- All GPIO pins routed to functional interface (output, input, programming)
+- Power and ground connectivity complete across all devices
+- Electrical ratings (voltage, current) within component specifications
+- No floating or unconnected signal paths</p>
+<p><a class="glightbox" href="../../images/day_3/Schematic_design.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Schematic Design" src="../../images/day_3/Schematic_design.png" /></a></p>
+<p><strong>Figure 1:</strong> Complete circuit schematic demonstrating ATtiny45 microcontroller integration with LED output stage, push-button input, ISP programming interface, and power conditioning. All signal paths and voltage rails explicitly routed.</p>
+<h2 id="5-footprint-assignment-and-component-placement-strategy">5. Footprint Assignment and Component Placement Strategy<a class="headerlink" href="#5-footprint-assignment-and-component-placement-strategy" title="Permanent link">&para;</a></h2>
+<p>Footprint assignment represents the translation of schematic symbols to physical PCB geometry and land patterns. This step aligns electrical design with manufacturing constraints and fabrication capabilities.</p>
+<p><strong>Footprint Selection Methodology:</strong></p>
+<ul>
+<li><strong>ATtiny45:</strong> DIP-8 (300mil package width) provides standard dual-in-line footprint compatible with breadboard and through-hole soldering</li>
+<li><strong>Passive Resistor and Capacitor:</strong> Standard 0.1" vertical mounting footprints (TH_1/4W, TH_C025)</li>
+<li><strong>LED:</strong> Radial through-hole footprint with 2mm lead spacing</li>
+<li><strong>Push Button:</strong> Standard tactile switch footprint with 2.54mm pin pitch</li>
+<li><strong>Headers:</strong> Pin header footprints with 2.54mm spacing aligned to standard connector ecosystem</li>
+</ul>
+<p><strong>Component Placement Considerations:</strong></p>
+<p>Through-hole component packages dictate vertical mounting orientation. Component leads pass through board perforations and solder to bottom copper layer. Placement strategy prioritized:
+- <strong>Signal Integrity:</strong> Input components (button, ISP header) grouped on board periphery
+- <strong>Thermal Path:</strong> Current-consuming element (LED resistor) positioned away from microcontroller thermal zone
+- <strong>Fabrication Accessibility:</strong> All components arranged for straightforward soldering without component interference
+- <strong>Routing Feasibility:</strong> Component placement optimized for single-layer trace routing without excessive jumpers</p>
+<h2 id="6-pcb-layout-and-single-sided-design-implementation">6. PCB Layout and Single-Sided Design Implementation<a class="headerlink" href="#6-pcb-layout-and-single-sided-design-implementation" title="Permanent link">&para;</a></h2>
+<p>PCB layout translates schematic connectivity into physical copper geometry suitable for fabrication. Single-sided design constraint restricts all traces to a single copper layer, necessitating careful routing optimization and potential jumper wire incorporation.</p>
+<p><strong>Board Geometry and Constraints:</strong></p>
+<ul>
+<li><strong>Board Dimensions:</strong> Approximately 60mm × 40mm footprint selected to encompass component placement with 5mm margin</li>
+<li><strong>Layer Configuration:</strong> Single copper layer (F.Cu) contains all signal traces and ground plane</li>
+<li><strong>Design Grid:</strong> 2.54mm (0.1") grid alignment matched to component pin spacing</li>
+<li><strong>No Via Usage:</strong> Single-sided design eliminates vias; all interlayer connections employ top-side jumper wires where necessary</li>
+<li><strong>Copper Clearance:</strong> 0.5mm minimum clearance maintained between traces and board perimeter</li>
+</ul>
+<p><strong>Routing Architecture:</strong></p>
+<ul>
+<li><strong>Ground Plane Organization:</strong> Continuous ground copper sheet covering maximum feasible board area, providing both electrical and thermal characteristics</li>
+<li><strong>Signal Traces:</strong> Individual routed traces connecting functional components (power, output, input, programming paths)</li>
+<li><strong>Jumpers:</strong> Insulated wire segments bridge traces where single-layer physical routing prevents direct copper connectivity</li>
+<li><strong>Trace Characterization:</strong> Trace width maintained at 0.6mm providing appropriate current-carrying capacity for low-voltage digital signals across ~15mA LED current</li>
+</ul>
+<p><strong>Single-Layer Challenge Resolution:</strong></p>
+<p>The ATtiny45 microcontroller central location created routing density at package pins. Resolution strategy implemented:
+1. Power and ground traces routed to pin locations with maximum available space utilization
+2. Output trace (PB0→LED resistor) and input trace (PB2←button) routed via opposing board margins
+3. ISP header traces directed via longest-path routing, accepting extended trace lengths in exchange for avoided crossings
+4. Critical resistor and capacitor placement adjacent to microcontroller to minimize trace lengths</p>
+<p><a class="glightbox" href="../../images/day_3/path_routing.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="PCB Routing Layout" src="../../images/day_3/path_routing.png" /></a></p>
+<p><strong>Figure 2:</strong> Single-sided PCB layout demonstrating trace routing optimization for ATtiny45 circuit. Ground plane provides electrical reference and reduced return path inductance. Output stage, input stage, and programming interface traces routed to minimize layer transitions.</p>
+<h2 id="7-3d-visualization-and-assembly-review">7. 3D Visualization and Assembly Review<a class="headerlink" href="#7-3d-visualization-and-assembly-review" title="Permanent link">&para;</a></h2>
+<p>Three-dimensional board visualization provides geometric validation confirming component placement feasibility, clearance verification, and soldering accessibility before fabrication.</p>
+<p><strong>3D Model Analysis:</strong></p>
+<ul>
+<li><strong>Component Orientation Verification:</strong> All through-hole leads perpendicular to board surface; no component mechanical interference</li>
+<li><strong>Copper Layer Visualization:</strong> Trace routing paths and ground plane distribution visible in rendered view</li>
+<li><strong>Clearance Assessment:</strong> Visual confirmation of maintained spacing between components and board edges</li>
+<li><strong>Assembly Accessibility:</strong> Solder-side surface clear for soldering iron access without obstruction</li>
+</ul>
+<p><a class="glightbox" href="../../images/day_3/pcb_3dview.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="3D PCB Visualization" src="../../images/day_3/pcb_3dview.png" /></a></p>
+<p><strong>Figure 3:</strong> Three-dimensional rendering of ATtiny45 control PCB showing component placement, trace routing distribution, and board profile. Vertical through-hole components and wire jumpers visible in assembly configuration.</p>
+<h2 id="8-design-rule-check-drc-verification">8. Design Rule Check (DRC) Verification<a class="headerlink" href="#8-design-rule-check-drc-verification" title="Permanent link">&para;</a></h2>
+<p>Design rule checking automated verification processes validate PCB layout compliance with manufacturing specifications and electrical design requirements.</p>
+<p><strong>DRC Criteria Verified:</strong></p>
+<ul>
+<li><strong>Electrical Continuity:</strong> All schematic nets mapped to corresponding copper traces; no unconnected signal nodes</li>
+<li><strong>Trace to Trace Clearance:</strong> Minimum 0.5mm spacing maintained between adjacent copper elements; no bridging or shorts</li>
+<li><strong>Trace Width Compliance:</strong> All traces maintain minimum 0.6mm width; current-carrying capacity verified for 20mA design headroom</li>
+<li><strong>Via Placement:</strong> No vias required in single-sided design; all connections formed via through-hole component leads</li>
+<li><strong>Copper to Edge Clearance:</strong> Minimum 5mm margin maintained between copper elements and board perimeter</li>
+<li><strong>Creepage and Clearance:</strong> Spacing between 5V and ground paths meets isolation requirements for hobbyist fabrication</li>
+</ul>
+<p><strong>DRC Violation Resolution:</strong></p>
+<ul>
+<li><strong>Clearance Violations:</strong> Trace routing adjusted to maintain minimum clearance where conflicts identified</li>
+<li><strong>Unresolved Nets:</strong> All schematic nodes successfully routed; no floating or unconnected signals</li>
+<li><strong>Width Violations:</strong> Trace specifications verified adequate for circuit current requirements</li>
+</ul>
+<p><strong>Post-DRC Status:</strong> Design achieved clean DRC clearance; no violations reported.</p>
+<h2 id="9-fabrication-preparation-and-file-generation">9. Fabrication Preparation and File Generation<a class="headerlink" href="#9-fabrication-preparation-and-file-generation" title="Permanent link">&para;</a></h2>
+<p>Fabrication file generation translates PCB design into machine-executable formats consumed by PCB manufacturing and milling equipment.</p>
+<p><strong>File Generation Process:</strong></p>
+<ol>
+<li><strong>Gerber Export:</strong> Primary PCB geometry exported in RS-274X (Gerber) format defining copper layer topology</li>
+<li><strong>F.Cu Layer:</strong> Front copper layer containing all signal traces and ground plane</li>
+<li>
+<p><strong>Edge.Cuts Layer:</strong> Board perimeter profile defining milling boundary</p>
+</li>
+<li>
+<p><strong>Drill File Generation:</strong> NC (numerical control) drill file generated specifying all through-hole positions and diameters</p>
+</li>
+<li>Format: Excellon standard drill file</li>
+<li>Drill specifications: 0.8mm (31mil) for component leads, 1.5mm for jumper wire holes</li>
+<li>
+<p>File coordinates: Material location with origin reference point established</p>
+</li>
+<li>
+<p><strong>Board Layout Documentation:</strong> Assembly drawing exported showing component reference designators and placement locations for solder-side reference during assembly</p>
+</li>
+</ol>
+<p><strong>File Format Compatibility Verification:</strong></p>
+<ul>
+<li><strong>Gerber Specification:</strong> RS-274X Extended Gerber format ensuring compatibility with modern PCB equipment</li>
+<li><strong>Drill Format:</strong> Excellon format version 2.4 providing precise coordinate specification</li>
+<li><strong>Coordinate System:</strong> Absolute positioning mode with 2.54mm grid reference</li>
+</ul>
+<p><strong>Fabrication Readiness Confirmation:</strong></p>
+<p>All files verified for completeness and machine readability. Design ready for PCB milling, photo-lithography, or commercial fabrication submission.</p>
+<h2 id="10-fabrication-results-and-prototype-assembly">10. Fabrication Results and Prototype Assembly<a class="headerlink" href="#10-fabrication-results-and-prototype-assembly" title="Permanent link">&para;</a></h2>
+<p>The design successfully translated to fabricated hardware through PCB milling process. Prototype assembly and initial functional testing validated design assumptions and circuit operation.</p>
+<p><strong>Fabrication Process Summary:</strong></p>
+<p>PCB substrate mill-cut from FR4 material following board profile. Copper layer milling created trace paths and component mounting pads. Drill operations established through-holes at specified component locations.</p>
+<p><strong>Assembly Process:</strong></p>
+<ol>
+<li>Component lead preparation through cropping to appropriate board-penetration depth</li>
+<li>Through-hole insertion with microcontroller and passive components oriented to copper side</li>
+<li>Solder application via conventional wave soldering or hand-soldering with iron tool</li>
+<li>Jumper wire installation bridging single-layer routing conflicts using insulated hookup wire</li>
+<li>Cold solder joint inspection and repair as necessary</li>
+</ol>
+<p><strong>Prototype Appearance and Physical Validation:</strong></p>
+<p>Fabricated board demonstrates clean trace execution without copper bridges or missing segments. Component placement aligns with design specification. All through-holes drilled at design locations with appropriate dimensional accuracy.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3527.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Fabricated Prototype - Top View" src="../../images/day_3/IMG_3527.jpeg" /></a></p>
+<p><strong>Figure 4:</strong> Fabricated PCB top view showing component placement, trace routing structure, and overall board finish quality.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3528.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Fabricated Prototype - Detail View" src="../../images/day_3/IMG_3528.jpeg" /></a></p>
+<p><strong>Figure 5:</strong> Component and trace detail showing solder joint quality, lead preparation, and copper trace execution on fabricated substrate.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3529.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Assembled Board - Component Integration" src="../../images/day_3/IMG_3529.jpeg" /></a></p>
+<p><strong>Figure 6:</strong> Assembled microcontroller board showing integrated component positioning, power connectivity, and user interface elements.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3530.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Prototype Operation - LED Illumination" src="../../images/day_3/IMG_3530.jpeg" /></a></p>
+<p><strong>Figure 7:</strong> Prototype under operating conditions demonstrating LED illumination in response to programmed microcontroller output.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3531.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ISP Programming Interface Connection" src="../../images/day_3/IMG_3531.jpeg" /></a></p>
+<p><strong>Figure 8:</strong> ISP programming header connected to development programmer, enabling firmware development and deployment.</p>
+<p><a class="glightbox" href="../../images/day_3/IMG_3532.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Final Assembled System" src="../../images/day_3/IMG_3532.jpeg" /></a></p>
+<p><strong>Figure 9:</strong> Complete assembled ATtiny45 control system ready for firmware programming and functional testing.</p>
+<h2 id="11-challenges-encountered-and-solutions-implemented">11. Challenges Encountered and Solutions Implemented<a class="headerlink" href="#11-challenges-encountered-and-solutions-implemented" title="Permanent link">&para;</a></h2>
+<p><strong>Challenge 1: Single-Layer Routing Density</strong></p>
+<p>At the ATtiny45 DIP-8 package location, eight pins require connection to dispersed peripheral components. Conventional dual-layer routing would employ vias bridging layers; single-sided design constraint forced extended routing paths and jumper wire integration.</p>
+<p><strong>Resolution:</strong> Strategic component placement repositioned peripheral components (button, LED) to board perimeter regions, extending signal trace paths but avoiding crossings. Jumper wires routed on solder-side surface for traces incompatible with front copper routing.</p>
+<p><strong>Challenge 2: ISP Pin Reuse Complexity</strong></p>
+<p>The ISP header requires SCK, MOSI, MISO, and RESET pins—four signals consuming dedicated I/O pins on the limited ATtiny45 package. Simultaneous connectivity to user peripherals (LED, button) constrained available GPIO.</p>
+<p><strong>Resolution:</strong> Deliberate GPIO selection assigned button input to PB2 (non-ISP), LED output to PB0 (non-ISP), preserving ISP-critical pins for programming interface. Firmware design accommodated this constraint through targeted port selection without functional limitation.</p>
+<p><strong>Challenge 3: Ground Plane Discontinuity Management</strong></p>
+<p>Extensive single-layer ground plane required routing around component leads and trace paths, creating potential fragmentation zones where ground continuity interrupted.</p>
+<p><strong>Resolution:</strong> Ground distribution strategy maintained continuous copper sheet across maximum feasible area. Strategic trace routing over ground layer where electrical isolation requirements not exceeded. Fabricated board inspection confirmed continuous ground connectivity across all pad locations.</p>
+<h2 id="12-design-improvements-for-next-iteration">12. Design Improvements for Next Iteration<a class="headerlink" href="#12-design-improvements-for-next-iteration" title="Permanent link">&para;</a></h2>
+<p><strong>PCB Layout Optimization:</strong></p>
+<ul>
+<li><strong>Board Compaction:</strong> Current 60×40mm footprint could compress to 50×35mm through component clustering without routing complexity increase</li>
+<li><strong>Trace Width Optimization:</strong> Conservative 0.6mm trace width could reduce to 0.5mm for non-critical signals, improving routing flexibility</li>
+<li><strong>Jumper Elimination:</strong> Dual-sided fabrication would eliminate single-layer routing jumpers, improving aesthetics and solder joint accessibility</li>
+</ul>
+<p><strong>Component Selection Enhancement:</strong></p>
+<ul>
+<li><strong>Microcontroller Package:</strong> Investigation of SOIC-8 surface-mount package would enable tighter routing density and smaller footprint</li>
+<li><strong>LED Specification:</strong> Alternative to discrete 5mm LED; integration of LED with integrated resistor module or surface-mount technology</li>
+<li><strong>Header Consolidation:</strong> Combination of ISP and power headers into single connector reducing connector footprint</li>
+</ul>
+<p><strong>Documentation Improvements:</strong></p>
+<ul>
+<li><strong>Silkscreen Labeling:</strong> Addition of component reference designators (R1, C1, U1, SW1) printed on board surface for assembly clarity</li>
+<li><strong>Test Points:</strong> Integration of accessible test pads for multimeter measurement during debugging and validation</li>
+<li><strong>Polarity Marking:</strong> Explicit LED polarity indicators to prevent reverse-insertion damage</li>
+</ul>
+<p><strong>Assembly Process Enhancement:</strong></p>
+<ul>
+<li><strong>Solder Mask Addition:</strong> Protective coating reducing accidental trace contact and corrosion—not implemented in hobbyist milling but relevant for production PCBs</li>
+<li><strong>Conformal Coating:</strong> Environmental protection for operating conditions with moisture or contamination exposure</li>
+<li><strong>Edge Beveling:</strong> Smooth board edges reducing handling injury risk during assembly and testing</li>
+</ul>
+<h2 id="13-learning-outcomes-and-competency-demonstration">13. Learning Outcomes and Competency Demonstration<a class="headerlink" href="#13-learning-outcomes-and-competency-demonstration" title="Permanent link">&para;</a></h2>
+<p>This Day 3 project integrated prior digital fabrication knowledge with microcontroller-specific PCB design methodology.</p>
+<p><strong>Technical Competencies Developed:</strong></p>
+<ol>
+<li><strong>Microcontroller Circuit Design:</strong> ATtiny45 integration demonstrating peripheral configuration, GPIO assignment, and ISP interface implementation</li>
+<li><strong>KiCad Workflow:</strong> End-to-end design process from schematic capture through fabrication file generation</li>
+<li><strong>Single-Layer PCB Constraints:</strong> Practical understanding of routing complexity, jumper wire integration, and design trade-offs</li>
+<li><strong>Manufacturing File Interpretation:</strong> Gerber format, drill file specification, and machine-executable documentation</li>
+<li><strong>Design Rule Checking:</strong> Automated verification protocols ensuring electrical compliance and manufacturability</li>
+<li><strong>Prototype Assembly:</strong> Through-hole soldering, component orientation, and functional testing</li>
+</ol>
+<p><strong>Design-for-Manufacturability Application:</strong></p>
+<ul>
+<li>Component selection aligned with fabrication capability (through-hole technology)</li>
+<li>Board dimensions optimized for cutting equipment capability</li>
+<li>Trace specifications verified for milling tool capability</li>
+<li>Copper-to-edge clearances maintained for mechanical reliability</li>
+</ul>
+<p><strong>System-Level Understanding:</strong></p>
+<ul>
+<li>Integrated understanding of electrical specification translating to physical hardware</li>
+<li>Recognition of design constraints impacting fabrication feasibility and cost</li>
+<li>Trade-off analysis between design complexity, component count, and manufacturing simplicity</li>
+</ul>
+<p>This project validates the principle established throughout the fabrication curriculum: <strong>digital geometry and electrical specification directly control fabricated hardware performance and manufacturability.</strong></p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Single-sided PCB design imposes routing constraints requiring strategic component placement</li>
+<li>Microcontroller integration requires careful GPIO assignment and ISP interface planning</li>
+<li>Systematic DRC verification prevents manufacturing failures before fabrication commissioning</li>
+<li>Through-hole technology suitable for hobbyist prototyping but limited compared to surface-mount production</li>
+<li>Iterative design refinement identifies optimization opportunities for subsequent versions</li>
 </ul>
 <hr />
-<h2 id="5-hand-soldering-and-testing">5. Hand Soldering and Testing<a class="headerlink" href="#5-hand-soldering-and-testing" title="Permanent link">&para;</a></h2>
-<h3 id="soldering-order">Soldering Order<a class="headerlink" href="#soldering-order" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Decoupling capacitor</strong> (closest to U1)</li>
-<li><strong>Microcontroller (U1)</strong> - use solder wick or braid for cleanup</li>
-<li><strong>Resistor and LED</strong></li>
-<li><strong>Button and connectors</strong></li>
-<li><strong>ISP header</strong> - last (to avoid accidentally soldering probe to board)</li>
-</ol>
-<h3 id="programming-via-isp">Programming via ISP<a class="headerlink" href="#programming-via-isp" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>ISP Programmer
-    ↓
-6-pin ISP header (MOSI, MISO, SCK, RESET, VCC, GND)
-    ↓
-ATtiny45 (receives firmware)
-</code></pre></div>
-<h3 id="functional-testing">Functional Testing<a class="headerlink" href="#functional-testing" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Apply 5V power through J2</li>
-<li>Press button—LED should light</li>
-<li>Release button—LED should turn off</li>
-<li>Verify all connections are secure</li>
-</ol>
-<hr />
-<h2 id="6-common-challenges-and-solutions">6. Common Challenges and Solutions<a class="headerlink" href="#6-common-challenges-and-solutions" title="Permanent link">&para;</a></h2>
-<h3 id="design-phase-challenges">Design Phase Challenges<a class="headerlink" href="#design-phase-challenges" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Challenge</th>
-<th>Cause</th>
-<th>Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Traces won't route</strong></td>
-<td>Poor component placement</td>
-<td>Rearrange components for better layout</td>
-</tr>
-<tr>
-<td><strong>DRC fails constantly</strong></td>
-<td>Rules too strict for milling</td>
-<td>Adjust design rules to match mill capabilities (0.5mm trace min)</td>
-</tr>
-<tr>
-<td><strong>Can't avoid crossings</strong></td>
-<td>Trace routing deadlock</td>
-<td>Add jumper wire or move component</td>
-</tr>
-<tr>
-<td><strong>Copper islands isolated</strong></td>
-<td>Incomplete connections</td>
-<td>Verify all nets are routed; check netlist</td>
-</tr>
-</tbody>
-</table>
-<h3 id="milling-phase-challenges">Milling Phase Challenges<a class="headerlink" href="#milling-phase-challenges" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Challenge</th>
-<th>Cause</th>
-<th>Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Traces broken mid-route</strong></td>
-<td>Tool breakage or misalignment</td>
-<td>Replace tool; re-zero Z-axis</td>
-</tr>
-<tr>
-<td><strong>Copper doesn't lift cleanly</strong></td>
-<td>Board material or spindle speed wrong</td>
-<td>Use FR-4; increase spindle speed slightly</td>
-</tr>
-<tr>
-<td><strong>Holes misaligned</strong></td>
-<td>Board shifted during operation</td>
-<td>Secure material more firmly</td>
-</tr>
-<tr>
-<td><strong>Gerber produces unexpected output</strong></td>
-<td>Coordinate system or layer mismatch</td>
-<td>Verify board origin; check layer selection</td>
-</tr>
-</tbody>
-</table>
-<h3 id="soldering-phase-challenges">Soldering Phase Challenges<a class="headerlink" href="#soldering-phase-challenges" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Challenge</th>
-<th>Cause</th>
-<th>Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Cold solder joints</strong></td>
-<td>Insufficient heat or movement during cooling</td>
-<td>Reheat joint, apply fresh solder</td>
-</tr>
-<tr>
-<td><strong>Solder bridges between pads</strong></td>
-<td>Too much solder</td>
-<td>Use solder wick to remove excess</td>
-</tr>
-<tr>
-<td><strong>Component lifted off pad</strong></td>
-<td>Overheating or component pulled up</td>
-<td>Use flux; apply less heat; hold component steady</td>
-</tr>
-<tr>
-<td><strong>ISP header won't program</strong></td>
-<td>Misaligned pins or poor contact</td>
-<td>Verify pin order; clean contacts</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="7-learning-outcomes-reflection">7. Learning Outcomes &amp; Reflection<a class="headerlink" href="#7-learning-outcomes-reflection" title="Permanent link">&para;</a></h2>
-<h3 id="skills-developed">Skills Developed<a class="headerlink" href="#skills-developed" title="Permanent link">&para;</a></h3>
-<p>By completing this activity, you have:</p>
-<ol>
-<li><strong>Designed a functional microcontroller circuit</strong> with real I/O</li>
-<li><strong>Mastered KiCad workflow</strong> from schematic to production files</li>
-<li><strong>Applied DFM principles</strong> to single-sided PCB design</li>
-<li><strong>Understood milling constraints</strong> and designed accordingly</li>
-<li><strong>Generated production-ready files</strong> for manufacturing</li>
-<li><strong>Gained hands-on experience</strong> with PCB fabrication and soldering</li>
-</ol>
-<h3 id="design-for-manufacturability-principles-applied">Design for Manufacturability Principles Applied<a class="headerlink" href="#design-for-manufacturability-principles-applied" title="Permanent link">&para;</a></h3>
+<h2 id="reflection-questions">Reflection Questions<a class="headerlink" href="#reflection-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Single-sided layout strategy without vias</li>
-<li>Trace width and spacing optimization for milling accuracy</li>
-<li>Component selection for hand soldering accessibility</li>
-<li>ISP programming interface integration</li>
-<li>Decoupling capacitor placement for power stability</li>
+<li>How did single-layer constraint influence your component placement strategy?</li>
+<li>What routing conflicts emerged during trace execution, and how were they resolved?</li>
+<li>How would ISP programming be eliminated in a production design?</li>
+<li>What would dual-layer design contribute to board compaction?</li>
+<li>How would surface-mount components change the board form factor?</li>
 </ul>
-<h3 id="reflection-questions">Reflection Questions<a class="headerlink" href="#reflection-questions" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Routing Challenge:</strong> What was the biggest constraint when routing traces on a single layer? How did you overcome it?</li>
-<li><strong>Design Iteration:</strong> If you redesigned this board, what would you change and why?</li>
-<li><strong>Manufacturing Reality:</strong> How did actual PCB milling differ from your initial expectations?</li>
-<li><strong>Component Placement:</strong> How would different component positions have improved manufacturability?</li>
-<li><strong>File Generation:</strong> What did you learn about Gerber files and design software communication?</li>
-</ul>
-<hr />
-<h2 id="download-references">Download References<a class="headerlink" href="#download-references" title="Permanent link">&para;</a></h2>
-<p><a class="md-button md-button--primary" href="../downloads/Day3_ATtiny45_LED_Control.zip"> ATtiny45 PCB Design (KiCad Project)</a></p>
-<p><a class="md-button md-button--primary" href="../downloads/Day3_Gerber_Files.zip"> Gerber Files (Ready for Milling)</a></p>
 <hr />
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <p><strong>KiCad Documentation:</strong>
-- <a href="https://docs.kicad.org/">KiCad Official Manual</a>
-- <a href="https://docs.kicad.org/en/6.0/getting_started/index.html">Schematic Editor Tutorial</a>
-- <a href="https://docs.kicad.org/en/6.0/pcbnew/index.html">PCB Editor Guide</a></p>
+- <a href="https://kicad.org/">KiCad Official Website</a>
+- <a href="https://docs.kicad.org/">Schematic Capture Tutorial</a>
+- <a href="https://docs.kicad.org/">PCB Layout Guide</a></p>
+<p><strong>ATtiny45 Reference:</strong>
+- <a href="https://ww1.microchip.com/en-US/product/ATTINY45">Microchip ATtiny45 Datasheet</a>
+- <a href="https://ww1.microchip.com/en-US/product/ATTINY45">GPIO Configuration Guide</a></p>
 <p><strong>PCB Design Best Practices:</strong>
-- <a href="https://www.bantamtools.com/tutorials">Design for PCB Milling Guide</a>
-- <a href="https://www.ucamco.com/en/gerber">Gerber File Format Specification</a>
-- <a href="https://www.microchip.com/en-us/product/ATtiny45">ATtiny45 Datasheet</a></p>
-<p><strong>Microcontroller Programming:</strong>
-- <a href="https://www.arduino.cc/en/tutorial/ArduinoISP">Arduino ISP Programming</a>
-- <a href="https://github.com/SpenceKonde/ATTinyCore">ATtiny Programming with AVRdude</a></p>
-<hr />
-<h2 id="deliverables-checklist">Deliverables Checklist<a class="headerlink" href="#deliverables-checklist" title="Permanent link">&para;</a></h2>
-<ul>
-<li>[ ] Schematic design with all components and connections</li>
-<li>[ ] Footprint assignments verified and correct</li>
-<li>[ ] Single-sided PCB layout without vias</li>
-<li>[ ] Design Rule Check passed with no violations</li>
-<li>[ ] Gerber and drill files generated and inspected</li>
-<li>[ ] PCB successfully milled and cleaned</li>
-<li>[ ] Board hand-soldered with all components</li>
-<li>[ ] ISP programming completed successfully</li>
-<li>[ ] Functional test passed (button controls LED)</li>
-</ul>
-<hr />
-<h2 id="implementation-results-and-analysis">Implementation Results and Analysis<a class="headerlink" href="#implementation-results-and-analysis" title="Permanent link">&para;</a></h2>
-<h3 id="successfully-completed-design-process">Successfully Completed Design Process<a class="headerlink" href="#successfully-completed-design-process" title="Permanent link">&para;</a></h3>
-<p>This Day 3 activity resulted in a fully functional ATtiny45-based microcontroller PCB design optimized for single-sided milling fabrication. The complete design process was documented through multiple stages as shown in the figures above.</p>
-<h4 id="key-achievements">Key Achievements<a class="headerlink" href="#key-achievements" title="Permanent link">&para;</a></h4>
-<p><strong>Schematic Design Completion</strong>
-- Successfully designed a complete microcontroller circuit with ATtiny44-20P
-- Integrated ISP programming interface for firmware development
-- Included proper decoupling capacitors and pull-up resistors for stable operation
-- Implemented user input (tactile button) and output (LED with current limiting resistor)</p>
-<p><strong>Single-Sided PCB Layout Success</strong>
-- Achieved 100% routing on single copper layer without vias
-- Maintained minimum trace widths of 0.6mm for milling compatibility
-- Optimized component placement for manufacturing and soldering accessibility
-- Successfully validated design through 3D visualization and design rule checking</p>
-<p><strong>Design for Manufacturing (DFM) Integration</strong>
-- Selected appropriate through-hole components for hand soldering
-- Maintained adequate clearances between components and traces
-- Positioned components for optimal milling machine access
-- Generated production-ready files for PCB fabrication</p>
-<h4 id="technical-specifications-achieved">Technical Specifications Achieved<a class="headerlink" href="#technical-specifications-achieved" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Specification</th>
-<th>Design Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Board Dimensions</strong></td>
-<td>60 × 40mm (max)</td>
-<td>~45 × 35mm</td>
-</tr>
-<tr>
-<td><strong>Minimum Trace Width</strong></td>
-<td>0.5mm</td>
-<td>0.6mm</td>
-</tr>
-<tr>
-<td><strong>Minimum Clearance</strong></td>
-<td>0.5mm</td>
-<td>0.6mm</td>
-</tr>
-<tr>
-<td><strong>Number of Layers</strong></td>
-<td>Single-sided</td>
-<td>1 layer (copper)</td>
-</tr>
-<tr>
-<td><strong>Component Package</strong></td>
-<td>Through-hole</td>
-<td>All THT selected</td>
-</tr>
-<tr>
-<td><strong>Drill Hole Size</strong></td>
-<td>Standard</td>
-<td>0.8-1.0mm</td>
-</tr>
-</tbody>
-</table>
-<h3 id="challenges-encountered-and-solutions">Challenges Encountered and Solutions<a class="headerlink" href="#challenges-encountered-and-solutions" title="Permanent link">&para;</a></h3>
-<p><strong>Single-Sided Routing Complexity</strong>
-The most significant challenge was routing all connections on a single copper layer without crossing traces. This was resolved through:
-- Strategic component placement near related circuits
-- Careful planning of ground and power distribution
-- Use of wider traces for power connections to minimize resistance
-- Acceptance of slightly longer routing paths to avoid crossings</p>
-<p><strong>Component Selection Trade-offs</strong>
-Balancing between component availability, footprint size, and functionality required:
-- Selection of larger DIP-8 package for ATtiny45 instead of surface-mount alternatives
-- Choice of 5mm through-hole LED for visibility and easy soldering
-- Standard 0.1" pitch headers for ISP programming compatibility</p>
-<p><strong>Design Rule Compliance</strong>
-Ensuring manufacturability within milling constraints involved:
-- Iterative adjustment of trace widths and spacing
-- Component repositioning to meet clearance requirements
-- Verification through KiCad's built-in design rule checker</p>
-<hr />
-<h2 id="project-documentation-and-files">Project Documentation and Files<a class="headerlink" href="#project-documentation-and-files" title="Permanent link">&para;</a></h2>
-<h3 id="kicad-project-structure">KiCad Project Structure<a class="headerlink" href="#kicad-project-structure" title="Permanent link">&para;</a></h3>
-<p><img alt="KiCad Project Overview" src="../images/KiCAD_Project.png" /></p>
-<p><strong>Figure 7:</strong> KiCad project file structure showing the complete design workflow from schematic capture through PCB layout to fabrication file generation</p>
-<h3 id="generated-fabrication-files">Generated Fabrication Files<a class="headerlink" href="#generated-fabrication-files" title="Permanent link">&para;</a></h3>
-<p><strong>Successfully Generated Files:</strong>
-- <strong>Schematic PDF</strong>: Complete circuit documentation
-- <strong>PCB Layout Gerber</strong>: Copper layer pattern for milling
-- <strong>Drill Files</strong>: Component hole positions and sizes
-- <strong>3D Renderings</strong>: Design visualization for review
-- <strong>Bill of Materials</strong>: Component specifications and quantities</p>
-<h4 id="component-bill-of-materials">Component Bill of Materials<a class="headerlink" href="#component-bill-of-materials" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>Reference</th>
-<th>Component</th>
-<th>Package</th>
-<th>Quantity</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>U1</td>
-<td>ATtiny45-20P</td>
-<td>DIP-8</td>
-<td>1</td>
-<td>Microcontroller (8-bit, 4KB flash)</td>
-</tr>
-<tr>
-<td>D1</td>
-<td>LED (Red)</td>
-<td>THT 5mm</td>
-<td>1</td>
-<td>Status indicator</td>
-</tr>
-<tr>
-<td>R1</td>
-<td>220Ω Resistor</td>
-<td>THT Axial</td>
-<td>1</td>
-<td>LED current limiting</td>
-</tr>
-<tr>
-<td>SW1</td>
-<td>Tactile Button</td>
-<td>THT 6×6mm</td>
-<td>1</td>
-<td>User input switch</td>
-</tr>
-<tr>
-<td>C1</td>
-<td>0.1µF Capacitor</td>
-<td>THT Radial</td>
-<td>1</td>
-<td>Power supply decoupling</td>
-</tr>
-<tr>
-<td>J1</td>
-<td>ISP Header</td>
-<td>2×3 Pin 0.1"</td>
-<td>1</td>
-<td>Programming interface</td>
-</tr>
-<tr>
-<td>J2</td>
-<td>Power Connector</td>
-<td>1×2 Pin 0.1"</td>
-<td>1</td>
-<td>5V supply input</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="reflection-and-learning-outcomes">Reflection and Learning Outcomes<a class="headerlink" href="#reflection-and-learning-outcomes" title="Permanent link">&para;</a></h2>
-<h3 id="knowledge-integration">Knowledge Integration<a class="headerlink" href="#knowledge-integration" title="Permanent link">&para;</a></h3>
-<p>This comprehensive PCB design exercise successfully integrated multiple critical aspects of digital fabrication:</p>
-<p><strong>Circuit Design Fundamentals</strong>
-- Demonstrated understanding of microcontroller pin functions and ISP programming requirements
-- Applied proper circuit design principles including decoupling, pull-up resistors, and current limiting
-- Integrated multiple subsystems (power, programming, I/O) into cohesive functional design</p>
-<p><strong>CAD Tool Proficiency</strong>
-- Mastered complete KiCad workflow from schematic capture through fabrication file generation
-- Developed skills in component library management and footprint assignment
-- Gained experience with design rule checking and manufacturing constraint validation</p>
-<p><strong>Design for Manufacturing Excellence</strong>
-- Successfully applied single-sided PCB design strategies to overcome milling limitations
-- Optimized component selection and placement for hand assembly processes
-- Generated production-ready files meeting manufacturing specifications</p>
-<h3 id="critical-design-insights">Critical Design Insights<a class="headerlink" href="#critical-design-insights" title="Permanent link">&para;</a></h3>
-<p><strong>Materials and Process Integration</strong>
-The exercise reinforced the fundamental principle that successful digital fabrication requires simultaneous consideration of:
-- Electronic circuit functionality and performance requirements
-- Physical manufacturing process capabilities and constraints
-- Assembly and testing accessibility throughout the production workflow
-- Cost optimization through appropriate component and process selection</p>
-<p><strong>Iterative Design Philosophy</strong>
-The project demonstrated the value of iterative design improvement through:
-- Multiple layout iterations to optimize routing and component placement
-- Continuous design rule verification to catch manufacturing violations early
-- 3D visualization for design validation before committing to fabrication
-- Documentation of design decisions for future reference and improvement</p>
-<h3 id="future-enhancement-opportunities">Future Enhancement Opportunities<a class="headerlink" href="#future-enhancement-opportunities" title="Permanent link">&para;</a></h3>
-<p><strong>Advanced Design Techniques</strong>
-- Implementation of mixed-signal design techniques for analog sensor interfaces
-- Integration of surface-mount components for higher component density
-- Development of multi-layer PCB designs for more complex circuits
-- Incorporation of embedded programming and testing interfaces</p>
-<p><strong>Manufacturing Process Optimization</strong>
-- Investigation of automated assembly techniques for higher volume production
-- Development of custom component libraries for specialized applications
-- Integration with modern fabrication processes including professional PCB manufacturing
-- Implementation of design for testability (DFT) principles for quality assurance</p>
-<p>This Day 3 activity successfully achieved all learning objectives while providing practical experience in the complete PCB design and fabrication workflow essential for digital fabrication proficiency.</p>
-<hr />
-<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
-<p>The Day 3 PCB design exercise exemplified the integration of theoretical knowledge with practical digital fabrication skills. Through the development of a functional ATtiny45 microcontroller circuit, this project demonstrated that successful electronic system design requires a holistic approach encompassing circuit functionality, manufacturing constraints, and assembly considerations.</p>
-<p>The completed design represents a fully manufacturable product ready for milling fabrication and hand assembly, validating the effectiveness of the systematic design methodology employed. This foundation establishes the necessary competencies for advancing to more complex digital fabrication challenges involving multi-layer designs, surface-mount components, and automated assembly processes.</p>
-<p>The documentation and files generated through this exercise provide a comprehensive reference for future PCB design projects and demonstrate best practices in design methodology, CAD tool utilization, and manufacturing preparation essential for professional digital fabrication practice.</p>
-<hr />
-<h2 id="download-references_1">Download References<a class="headerlink" href="#download-references_1" title="Permanent link">&para;</a></h2>
-<p>Links to reference files, project files, and additional resources:</p>
+- <a href="https://www.ipc.org/">IPC Standards for PCB Design</a>
+- <a href="https://www.ucamco.com/gerber">Gerber File Specification</a></p>
 
 
 
@@ -2954,5 +1642,5 @@ The project demonstrated the value of iterative design improvement through:
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
